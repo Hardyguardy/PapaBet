@@ -1,13 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
 @theme {
+  /* Цвет фона */
   --color-brand-primary: #111f24;
-  --color-brand-secondary: #8b5cf6;
+  /* Цвет хедера  */
+  --color-brand-secondary: #c7f121;
   --color-brand-accent: #ec4899;
   --color-surface: #ffffff;
   --color-text: #1f2937;
 
+  /* Шрифты */
   --font-family-base: "Inter", system-ui, sans-serif;
+  --font-family-secondary: "IBM Plex Mono", monospace;
   --font-family-heading: "Poppins", system-ui, sans-serif;
 }
 
