@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/index.css" rel="stylesheet" />
+    <title>PapaBet</title>
+  </head>
+  <body class="bg-brand-primary">
+    <header
+      class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[1440px] h-[57px] bg-[#cddc39]"
+    >
+      <div class="flex items-center justify-between h-full px-6">
+        <!-- Логотип -->
+        <div class="flex items-center gap-3">
+          <img src="/assets/icons/Logo.svg" alt="PapaBet" class="h-10" />
+          <div class="flex items-baseline gap-1"></div>
+        </div>
+
+        <!-- Навигация -->
+        <nav class="flex items-center gap-8">
+          <a
+            href="#"
+            class="text-black text-sm font-medium uppercase tracking-wide hover:opacity-70"
+            >Казино</a
+          >
+          <a
+            href="#"
+            class="text-black text-sm font-medium uppercase tracking-wide hover:opacity-70"
+            >Live Казино</a
+          >
+          <a
+            href="#"
+            class="text-black text-sm font-medium uppercase tracking-wide hover:opacity-70"
+            >Спорт</a
+          >
+          <a
+            href="#"
+            class="text-black text-sm font-medium uppercase tracking-wide hover:opacity-70"
+            >Gacha</a
+          >
+        </nav>
+
+        <!-- Поиск и логин -->
+        <div class="flex items-center gap-4">
+          <!-- Иконка поиска -->
+          <button
+            class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-black/10"
+          >
+            <svg
+              class="w-5 h-5 text-black"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
+          </button>
+
+          <!-- Логин -->
+          <button
+            class="flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-black/10"
+          >
+            <svg
+              class="w-5 h-5 text-black"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+              />
+            </svg>
+            <span class="text-black text-sm font-medium uppercase tracking-wide"
+              >Вход / Регистрация</span
+            >
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
