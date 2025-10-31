@@ -8,7 +8,7 @@
   </head>
   <body class="bg-brand-primary">
     <header
-      class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[1440px] h-[57px] bg-brand-secondary"
+      class="fixed top-0 left-1/2 -translate-x-1/2 w-full max-w-[1440px] h-[57px] bg-brand-secondary z-50"
     >
       <div class="flex items-center justify-between h-full px-6">
         <!-- Логотип -->
@@ -416,21 +416,156 @@
           <div
             class="relative w-full h-[122px] rounded-[5px] overflow-hidden cursor-pointer hover:ring-2 hover:ring-[#cddc39] transition"
           >
-            <!-- Черный overlay с прозрачностью -->
             <div class="absolute inset-0 bg-black opacity-30"></div>
 
-            <!-- Градиент снизу вверх -->
             <div
               class="absolute inset-0 bg-gradient-to-t from-[#C7F121]/60 via-[#C7F121]/20 to-transparent"
             ></div>
 
-            <!-- Контент -->
             <div class="relative z-10 flex items-center justify-center h-full">
               <h2
                 class="text-white font-medium font-family-secondary text-[32px] uppercase tracking-widest"
               >
                 30% бонус на депозит
               </h2>
+            </div>
+          </div>
+        </section>
+
+        <!-- Последние Ставки -->
+        <section class="mt-12">
+          <!-- Завголовок -->
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-3">
+              <img src="assets/icons/Guitar.svg" alt="PapaBet" class="h-8" />
+              <h2 class="text-white text-3xl font-bold">Последние ставки</h2>
+            </div>
+
+            <!-- Фильтры -->
+            <div class="flex gap-2">
+              <button
+                class="px-4 py-2 bg-[#cddc39] text-black text-sm font-semibold rounded-lg hover:bg-[#b8c935] transition uppercase"
+              >
+                Лайв
+              </button>
+              <button
+                class="px-4 py-2 bg-white/10 text-white text-sm font-semibold rounded-lg hover:bg-white/20 transition uppercase"
+              >
+                Неделя
+              </button>
+              <button
+                class="px-4 py-2 bg-white/10 text-white text-sm font-semibold rounded-lg hover:bg-white/20 transition uppercase"
+              >
+                Месяц
+              </button>
+              <button
+                class="px-4 py-2 bg-white/10 text-white text-sm font-semibold rounded-lg hover:bg-white/20 transition uppercase"
+              >
+                Все время
+              </button>
+            </div>
+          </div>
+
+          <!-- Таблица -->
+          <div class="bg-brand-primary/50 rounded-lg overflow-hidden">
+            <!-- Хедер таблицы -->
+            <div
+              class="grid grid-cols-5 gap-4 px-6 py-4 border-b border-gray-700"
+            >
+              <div
+                class="text-gray-400 text-sm font-semibold uppercase tracking-wide"
+              >
+                Игра
+              </div>
+              <div
+                class="text-gray-400 text-sm font-semibold uppercase tracking-wide"
+              >
+                Игрок
+              </div>
+              <div
+                class="text-gray-400 text-sm font-semibold uppercase tracking-wide"
+              >
+                Время
+              </div>
+              <div
+                class="text-gray-400 text-sm font-semibold uppercase tracking-wide"
+              >
+                Множитель
+              </div>
+              <div
+                class="text-gray-400 text-sm font-semibold uppercase tracking-wide text-right"
+              >
+                Выигрыш/Проигрыш
+              </div>
+            </div>
+
+            <!-- Строки таблицы -->
+            <div id="bets-container">
+              <!-- Строка 1 - Выигрыш -->
+              <div
+                class="grid bg-[#253236] grid-cols-5 gap-4 px-6 py-4 border-b border-gray-700/50 hover:bg-white/5 transition"
+              >
+                <div class="flex items-center gap-3">
+                  <!-- <img
+                    src=""
+                    alt="Game"
+                    class="w-8 h-8 rounded"
+                  /> -->
+                  <span class="text-white text-sm font-medium"
+                    >SWEET BONANZA SUPER</span
+                  >
+                </div>
+                <div class="text-white text-sm">IVANPAD111</div>
+                <div class="text-gray-400 text-sm">08:45 AM</div>
+                <div class="text-[#627EEA] text-sm font-semibold">X 0.5</div>
+                <div class="text-[#4ADE80] text-sm font-semibold text-right">
+                  +27.8 USDT
+                </div>
+              </div>
+
+              <!-- Строка 2 - Проигрыш -->
+              <div
+                class="grid grid-cols-5 gap-4 px-6 py-4 border-b border-gray-700/50 hover:bg-white/5 transition"
+              >
+                <div class="flex items-center gap-3">
+                  <!-- <img
+                    src="/assets/icons/game-icon.png"
+                    alt="Game"
+                    class="w-8 h-8 rounded"
+                  /> -->
+                  <span class="text-white text-sm font-medium"
+                    >SWEET BONANZA SUPER</span
+                  >
+                </div>
+                <div class="text-white text-sm">IVANPAD111</div>
+                <div class="text-gray-400 text-sm">08:45 AM</div>
+                <div class="text-[#627EEA] text-sm font-semibold">X 0.5</div>
+                <div class="text-[#EF4444] text-sm font-semibold text-right">
+                  -27.8 USDT
+                </div>
+              </div>
+
+              <!-- Строка 3 - Выигрыш -->
+              <div
+                class="bg-[#253236] grid grid-cols-5 gap-4 px-6 py-4 border-b border-gray-700/50 hover:bg-white/5 transition"
+              >
+                <div class="flex items-center gap-3">
+                  <!-- <img
+                    src="/assets/icons/game-icon.png"
+                    alt="Game"
+                    class="w-8 h-8 rounded"
+                  /> -->
+                  <span class="text-white text-sm font-medium"
+                    >SWEET BONANZA SUPER</span
+                  >
+                </div>
+                <div class="text-white text-sm">IVANPAD111</div>
+                <div class="text-gray-400 text-sm">08:45 AM</div>
+                <div class="text-[#627EEA] text-sm font-semibold">X 0.5</div>
+                <div class="text-[#4ADE80] text-sm font-semibold text-right">
+                  +27.8 USDT
+                </div>
+              </div>
             </div>
           </div>
         </section>
