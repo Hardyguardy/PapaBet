@@ -1,5 +1,22 @@
 import "./index.css";
 
+// Header footer load
+
+async function loadComponent(elementId, filePath) {
+  try {
+    const response = await fetch(filePath);
+    const html = await response.text();
+    document.getElementById(elementId).innerHTML = html;
+  } catch (error) {
+    console.error(`Error loading ${filePath}:`, error);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadComponent("header-container", "/src/components/header.html");
+  loadComponent("footer-container", "/src/components/footer.html");
+});
+
 // Функция для Show More
 function toggleTextBlock(button) {
   const container = button.closest(".relative").parentElement;
