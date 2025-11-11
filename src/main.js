@@ -14,6 +14,10 @@ async function loadComponent(elementId, filePath) {
 
 document.addEventListener("DOMContentLoaded", () => {
   loadComponent("header-container", "/src/components/header.html");
+  loadComponent(
+    "header-logged-container",
+    "/src/components/header-logged.html"
+  );
   loadComponent("footer-container", "/src/components/footer.html");
 });
 
