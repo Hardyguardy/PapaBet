@@ -185,10 +185,10 @@
               <div class="cursor-pointer group relative">
                 <!-- Бейдж ТУРНИР -->
                 <div
-                  class="absolute top-3 left-3 z-10 px-3 py-1.5 bg-transparent border border-[#cddc39] rounded-md"
+                  class="absolute top-3 left-3 z-10 w-[55px] h-[17px] bg-transparent border border-[#cddc39] rounded-md"
                 >
                   <span
-                    class="text-[#cddc39] text-[10px] font-bold uppercase tracking-wide"
+                    class="text-[#cddc39] text-[10px] flex items-center justify-center font-bold uppercase tracking-wide"
                     >Турнир</span
                   >
                 </div>
@@ -197,11 +197,6 @@
                 <div
                   class="w-full aspect-[16/9] rounded-lg overflow-hidden hover:opacity-90 transition relative bg-black"
                 >
-                  <img
-                    src="assets/images/game1.jpg"
-                    alt="Bash Bros"
-                    class="w-full h-full object-cover"
-                  />
                   <!-- Градиент снизу (сильнее) -->
                   <div
                     class="absolute inset-0 bg-gradient-to-t from-[#C7F121] via-[#C7F121]/40 to-transparent"
@@ -212,12 +207,14 @@
                     class="absolute bottom-3 left-3 right-3 z-10 flex items-end justify-between"
                   >
                     <!-- Название игры -->
-                    <h3 class="text-white font-bold text-xl leading-tight">
+                    <h3
+                      class="text-[#273337] font-family-base font-bold text-xl leading-tight"
+                    >
                       Bash Bros
                     </h3>
                     <!-- Провайдер -->
                     <p
-                      class="text-white text-[10px] font-medium uppercase tracking-wider"
+                      class="text-[#273337] font-family-secondary text-[10px] font-medium uppercase tracking-wider"
                     >
                       Hacksaw Gaming
                     </p>
@@ -229,10 +226,10 @@
               <div class="cursor-pointer group relative">
                 <!-- Бейдж ТУРНИР -->
                 <div
-                  class="absolute top-3 left-3 z-10 px-3 py-1.5 bg-transparent border border-[#cddc39] rounded-md"
+                  class="absolute top-3 left-3 z-10 w-[55px] h-[17px] bg-transparent border border-[#cddc39] rounded-md"
                 >
                   <span
-                    class="text-[#cddc39] text-[10px] font-bold uppercase tracking-wide"
+                    class="text-[#cddc39] text-[10px] flex items-center justify-center font-bold uppercase tracking-wide"
                     >Турнир</span
                   >
                 </div>
@@ -241,11 +238,6 @@
                 <div
                   class="w-full aspect-[16/9] rounded-lg overflow-hidden hover:opacity-90 transition relative bg-black"
                 >
-                  <img
-                    src="assets/images/game1.jpg"
-                    alt="Bash Bros"
-                    class="w-full h-full object-cover"
-                  />
                   <!-- Градиент снизу (сильнее) -->
                   <div
                     class="absolute inset-0 bg-gradient-to-t from-[#C7F121] via-[#C7F121]/40 to-transparent"
@@ -256,12 +248,14 @@
                     class="absolute bottom-3 left-3 right-3 z-10 flex items-end justify-between"
                   >
                     <!-- Название игры -->
-                    <h3 class="text-white font-bold text-xl leading-tight">
+                    <h3
+                      class="text-[#273337] font-family-base font-bold text-xl leading-tight"
+                    >
                       Bash Bros
                     </h3>
                     <!-- Провайдер -->
                     <p
-                      class="text-white text-[10px] font-medium uppercase tracking-wider"
+                      class="text-[#273337] font-family-secondary text-[10px] font-medium uppercase tracking-wider"
                     >
                       Hacksaw Gaming
                     </p>
@@ -306,7 +300,9 @@
               <h2 class="text-white text-3xl font-bold">Мои крупные победы</h2>
             </div>
 
-            <div class="grid grid-cols-5 gap-4">
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+            >
               <!-- Game 1 -->
               <div class="cursor-pointer">
                 <div
@@ -358,6 +354,95 @@
                   Peter & Sons
                 </p>
               </div>
+            </div>
+          </section>
+
+          <!-- Последние игры -->
+          <section class="mt-12">
+            <!-- Заголовок с иконкой и стрелками -->
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center gap-3">
+                <img src="assets/icons/Guitar.svg" alt="PapaBet" class="h-8" />
+
+                <h2 class="text-white text-3xl font-bold">Последние игры</h2>
+              </div>
+
+              <!-- Навигация -->
+              <div class="flex gap-2">
+                <button
+                  class="w-5 h-5 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition"
+                >
+                  <img
+                    src="assets/icons/arrow-left.svg"
+                    alt="PapaBet"
+                    class="h-2"
+                  />
+                </button>
+                <button
+                  class="w-5 h-5 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition"
+                >
+                  <img
+                    src="assets/icons/arrow-right.svg"
+                    alt="PapaBet"
+                    class="h-2"
+                  />
+                </button>
+              </div>
+            </div>
+
+            <!-- Игры -->
+            <div class="grid grid-cols-5 gap-4">
+              <!-- Game 1 -->
+              <div class="cursor-pointer">
+                <div
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
+                >
+                  Hacksaw Gaming
+                </p>
+              </div>
+
+              <!-- Game 2 -->
+              <div class="cursor-pointer">
+                <div
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
+                >
+                  Hacksaw Gaming
+                </p>
+              </div>
+
+              <!-- Game 3 -->
+              <div class="cursor-pointer">
+                <div
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
+                >
+                  Hacksaw Gaming
+                </p>
+              </div>
+
+              <!-- Game 4 -->
+              <div class="cursor-pointer">
+                <div
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
+                >
+                  Hacksaw Gaming
+                </p>
+              </div>
 
               <!-- Game 5 -->
               <div class="cursor-pointer">
@@ -374,7 +459,109 @@
             </div>
           </section>
 
-          <!-- Крипто депозиты и обычные способы пополнения -->
+          <!-- Советуем поиграть -->
+          <section class="mt-12">
+            <!-- Заголовок с иконкой и стрелками -->
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center gap-3">
+                <img src="assets/icons/Guitar.svg" alt="PapaBet" class="h-8" />
+
+                <h2 class="text-white text-3xl font-bold">Советуем поиграть</h2>
+              </div>
+
+              <!-- Навигация -->
+              <div class="flex gap-2">
+                <button
+                  class="w-5 h-5 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition"
+                >
+                  <img
+                    src="assets/icons/arrow-left.svg"
+                    alt="PapaBet"
+                    class="h-2"
+                  />
+                </button>
+                <button
+                  class="w-5 h-5 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition"
+                >
+                  <img
+                    src="assets/icons/arrow-right.svg"
+                    alt="PapaBet"
+                    class="h-2"
+                  />
+                </button>
+              </div>
+            </div>
+
+            <!-- Игры -->
+            <div class="grid grid-cols-5 gap-4">
+              <!-- Game 1 -->
+              <div class="cursor-pointer">
+                <div
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
+                >
+                  Hacksaw Gaming
+                </p>
+              </div>
+
+              <!-- Game 2 -->
+              <div class="cursor-pointer">
+                <div
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
+                >
+                  Hacksaw Gaming
+                </p>
+              </div>
+
+              <!-- Game 3 -->
+              <div class="cursor-pointer">
+                <div
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
+                >
+                  Hacksaw Gaming
+                </p>
+              </div>
+
+              <!-- Game 4 -->
+              <div class="cursor-pointer">
+                <div
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
+                >
+                  Hacksaw Gaming
+                </p>
+              </div>
+
+              <!-- Game 5 -->
+              <div class="cursor-pointer">
+                <div
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
+                >
+                  Hacksaw Gaming
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Популярны среди других игроков -->
           <section class="mt-12">
             <!-- Заголовок с иконкой и стрелками -->
             <div class="flex items-center justify-between mb-6">
@@ -382,7 +569,7 @@
                 <img src="assets/icons/Guitar.svg" alt="PapaBet" class="h-8" />
 
                 <h2 class="text-white text-3xl font-bold">
-                  Крипто депозиты и обычные способы пополнения
+                  Популярны среди других игроков
                 </h2>
               </div>
 
@@ -409,97 +596,434 @@
               </div>
             </div>
 
-            <!-- Способы оплаты -->
+            <!-- Игры -->
             <div class="grid grid-cols-5 gap-4">
-              <!-- Ethereum -->
-              <div class="cursor-pointer group">
+              <!-- Game 1 -->
+              <div class="cursor-pointer">
                 <div
-                  class="w-full aspect-[16/9] bg-[#627EEA] rounded-lg p-6 flex flex-col items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
                 >
-                  <img
-                    src="assets/icons/ethereum.png"
-                    alt="PapaBet"
-                    class="h-19"
-                  />
-                  <p class="text-white text-sm font-semibold">Ethereum</p>
-                </div>
+                  Hacksaw Gaming
+                </p>
               </div>
 
-              <!-- Bitcoin -->
-              <div class="cursor-pointer group">
+              <!-- Game 2 -->
+              <div class="cursor-pointer">
                 <div
-                  class="w-full aspect-[16/9] bg-[#F7931A] rounded-lg p-6 flex flex-col items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
                 >
-                  <img
-                    src="assets/icons/bitcoin.png"
-                    alt="PapaBet"
-                    class="h-19"
-                  />
-                  <p class="text-white text-sm font-semibold">Bitcoin</p>
-                </div>
+                  Hacksaw Gaming
+                </p>
               </div>
 
-              <!-- Mastercard -->
-              <div class="cursor-pointer group">
+              <!-- Game 3 -->
+              <div class="cursor-pointer">
                 <div
-                  class="w-full h-full aspect-[16/9] bg-[#000000] rounded-lg p-6 flex flex-col items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
                 >
-                  <img
-                    src="assets/icons/mastercard.png"
-                    alt="PapaBet"
-                    class="h-[60px] w-[100px]"
-                  />
-                  <p class="text-white text-sm font-semibold mt-3">
-                    Mastercard
-                  </p>
-                </div>
+                  Hacksaw Gaming
+                </p>
               </div>
 
-              <!-- Apple Pay -->
-              <div class="cursor-pointer group">
+              <!-- Game 4 -->
+              <div class="cursor-pointer">
                 <div
-                  class="w-full h-full aspect-[16/9] bg-[#E5E5E5] rounded-lg p-6 flex flex-col items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
                 >
-                  <img
-                    src="assets/icons/applepay.png"
-                    alt="PapaBet"
-                    class="h-[46px] w-[112px] mt-4"
-                  />
-                  <p class="text-black text-sm font-semibold mt-2">Apple Pay</p>
-                </div>
+                  Hacksaw Gaming
+                </p>
               </div>
 
-              <!-- Visa -->
-              <div class="cursor-pointer group">
+              <!-- Game 5 -->
+              <div class="cursor-pointer">
                 <div
-                  class="w-full aspect-[16/9] bg-white rounded-lg p-6 flex flex-col items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
                 >
-                  <img src="assets/icons/visa.png" alt="PapaBet" class="h-19" />
-                  <p class="text-[#1A1F71] text-sm font-semibold">Visa</p>
-                </div>
+                  Hacksaw Gaming
+                </p>
               </div>
             </div>
           </section>
 
-          <!-- 30% bonus deposit -->
+          <!-- Новые игры от наших провайдеров -->
           <section class="mt-12">
-            <div
-              class="relative w-full h-[122px] rounded-[5px] overflow-hidden cursor-pointer hover:ring-2 hover:ring-[#cddc39] transition"
-            >
-              <div class="absolute inset-0 bg-black opacity-30"></div>
+            <!-- Заголовок с иконкой и стрелками -->
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center gap-3">
+                <img src="assets/icons/Guitar.svg" alt="PapaBet" class="h-8" />
 
+                <h2 class="text-white text-3xl font-bold">
+                  Новые игры от наших провайдеров
+                </h2>
+              </div>
+
+              <!-- Навигация -->
+              <div class="flex gap-2">
+                <button
+                  class="w-5 h-5 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition"
+                >
+                  <img
+                    src="assets/icons/arrow-left.svg"
+                    alt="PapaBet"
+                    class="h-2"
+                  />
+                </button>
+                <button
+                  class="w-5 h-5 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition"
+                >
+                  <img
+                    src="assets/icons/arrow-right.svg"
+                    alt="PapaBet"
+                    class="h-2"
+                  />
+                </button>
+              </div>
+            </div>
+
+            <!-- Игры -->
+            <div class="grid grid-cols-5 gap-4">
+              <!-- Game 1 -->
+              <div class="cursor-pointer">
+                <div
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
+                >
+                  Hacksaw Gaming
+                </p>
+              </div>
+
+              <!-- Game 2 -->
+              <div class="cursor-pointer">
+                <div
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
+                >
+                  Hacksaw Gaming
+                </p>
+              </div>
+
+              <!-- Game 3 -->
+              <div class="cursor-pointer">
+                <div
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
+                >
+                  Hacksaw Gaming
+                </p>
+              </div>
+
+              <!-- Game 4 -->
+              <div class="cursor-pointer">
+                <div
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
+                >
+                  Hacksaw Gaming
+                </p>
+              </div>
+
+              <!-- Game 5 -->
+              <div class="cursor-pointer">
+                <div
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
+                >
+                  Hacksaw Gaming
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Кнопка все игры -->
+          <div class="flex justify-center mt-8">
+            <button
+              class="px-8 py-3 bg-transparent border-2 border-[#cddc39] text-[#cddc39] font-bold text-sm uppercase tracking-wider rounded-lg hover:bg-[#cddc39] hover:text-black transition"
+            >
+              Смотреть все игры
+            </button>
+          </div>
+
+          <!-- Barbarossa -->
+          <section>
+            <div
+              class="relative mt-[60px] w-full h-[326px] rounded-[5px] overflow-hidden"
+            >
               <div
-                class="absolute inset-0 bg-gradient-to-t from-[#C7F121]/60 via-[#C7F121]/20 to-transparent"
+                class="absolute inset-0 bg-gradient-to-t from-[#C7F121] to-transparent"
               ></div>
 
+              <!-- Фон -->
+              <div class="absolute inset-0 bg-black opacity-30"></div>
+
+              <!-- Контент -->
               <div
-                class="relative z-10 flex items-center justify-center h-full"
+                class="relative z-10 flex flex-col items-center justify-center h-full px-12 text-center"
               >
-                <h2
-                  class="text-white font-medium font-family-secondary text-[32px] uppercase tracking-widest"
+                <!-- Текст -->
+                <p
+                  class="text-white font-family-secondary text-sm uppercase tracking-widest mb-6"
                 >
-                  30% бонус на депозит
-                </h2>
+                  Турнир
+                </p>
+
+                <!-- Главный текст -->
+                <h1
+                  class="text-white font-family-base font-bold text-6xl mb-8 leading-tight"
+                >
+                  BARBAROSSA
+                </h1>
+
+                <!-- Кнопка -->
+                <button
+                  class="px-4 py-2 bg-[#1a2c38] text-white font-family-secondary font-regularr text-lg rounded-lg hover:bg-[#253847] transition uppercase tracking-wide"
+                >
+                  Участвовать
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Наши провайдеры -->
+          <section class="mt-12">
+            <!-- Заголовок с иконкой и стрелками -->
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center gap-3">
+                <img src="assets/icons/Guitar.svg" alt="PapaBet" class="h-8" />
+                <h2 class="text-white text-3xl font-bold">Наши провайдеры</h2>
+              </div>
+
+              <!-- Стрелки навигации -->
+              <div class="flex gap-2">
+                <button
+                  class="w-5 h-5 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition"
+                >
+                  <img
+                    src="assets/icons/arrow-left.svg"
+                    alt="PapaBet"
+                    class="h-2"
+                  />
+                </button>
+                <button
+                  class="w-5 h-5 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition"
+                >
+                  <img
+                    src="assets/icons/arrow-right.svg"
+                    alt="PapaBet"
+                    class="h-2"
+                  />
+                </button>
+              </div>
+            </div>
+
+            <!-- Сетка провайдеров - 2 ряда по 5 -->
+            <div class="grid grid-cols-5 gap-4">
+              <!-- Ряд 1 -->
+              <!-- Карточка 1 -->
+              <div class="cursor-pointer group">
+                <div
+                  class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg flex items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+              </div>
+
+              <!-- Карточка 2 -->
+              <div class="cursor-pointer group">
+                <div
+                  class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg flex items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+              </div>
+
+              <!-- Карточка 3 -->
+              <div class="cursor-pointer group">
+                <div
+                  class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg flex items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+              </div>
+
+              <!-- Карточка 4 -->
+              <div class="cursor-pointer group">
+                <div
+                  class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg flex items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+              </div>
+
+              <!-- Карточка 5 -->
+              <div class="cursor-pointer group">
+                <div
+                  class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg flex items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+              </div>
+
+              <!-- Ряд 2 -->
+              <!-- Карточка 6 -->
+              <div class="cursor-pointer group">
+                <div
+                  class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg flex items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+              </div>
+
+              <!-- Карточка 7 -->
+              <div class="cursor-pointer group">
+                <div
+                  class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg flex items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+              </div>
+
+              <!-- Карточка 8 -->
+              <div class="cursor-pointer group">
+                <div
+                  class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg flex items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+              </div>
+
+              <!-- Карточка 9 -->
+              <div class="cursor-pointer group">
+                <div
+                  class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg flex items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+              </div>
+
+              <!-- Карточка 10 -->
+              <div class="cursor-pointer group">
+                <div
+                  class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg flex items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- LIVE Казино -->
+          <section class="mt-12">
+            <!-- Заголовок с иконкой и стрелками -->
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center gap-3">
+                <img src="assets/icons/Guitar.svg" alt="PapaBet" class="h-8" />
+
+                <h2 class="text-white text-3xl font-bold">LIVE Казино</h2>
+              </div>
+
+              <!-- Навигация -->
+              <div class="flex gap-2">
+                <button
+                  class="w-5 h-5 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition"
+                >
+                  <img
+                    src="assets/icons/arrow-left.svg"
+                    alt="PapaBet"
+                    class="h-2"
+                  />
+                </button>
+                <button
+                  class="w-5 h-5 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition"
+                >
+                  <img
+                    src="assets/icons/arrow-right.svg"
+                    alt="PapaBet"
+                    class="h-2"
+                  />
+                </button>
+              </div>
+            </div>
+
+            <!-- Игры -->
+            <div class="grid grid-cols-5 gap-4">
+              <!-- Game 1 -->
+              <div class="cursor-pointer">
+                <div
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
+                >
+                  Hacksaw Gaming
+                </p>
+              </div>
+
+              <!-- Game 2 -->
+              <div class="cursor-pointer">
+                <div
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
+                >
+                  Hacksaw Gaming
+                </p>
+              </div>
+
+              <!-- Game 3 -->
+              <div class="cursor-pointer">
+                <div
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
+                >
+                  Hacksaw Gaming
+                </p>
+              </div>
+
+              <!-- Game 4 -->
+              <div class="cursor-pointer">
+                <div
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
+                >
+                  Hacksaw Gaming
+                </p>
+              </div>
+
+              <!-- Game 5 -->
+              <div class="cursor-pointer">
+                <div
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
+                >
+                  Hacksaw Gaming
+                </p>
               </div>
             </div>
           </section>
@@ -642,16 +1166,17 @@
             </div>
           </section>
 
-          <!-- Наши провайдеры -->
+          <!-- Задания -->
           <section class="mt-12">
             <!-- Заголовок с иконкой и стрелками -->
             <div class="flex items-center justify-between mb-6">
               <div class="flex items-center gap-3">
                 <img src="assets/icons/Guitar.svg" alt="PapaBet" class="h-8" />
-                <h2 class="text-white text-3xl font-bold">Наши провайдеры</h2>
+
+                <h2 class="text-white text-3xl font-bold">Задания</h2>
               </div>
 
-              <!-- Стрелки навигации -->
+              <!-- Навигация -->
               <div class="flex gap-2">
                 <button
                   class="w-5 h-5 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition"
@@ -674,78 +1199,45 @@
               </div>
             </div>
 
-            <!-- Сетка провайдеров - 2 ряда по 5 -->
-            <div class="grid grid-cols-5 gap-4">
-              <!-- Ряд 1 -->
-              <!-- Карточка 1 -->
-              <div class="cursor-pointer group">
+            <!-- Игры -->
+            <div class="grid grid-cols-3 gap-4">
+              <!-- Game 1 -->
+              <div class="cursor-pointer">
                 <div
-                  class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg flex items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
                 ></div>
+                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
+                >
+                  Hacksaw Gaming
+                </p>
               </div>
 
-              <!-- Карточка 2 -->
-              <div class="cursor-pointer group">
+              <!-- Game 2 -->
+              <div class="cursor-pointer">
                 <div
-                  class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg flex items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
                 ></div>
+                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
+                >
+                  Hacksaw Gaming
+                </p>
               </div>
 
-              <!-- Карточка 3 -->
-              <div class="cursor-pointer group">
+              <!-- Game 3 -->
+              <div class="cursor-pointer">
                 <div
-                  class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg flex items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
                 ></div>
-              </div>
-
-              <!-- Карточка 4 -->
-              <div class="cursor-pointer group">
-                <div
-                  class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg flex items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-              </div>
-
-              <!-- Карточка 5 -->
-              <div class="cursor-pointer group">
-                <div
-                  class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg flex items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-              </div>
-
-              <!-- Ряд 2 -->
-              <!-- Карточка 6 -->
-              <div class="cursor-pointer group">
-                <div
-                  class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg flex items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-              </div>
-
-              <!-- Карточка 7 -->
-              <div class="cursor-pointer group">
-                <div
-                  class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg flex items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-              </div>
-
-              <!-- Карточка 8 -->
-              <div class="cursor-pointer group">
-                <div
-                  class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg flex items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-              </div>
-
-              <!-- Карточка 9 -->
-              <div class="cursor-pointer group">
-                <div
-                  class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg flex items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-              </div>
-
-              <!-- Карточка 10 -->
-              <div class="cursor-pointer group">
-                <div
-                  class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg flex items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
+                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
+                >
+                  Hacksaw Gaming
+                </p>
               </div>
             </div>
           </section>
