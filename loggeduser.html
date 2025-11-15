@@ -7,7 +7,7 @@
     <title>PapaBet</title>
   </head>
   <body class="bg-brand-primary">
-    <div id="header-container"></div>
+    <div id="header-logged-container"></div>
 
     <div class="pt-[57px] max-w-full mx-auto flex">
       <!-- Сайдбар -->
@@ -138,49 +138,172 @@
       <!-- Главный контент -->
       <main class="flex-1 ml-80 min-w-0">
         <div class="px-6 py-6">
-          <div class="relative w-full h-[326px] rounded-[5px] overflow-hidden">
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-[#C7F121] to-transparent"
-            ></div>
+          <section>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <!-- Game 1 - ТУРНИР -->
+              <div class="cursor-pointer group relative">
+                <!-- Бейдж ТУРНИР -->
+                <div
+                  class="absolute top-3 left-3 z-10 w-[55px] h-[17px] bg-transparent border border-[#cddc39] rounded-md"
+                >
+                  <span
+                    class="text-[#cddc39] text-[10px] flex items-center justify-center font-bold uppercase tracking-wide"
+                    >Турнир</span
+                  >
+                </div>
 
-            <!-- Фон -->
-            <div class="absolute inset-0 bg-black opacity-30"></div>
+                <!-- Изображение игры -->
+                <div
+                  class="w-full aspect-[16/9] rounded-lg overflow-hidden hover:opacity-90 transition relative bg-black"
+                >
+                  <!-- Градиент снизу (сильнее) -->
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-[#C7F121] via-[#C7F121]/40 to-transparent"
+                  ></div>
 
-            <!-- Контент -->
-            <div
-              class="relative z-10 flex flex-col items-center justify-center h-full px-12 text-center"
-            >
-              <!-- Текст -->
-              <p
-                class="text-white font-family-secondary text-sm uppercase tracking-widest mb-6"
-              >
-                Регистрируйся и получи бонус к<br />
-                депозиту до 1000$ и 30 фриспинов!
-              </p>
+                  <!-- Текст на изображении -->
+                  <div
+                    class="absolute bottom-3 left-3 right-3 z-10 flex items-end justify-between"
+                  >
+                    <!-- Название игры -->
+                    <h3
+                      class="text-[#273337] font-family-base font-bold text-xl leading-tight"
+                    >
+                      Bash Bros
+                    </h3>
+                    <!-- Провайдер -->
+                    <p
+                      class="text-[#273337] font-family-secondary text-[10px] font-medium uppercase tracking-wider"
+                    >
+                      Hacksaw Gaming
+                    </p>
+                  </div>
+                </div>
+              </div>
 
-              <!-- Главный текст -->
-              <h1
-                class="text-white font-family-base font-bold text-6xl mb-8 leading-tight"
-              >
-                Крутани как папа!
-              </h1>
+              <!-- Game 2 - HACKSAW -->
+              <div class="cursor-pointer group relative">
+                <!-- Бейдж ТУРНИР -->
+                <div
+                  class="absolute top-3 left-3 z-10 px-3 py-1.5 bg-transparent border border-[#cddc39] rounded-md"
+                >
+                  <span
+                    class="text-[#cddc39] text-[10px] font-bold uppercase tracking-wide"
+                    >Турнир</span
+                  >
+                </div>
 
-              <!-- Кнопка -->
-              <button
-                class="px-4 py-2 bg-[#1a2c38] text-white font-family-secondary font-regularr text-lg rounded-lg hover:bg-[#253847] transition uppercase tracking-wide"
-              >
-                Начать игру
-              </button>
+                <!-- Изображение игры -->
+                <div
+                  class="w-full aspect-[16/9] rounded-lg overflow-hidden hover:opacity-90 transition relative bg-black"
+                >
+                  <img
+                    src="assets/images/game1.jpg"
+                    alt="Bash Bros"
+                    class="w-full h-full object-cover"
+                  />
+                  <!-- Градиент снизу (сильнее) -->
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-[#C7F121] via-[#C7F121]/40 to-transparent"
+                  ></div>
+
+                  <!-- Текст на изображении -->
+                  <div
+                    class="absolute bottom-3 left-3 right-3 z-10 flex items-end justify-between"
+                  >
+                    <!-- Название игры -->
+                    <h3 class="text-white font-bold text-xl leading-tight">
+                      Bash Bros
+                    </h3>
+                    <!-- Провайдер -->
+                    <p
+                      class="text-white text-[10px] font-medium uppercase tracking-wider"
+                    >
+                      Hacksaw Gaming
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Game 3 - HACKSAW -->
+              <div class="cursor-pointer group relative">
+                <!-- Бейдж ТУРНИР -->
+                <div
+                  class="absolute top-3 left-3 z-10 px-3 py-1.5 bg-transparent border border-[#cddc39] rounded-md"
+                >
+                  <span
+                    class="text-[#cddc39] text-[10px] font-bold uppercase tracking-wide"
+                    >Турнир</span
+                  >
+                </div>
+
+                <!-- Изображение игры -->
+                <div
+                  class="w-full aspect-[16/9] rounded-lg overflow-hidden hover:opacity-90 transition relative bg-black"
+                >
+                  <img
+                    src="assets/images/game1.jpg"
+                    alt="Bash Bros"
+                    class="w-full h-full object-cover"
+                  />
+                  <!-- Градиент снизу (сильнее) -->
+                  <div
+                    class="absolute inset-0 bg-gradient-to-t from-[#C7F121] via-[#C7F121]/40 to-transparent"
+                  ></div>
+
+                  <!-- Текст на изображении -->
+                  <div
+                    class="absolute bottom-3 left-3 right-3 z-10 flex items-end justify-between"
+                  >
+                    <!-- Название игры -->
+                    <h3 class="text-white font-bold text-xl leading-tight">
+                      Bash Bros
+                    </h3>
+                    <!-- Провайдер -->
+                    <p
+                      class="text-white text-[10px] font-medium uppercase tracking-wider"
+                    >
+                      Hacksaw Gaming
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
+          </section>
 
-          <!-- Популярные игры -->
+          <!-- Поиск игры -->
+          <section class="mt-12">
+            <div class="relative">
+              <div
+                class="flex items-center gap-3 bg-[#273337] rounded-lg px-6 py-4 hover:bg-[#2d4250] transition"
+              >
+                <!-- Иконка поиска -->
+                <img
+                  src="assets/icons/Search.svg"
+                  alt="PapaBet"
+                  class="h-5 filter brightness-0 invert"
+                />
+
+                <!-- Input -->
+                <input
+                  type="text"
+                  placeholder="НАЙТИ ИГРУ"
+                  class="flex-1 bg-transparent text-white placeholder-gray-400 text-sm font-bold uppercase tracking-wider focus:outline-none"
+                />
+
+                <!-- Стрелка справа -->
+                <img src="assets/icons/arrow-right.svg" alt="" />
+              </div>
+            </div>
+          </section>
+
+          <!-- Мои крупные победы -->
           <section>
             <!-- Заголовок -->
             <div class="flex items-center gap-3 mb-6 mt-[60px]">
               <img src="assets/icons/Guitar.svg" alt="PapaBet" class="h-8" />
 
-              <h2 class="text-white text-3xl font-bold">Популярные игры</h2>
+              <h2 class="text-white text-3xl font-bold">Мои крупные победы</h2>
             </div>
 
             <div class="grid grid-cols-5 gap-4">
