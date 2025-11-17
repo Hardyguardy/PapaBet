@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+  </head>
+  <body class="bg-brand-primary">
+    <!-- Депозит -->
+    <div
+      class="fixed inset-0 bg-black/70 z-[100] flex items-center justify-center"
+    >
+      <div class="bg-brand-primary rounded-2xl w-full max-w-lg mx-4 relative">
+        <!-- Close Button -->
+        <button
+          class="absolute top-6 right-6 text-gray-400 hover:text-white transition"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+
+        <div class="p-8">
+          <!-- Title -->
+          <h2 class="text-white text-3xl font-bold mb-6">Баланс</h2>
+
+          <!-- Tabs -->
+          <div class="flex gap-2 mb-6">
+            <button
+              class="px-10 py-2 flex bg-brand-secondary font-family-secondary text-black font-medium text-[18px] rounded-lg uppercase"
+            >
+              Крипто
+              <img
+                src="assets/icons/Arrow-down.svg"
+                alt="PapaBet"
+                class="pl-2"
+              />
+            </button>
+            <button
+              class="px-10 py-2 flex items-center justify-center bg-[#414F54] font-family-secondary text-[#111F24] text-[18px] font-medium rounded-lg hover:bg-[#2d4250] transition uppercase"
+            >
+              Банк
+              <img src="assets/icons/Bank.svg" alt="" class="pl-2 h-5" />
+            </button>
+            <button
+              class="px-10 py-2 flex items-center justify-center bg-[#414F54] font-family-secondary text-[#111F24] text-[18px] font-medium rounded-lg hover:bg-[#2d4250] transition uppercase"
+            >
+              Вывод
+              <img
+                src="assets/icons/Arrow-down.svg"
+                alt="PapaBet"
+                class="pl-2"
+              />
+            </button>
+          </div>
+
+          <!-- Активировать гифт-карту -->
+          <button
+            class="w-full py-3 mb-6 font-family-secondary bg-transparent border-2 border-brand-secondary text-brand-secondary font-medium text-[18px] rounded-lg hover:bg-[#cddc39] hover:text-black transition uppercase"
+          >
+            Активировать гифт-карту
+          </button>
+
+          <!-- Лимит депозита -->
+          <div class="mb-6">
+            <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-2">
+                <img src="assets/icons/Lock.svg" alt="" class="h-5 w-5"></img>
+                <span class="text-white font-family-base text-[24px] font-semibold"
+                  >Лимит вашего депозита</span
+                >
+              </div>
+              <div >
+                <button class="text-white font-family-secondary text-[14px] uppercase">скрыть
+                </button>
+                
+              </div>
+              
+            </div>
+
+            <div class="space-y-2 font-family-secondary uppercase text-[12px] text-gray-300">
+              <div class="flex justify-between">
+                <span>минимальный депозит</span>
+                <span>1 USDT</span>
+              </div>
+              <div class="flex justify-between">
+                <span>максимальный разовый депозит</span>
+                <span>50 000 USDT</span>
+              </div>
+              <div class="flex justify-between">
+                <span>оставшийся дневной лимит</span>
+                <span>100 000 USDT</span>
+              </div>
+              <div class="flex justify-between">
+                <span>оставшийся недельный лимит</span>
+                <span>500 000 USDT</span>
+              </div>
+              <div class="flex justify-between">
+                <span>оставшийся месячный лимит</span>
+                <span>2 000 000 USDT</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Выберите валюту -->
+          <div class="mb-4 ">
+            <label class="block text-white font-family-secondary text-sm font-semibold mb-2 uppercase"
+              >Выберите валюту</label
+            >
+            <select
+              class="w-full px-4 py-3 bg-[#273337] text-white font-family-secondary  rounded-lg border border-transparent focus:border-[#cddc39] focus:outline-none"
+            >
+              <option>USDT</option>
+              <option>BTC</option>
+              <option>ETH</option>
+            </select>
+          </div>
+
+          <!-- Выберите сеть -->
+          <div class="mb-4">
+            <label class="block text-white font-family-secondary  text-sm font-semibold mb-2 uppercase"
+              >Выберите сеть</label
+            >
+            <select
+              class="w-full px-4 py-3 bg-[#273337] text-white font-family-secondary  rounded-lg border border-transparent focus:border-[#cddc39] focus:outline-none"
+            >
+              <option>TRC20</option>
+              <option>ERC20</option>
+              <option>BEP20</option>
+            </select>
+          </div>
+
+          <!-- Укажите сумму депозита -->
+          <div class="mb-4 mt-10">
+            <label class="block text-white text-sm font-family-secondary  font-semibold mb-2 uppercase"
+              >Укажите сумму депозита</label
+            >
+            <input
+              type="text"
+              value="1000 USDT"
+              class="w-full px-4 py-3 bg-[#273337] text-white font-family-secondary  rounded-lg border border-transparent focus:border-[#cddc39] focus:outline-none"
+            />
+          </div>
+
+          <!-- Промокод -->
+          <div class="mb-4 mt-10">
+            <label class="block text-white text-sm font-family-secondary  font-semibold mb-2 uppercase"
+              >Промокод</label
+            >
+            <div class="relative">
+              <input
+                type="text"
+                placeholder="ПРОМОКОД"
+                class="w-full px-4 py-3 bg-[#273337] text-white placeholder-gray-500 rounded-lg border border-transparent focus:border-[#cddc39] focus:outline-none"
+              />
+              <button
+                class="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#cddc39] rounded-full flex items-center justify-center hover:bg-[#b8c935] transition"
+              >
+                <svg
+                  class="w-5 h-5 text-black"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Ошибка -->
+          <p class="text-red-500 text-xs text-center mb-6 uppercase mt-10 mb-10">
+            сумма меньше минимального депозита
+          </p>
+
+          <!-- Создать платеж -->
+          <button
+            class="w-full py-3 bg-brand-secondary font-family-secondary text-black font-medium text-[18px] rounded-lg hover:bg-[#b8c935] transition uppercase"
+          >
+            Создать платеж
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
