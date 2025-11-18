@@ -37,7 +37,7 @@
           <!-- Tabs -->
           <div class="flex gap-2 mb-6">
             <button
-              class="px-10 py-2 flex bg-brand-secondary font-family-secondary text-black font-medium text-[18px] rounded-lg uppercase"
+              class="px-10 py-2 flex items-center justify-center bg-[#414F54] font-family-secondary text-[#111F24] text-[18px] font-medium rounded-lg hover:bg-[#2d4250] transition uppercase"
             >
               Крипто
               <img
@@ -48,11 +48,11 @@
             </button>
             <a
               href="/deposit-bank.html"
-              class="px-10 py-2 flex items-center justify-center bg-[#414F54] font-family-secondary text-[#111F24] text-[18px] font-medium rounded-lg hover:bg-[#2d4250] transition uppercase"
+              class="px-10 py-2 flex items-center bg-brand-secondary font-family-secondary text-black font-medium text-[18px] rounded-lg uppercase"
             >
               Банк
-              <img src="assets/icons/Bank.svg" alt="" class="pl-2 h-5" />
-          </a>
+              <img src="assets/icons/Bank.svg" alt="" class="pl-2 h-4" />
+            </a>
             <button
               class="px-10 py-2 flex items-center justify-center bg-[#414F54] font-family-secondary text-[#111F24] text-[18px] font-medium rounded-lg hover:bg-[#2d4250] transition uppercase"
             >
@@ -65,61 +65,38 @@
             </button>
           </div>
 
-          <!-- Активировать гифт-карту -->
-          <button
-            class="w-full py-3 mb-6 font-family-secondary bg-transparent border-2 border-brand-secondary text-brand-secondary font-medium text-[18px] rounded-lg hover:bg-[#cddc39] hover:text-black transition uppercase"
-          >
-            Активировать гифт-карту
-          </button>
-
-          <!-- Лимит депозита -->
-          <div class="mb-6">
+          <!-- Методы пополнения -->
+          <div class="mb-6 pt-6">
             <div class="flex items-center justify-between mb-3">
               <div class="flex items-center gap-2">
-                <img src="assets/icons/Lock.svg" alt="" class="h-5 w-5"></img>
-                <span class="text-white font-family-base text-[24px] font-semibold"
-                  >Лимит вашего депозита</span
+                <span
+                  class="text-white font-family-base text-[24px] font-semibold"
+                  >Доступные методы пополнения:</span
                 >
               </div>
-              <div >
-                <button class="text-white font-family-secondary text-[14px] uppercase">скрыть
-                </button>
-                
-              </div>
-              
             </div>
 
-            <div class="space-y-2 font-family-secondary uppercase text-[12px] text-gray-300">
-              <div class="flex justify-between">
-                <span>минимальный депозит</span>
-                <span>1 USDT</span>
-              </div>
-              <div class="flex justify-between">
-                <span>максимальный разовый депозит</span>
-                <span>50 000 USDT</span>
-              </div>
-              <div class="flex justify-between">
-                <span>оставшийся дневной лимит</span>
-                <span>100 000 USDT</span>
-              </div>
-              <div class="flex justify-between">
-                <span>оставшийся недельный лимит</span>
-                <span>500 000 USDT</span>
-              </div>
-              <div class="flex justify-between">
-                <span>оставшийся месячный лимит</span>
-                <span>2 000 000 USDT</span>
+            <div
+              class="font-family-secondary uppercase text-[12px] text-gray-300"
+            >
+              <div class="flex gap-2">
+                <span>Тбанк</span>
+                <span>Сбер</span>
+                <span>СБП</span>
+                <span>Альфабанк</span>
+                <span>Промсвязьбанк</span>
               </div>
             </div>
           </div>
 
           <!-- Выберите валюту -->
-          <div class="mb-4 ">
-            <label class="block text-white font-family-secondary text-sm font-semibold mb-2 uppercase"
+          <div class="mb-4 pt-6">
+            <label
+              class="block text-white font-family-secondary text-sm font-semibold mb-2 uppercase"
               >Выберите валюту</label
             >
             <select
-              class="w-full px-4 py-3 bg-[#273337] text-white font-family-secondary  rounded-lg border border-transparent focus:border-[#cddc39] focus:outline-none"
+              class="w-full px-4 py-3 bg-[#273337] text-white font-family-secondary rounded-lg border border-transparent focus:border-[#cddc39] focus:outline-none"
             >
               <option>USDT</option>
               <option>BTC</option>
@@ -127,35 +104,23 @@
             </select>
           </div>
 
-          <!-- Выберите сеть -->
-          <div class="mb-4">
-            <label class="block text-white font-family-secondary  text-sm font-semibold mb-2 uppercase"
-              >Выберите сеть</label
-            >
-            <select
-              class="w-full px-4 py-3 bg-[#273337] text-white font-family-secondary  rounded-lg border border-transparent focus:border-[#cddc39] focus:outline-none"
-            >
-              <option>TRC20</option>
-              <option>ERC20</option>
-              <option>BEP20</option>
-            </select>
-          </div>
-
           <!-- Укажите сумму депозита -->
-          <div class="mb-4 mt-10">
-            <label class="block text-white text-sm font-family-secondary  font-semibold mb-2 uppercase"
+          <div class="mb-4">
+            <label
+              class="block text-white text-sm font-family-secondary font-semibold mb-2 uppercase"
               >Укажите сумму депозита</label
             >
             <input
               type="text"
-              value="1000 USDT"
-              class="w-full px-4 py-3 bg-[#273337] text-white font-family-secondary  rounded-lg border border-transparent focus:border-[#cddc39] focus:outline-none"
+              placeholder="1000 USDT"
+              class="w-full px-4 py-3 bg-[#273337] text-white font-family-secondary rounded-lg border border-transparent focus:border-[#cddc39] focus:outline-none"
             />
           </div>
 
           <!-- Промокод -->
           <div class="mb-4 mt-10">
-            <label class="block text-white text-sm font-family-secondary  font-semibold mb-2 uppercase"
+            <label
+              class="block text-white text-sm font-family-secondary font-semibold mb-2 uppercase"
               >Промокод</label
             >
             <div class="relative">
@@ -185,8 +150,9 @@
           </div>
 
           <!-- Ошибка -->
-          <p class="text-red-500 text-xs text-center mb-6 uppercase mt-10 mb-10">
-            сумма меньше минимального депозита
+          <p class="text-white text-xs text-center mb-6 uppercase mt-10 mb-10">
+            Вы будете перенаправлены на платежный шлюз где сможете выбрать
+            удобный для вас способ пополнения.
           </p>
 
           <!-- Создать платеж -->
@@ -194,8 +160,8 @@
             href="/deposit-payment.html"
             class="block text-center w-full py-3 bg-brand-secondary font-family-secondary text-black font-medium text-[18px] rounded-lg hover:bg-[#b8c935] transition uppercase"
           >
-            Создать платеж
-        </a>
+            Оплатить
+          </a>
         </div>
       </div>
     </div>
