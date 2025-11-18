@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+  </head>
+  <body class="bg-brand-primary">
+    <!-- Депозит -->
+    <div
+      class="fixed inset-0 bg-black/70 z-[100] flex items-center justify-center"
+    >
+      <div
+        class="bg-brand-primary rounded-2xl w-full max-w-lg mx-4 py-8 relative"
+      >
+        <!-- Close Button -->
+        <a
+          href="loggeduser.html"
+          class="absolute top-6 right-6 text-gray-400 hover:text-white transition"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </a>
+
+        <div
+          class="p-8 flex flex-col items-center justify-center min-h-[400px]"
+        >
+          <!-- Success Icon -->
+          <div
+            class="w-16 h-16 rounded-full flex items-center justify-center mb-8"
+          >
+            <img
+              src="assets/icons/checkmark-white.svg"
+              alt=""
+              class="w-8 h-8"
+            />
+          </div>
+
+          <!-- Success Message -->
+          <h2
+            class="text-white text-2xl font-family-base font-semibold text-center mb-8 max-w-md leading-relaxed"
+          >
+            Спасибо за платеж! Ваш баланс обновится после того как ваш баланс
+            обновится после того как
+          </h2>
+
+          <!-- Button -->
+          <a
+            href="loggeduser.html"
+            class="px-8 py-3 mt-10 bg-transparent border-2 border-white font-family-secondary text-white font-medium text-[16px] rounded-lg hover:bg-white hover:text-[#111F24] transition uppercase"
+          >
+            Вернуться на главную
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
