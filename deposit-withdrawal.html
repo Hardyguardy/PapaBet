@@ -37,7 +37,7 @@
           <!-- Tabs -->
           <div class="flex gap-2 mb-6">
             <button
-              class="px-10 py-2 flex bg-brand-secondary font-family-secondary text-black font-medium text-[18px] rounded-lg uppercase"
+              class="px-10 py-2 flex items-center justify-center bg-[#414F54] font-family-secondary text-[#111F24] text-[18px] font-medium rounded-lg hover:bg-[#2d4250] transition uppercase"
             >
               Крипто
               <img
@@ -53,9 +53,8 @@
               Банк
               <img src="assets/icons/Bank.svg" alt="" class="pl-2 h-5" />
           </a>
-            <a
-              href="/deposit-withdrawal.html"
-              class="px-10 py-2 flex items-center justify-center bg-[#414F54] font-family-secondary text-[#111F24] text-[18px] font-medium rounded-lg hover:bg-[#2d4250] transition uppercase"
+            <button
+              class="px-10 py-2 flex bg-brand-secondary font-family-secondary text-black font-medium text-[18px] rounded-lg uppercase"
             >
               Вывод
               <img
@@ -63,23 +62,33 @@
                 alt="PapaBet"
                 class="pl-2"
               />
-        </a>
+            </button>
           </div>
 
-          <!-- Активировать гифт-карту -->
-          <button
-            class="w-full py-3 mb-6 font-family-secondary bg-transparent border-2 border-brand-secondary text-brand-secondary font-medium text-[18px] rounded-lg hover:bg-[#cddc39] hover:text-black transition uppercase"
-          >
-            Активировать гифт-карту
-          </button>
+          <!-- Выберите валюту -->
+          <div class="mb-4 mt-10 ">
+            <label class="block text-white font-family-secondary text-sm font-semibold mb-2 uppercase"
+              >Выберите способ вывода</label
+            >
+            <select
+              class="w-full px-4 py-3 bg-[#273337] text-white font-family-secondary  rounded-lg border border-transparent focus:border-[#cddc39] focus:outline-none"
+            >
+              <option>USDT</option>
+              <option>BTC</option>
+              <option>ETH</option>
+            </select>
+          </div>
+
+          <p class="text-brand-secondary text-xs text-center mb-6 uppercase mt-10 mb-10">
+Доступно для вывода: 100 USDT          </p>
 
           <!-- Лимит депозита -->
-          <div class="mb-6">
+          <div class="mb-6 mt-10">
             <div class="flex items-center justify-between mb-3">
               <div class="flex items-center gap-2">
                 <img src="assets/icons/Lock.svg" alt="" class="h-5 w-5"></img>
                 <span class="text-white font-family-base text-[24px] font-semibold"
-                  >Лимит вашего депозита</span
+                  >Лимит вашего вывода</span
                 >
               </div>
               <div >
@@ -92,11 +101,11 @@
 
             <div class="space-y-2 font-family-secondary uppercase text-[12px] text-gray-300">
               <div class="flex justify-between">
-                <span>минимальный депозит</span>
+                <span>минимальный вывод</span>
                 <span>1 USDT</span>
               </div>
               <div class="flex justify-between">
-                <span>максимальный разовый депозит</span>
+                <span>максимальный разовый вывод</span>
                 <span>50 000 USDT</span>
               </div>
               <div class="flex justify-between">
@@ -145,49 +154,20 @@
           <!-- Укажите сумму депозита -->
           <div class="mb-4 mt-10">
             <label class="block text-white text-sm font-family-secondary  font-semibold mb-2 uppercase"
-              >Укажите сумму депозита</label
+              >Укажите сумму вывода</label
             >
             <input
               type="text"
-              value="1000 USDT"
+              placeholder="1000 USDT"
               class="w-full px-4 py-3 bg-[#273337] text-white font-family-secondary  rounded-lg border border-transparent focus:border-[#cddc39] focus:outline-none"
             />
           </div>
 
-          <!-- Промокод -->
-          <div class="mb-4 mt-10">
-            <label class="block text-white text-sm font-family-secondary  font-semibold mb-2 uppercase"
-              >Промокод</label
-            >
-            <div class="relative">
-              <input
-                type="text"
-                placeholder="ПРОМОКОД"
-                class="w-full px-4 py-3 bg-[#273337] text-white placeholder-gray-500 rounded-lg border border-transparent focus:border-[#cddc39] focus:outline-none"
-              />
-              <button
-                class="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 bg-[#cddc39] rounded-full flex items-center justify-center hover:bg-[#b8c935] transition"
-              >
-                <svg
-                  class="w-5 h-5 text-black"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M14 5l7 7m0 0l-7 7m7-7H3"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
+          
 
           <!-- Ошибка -->
           <p class="text-red-500 text-xs text-center mb-6 uppercase mt-10 mb-10">
-            сумма меньше минимального депозита
+            Сумма меньше минимальной суммы вывода
           </p>
 
           <!-- Создать платеж -->
