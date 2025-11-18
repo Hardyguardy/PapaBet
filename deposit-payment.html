@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+  </head>
+  <body class="bg-brand-primary">
+    <!-- Депозит -->
+    <div
+      class="fixed inset-0 bg-black/70 z-[100] flex items-center justify-center"
+    >
+      <div class="bg-brand-primary rounded-2xl w-full max-w-lg mx-4 relative">
+        <!-- Close Button -->
+        <button
+          class="absolute top-6 right-6 text-gray-400 hover:text-white transition"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+
+        <div class="p-8">
+          <!-- Title -->
+          <button
+            class="flex items-center gap-2 mb-6 text-white hover:text-gray-300 transition"
+          >
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+            <h2
+              class="text-white items-center font-family-secondary text-[14px] font-medium uppercase"
+            >
+              Назад
+            </h2>
+          </button>
+
+          <!-- Селекторы валюты и сети -->
+          <div class="grid grid-cols-2 gap-4 mb-6 mt-16">
+            <div>
+              <label
+                class="block text-white font-family-secondary text-sm font-semibold mb-2 uppercase"
+                >Валюта</label
+              >
+              <select
+                class="w-full px-4 py-3 bg-[#273337] text-white font-family-secondary rounded-lg border border-transparent focus:border-[#cddc39] focus:outline-none"
+              >
+                <option>USDT</option>
+                <option>BTC</option>
+                <option>ETH</option>
+              </select>
+            </div>
+            <div>
+              <label
+                class="block text-white font-family-secondary text-sm font-semibold mb-2 uppercase"
+                >Сеть</label
+              >
+              <select
+                class="w-full px-4 py-3 bg-[#273337] text-white font-family-secondary rounded-lg border border-transparent focus:border-[#cddc39] focus:outline-none"
+              >
+                <option>TRC20</option>
+                <option>ERC20</option>
+                <option>BEP20</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Инструкция -->
+          <p class="text-white font-family-base text-[16px]] mb-6">
+            Отправьте <span class="font-semibold">100 USDT</span> в сети
+            <span class="font-semibold">TRC20</span> на указанный адрес:
+          </p>
+
+          <!-- QR код и таймер -->
+          <div class="bg-[#1a2b30] rounded-xl p-6 mb-6 flex gap-6">
+            <!-- QR код -->
+            <div class="bg-white p-3 rounded-lg flex-shrink-0">
+              <div class="w-32 h-32 bg-gray-200"></div>
+            </div>
+
+            <!-- Таймер -->
+            <div class="flex-1">
+              <p
+                class="text-[#CBAA56] font-family-secondary text-[14px] uppercase mb-2"
+              >
+                Ожидание оплаты
+              </p>
+              <div class="flex items-center gap-2 mb-3">
+                <img src="assets/icons/checkmark.svg" alt="" />
+                <span class="text-white font-family-base text-[32px] font-bold"
+                  >59:50</span
+                >
+              </div>
+              <p class="text-white font-family-base text-[14px]">
+                Оставшееся время для завершения платежа
+              </p>
+            </div>
+          </div>
+
+          <!-- Адрес кошелька -->
+          <div class="mb-6">
+            <label
+              class="block text-white font-family-secondary text-sm font-semibold mb-2 uppercase"
+              >Адрес кошелька</label
+            >
+            <div class="relative">
+              <input
+                type="text"
+                value="o209394xhfdn1464kl6"
+                readonly
+                class="w-full px-4 py-3 bg-[#273337] text-white font-family-secondary rounded-lg border border-transparent focus:outline-none"
+              />
+              <button
+                class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <rect
+                    x="9"
+                    y="9"
+                    width="13"
+                    height="13"
+                    rx="2"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"
+                    stroke-width="2"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Детали платежа -->
+          <div class="space-y-4 mb-6">
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label
+                  class="block text-white font-family-secondary text-sm font-semibold mb-2 uppercase"
+                  >К отправлению</label
+                >
+                <div
+                  class="px-4 py-3 bg-[#273337] text-white font-family-secondary rounded-lg"
+                >
+                  USDT
+                </div>
+              </div>
+              <div>
+                <label
+                  class="block text-white font-family-secondary text-sm font-semibold mb-2 uppercase"
+                  >Обменный курс</label
+                >
+                <div
+                  class="px-4 py-3 bg-[#273337] text-white font-family-secondary rounded-lg"
+                >
+                  TRC20
+                </div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label
+                  class="block text-white font-family-secondary text-sm font-semibold mb-2 uppercase"
+                  >К получению</label
+                >
+                <div
+                  class="px-4 py-3 bg-[#273337] text-white font-family-secondary rounded-lg"
+                >
+                  100 USDT
+                </div>
+              </div>
+              <div>
+                <label
+                  class="block text-white font-family-secondary text-sm font-semibold mb-2 uppercase"
+                  >Сеть</label
+                >
+                <div
+                  class="px-4 py-3 bg-[#273337] text-white font-family-secondary rounded-lg"
+                >
+                  TRC20
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Кнопки -->
+          <div class="grid grid-cols-2 gap-4">
+            <button
+              class="py-3 bg-brand-secondary font-family-secondary text-black font-medium text-[18px] rounded-lg hover:bg-[#b8c935] transition uppercase"
+            >
+              Оплачено/Далее
+            </button>
+            <button
+              class="py-3 bg-[#414F54] font-family-secondary text-white font-medium text-[18px] rounded-lg hover:bg-[#4a5c62] transition uppercase"
+            >
+              Отменить платеж
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
