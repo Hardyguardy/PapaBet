@@ -7,6 +7,14 @@ async function loadComponent(elementId, filePath) {
     const response = await fetch(filePath);
     const html = await response.text();
     document.getElementById(elementId).innerHTML = html;
+
+    // Инициализируем поиск после загрузки хедера
+    if (elementId === "header-logged-container") {
+      // Используем setTimeout чтобы дать браузеру время отрендерить HTML
+      setTimeout(() => {
+        initSearch();
+      }, 100);
+    }
   } catch (error) {
     console.error(`Error loading ${filePath}:`, error);
   }
@@ -20,6 +28,48 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   loadComponent("footer-container", "/src/components/footer.html");
 });
+
+// Функция инициализации поиска
+function initSearch() {
+  const searchButton = document.getElementById("search-button");
+  const searchDropdown = document.getElementById("search-dropdown");
+  const searchInput = document.getElementById("search-input");
+
+  console.log("initSearch called", {
+    searchButton,
+    searchDropdown,
+    searchInput,
+  }); // Для отладки
+
+  if (searchButton && searchDropdown && searchInput) {
+    // Открытие/закрытие поиска
+    searchButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      console.log("Search button clicked"); // Для отладки
+      searchDropdown.classList.toggle("hidden");
+      if (!searchDropdown.classList.contains("hidden")) {
+        searchInput.focus();
+      }
+    });
+
+    // Закрытие при клике вне меню
+    document.addEventListener("click", (e) => {
+      if (
+        !searchButton.contains(e.target) &&
+        !searchDropdown.contains(e.target)
+      ) {
+        searchDropdown.classList.add("hidden");
+      }
+    });
+
+    // Предотвращение закрытия при клике внутри меню
+    searchDropdown.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+  } else {
+    console.error("Search elements not found!"); // Для отладки
+  }
+}
 
 // Функция для Show More
 function toggleTextBlock(button) {

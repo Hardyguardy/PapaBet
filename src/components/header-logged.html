@@ -29,20 +29,96 @@
         class="flex items-center gap-2 text-black text-sm font-medium uppercase tracking-wide hover:opacity-70"
       >
         <img src="/assets/icons/Sport.svg" alt="" class="h-5 w-5" />
-        <span> Спорт</span></a
-      >
+        <span>Спорт</span>
+      </a>
       <a
         href="#"
         class="flex items-center gap-2 text-black text-sm font-medium uppercase tracking-wide hover:opacity-70"
       >
         <img src="/assets/icons/Gacha.svg" alt="" class="h-5 w-5" />
-        <span>Gacha</span></a
-      >
-      <button
-        class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-black/10"
-      >
-        <img src="/assets/icons/Search.svg" alt="PapaBet" class="h-5" />
-      </button>
+        <span>Gacha</span>
+      </a>
+
+      <!-- Поиск с выпадающим меню -->
+      <div class="relative">
+        <button
+          id="search-button"
+          class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-black/10"
+        >
+          <img src="/assets/icons/Search.svg" alt="PapaBet" class="h-5" />
+        </button>
+
+        <!-- Выпадающее меню поиска -->
+        <div
+          id="search-dropdown"
+          class="hidden absolute top-14 left-1/2 -translate-x-1/2 w-64 bg-brand-secondary rounded-lg shadow-xl border-2 border-[#cddc39] overflow-hidden"
+        >
+          <!-- Поле ввода -->
+          <div class="p-3 border-b border-black/10">
+            <div
+              class="flex items-center gap-2 bg-white/20 rounded-lg px-3 py-2"
+            >
+              <img
+                src="/assets/icons/Search.svg"
+                alt=""
+                class="h-4 w-4 opacity-70"
+              />
+              <input
+                type="text"
+                id="search-input"
+                placeholder="Поиск игры..."
+                class="flex-1 bg-transparent text-black placeholder-black/60 text-sm focus:outline-none font-family-secondary"
+              />
+              <button class="text-black hover:opacity-70">
+                <img src="/assets/icons/arrow-right.svg" alt="" class="h-4" />
+              </button>
+            </div>
+          </div>
+
+          <!-- Результаты поиска -->
+          <div class="max-h-64 overflow-y-auto">
+            <a
+              href="#"
+              class="flex items-center gap-3 px-4 py-3 hover:bg-black/10 transition border-b border-black/5"
+            >
+              <span
+                class="text-black text-sm font-family-secondary uppercase font-medium"
+                >SWEET BONANZA SUPER</span
+              >
+            </a>
+
+            <a
+              href="#"
+              class="flex items-center gap-3 px-4 py-3 hover:bg-black/10 transition border-b border-black/5"
+            >
+              <span
+                class="text-black text-sm font-family-secondary uppercase font-medium"
+                >BARBAROSSA</span
+              >
+            </a>
+
+            <a
+              href="#"
+              class="flex items-center gap-3 px-4 py-3 hover:bg-black/10 transition border-b border-black/5"
+            >
+              <span
+                class="text-black text-sm font-family-secondary uppercase font-medium"
+                >ZOMBIE ROAD</span
+              >
+            </a>
+
+            <a
+              href="#"
+              class="flex items-center gap-3 px-4 py-3 hover:bg-black/10 transition"
+            >
+              <span
+                class="text-black text-sm font-family-secondary uppercase font-medium"
+                >BASH BROS</span
+              >
+            </a>
+          </div>
+        </div>
+      </div>
     </nav>
 
     <div class="flex items-center gap-4">
@@ -50,12 +126,11 @@
       <div class="flex items-center gap-2">
         <span
           class="text-black font-family-secondary text-sm font-semibold uppercase"
+          >Баланс</span
         >
-          Баланс
-        </span>
-        <span class="text-black font-family-secondary text-sm font-bold">
-          100 USDT
-        </span>
+        <span class="text-black font-family-secondary text-sm font-bold"
+          >100 USDT</span
+        >
         <svg class="w-4 h-4 text-black" fill="currentColor" viewBox="0 0 20 20">
           <path
             fill-rule="evenodd"
@@ -68,9 +143,8 @@
       <a
         href="/deposit.html"
         class="px-6 py-2 bg-[#1a2c38] text-white font-family-secondary text-sm font-bold rounded-lg hover:bg-[#253847] transition uppercase tracking-wide"
+        >Deposit</a
       >
-        Deposit
-      </a>
 
       <a
         href="/profile.html"
@@ -84,13 +158,12 @@
         <div class="flex items-center gap-2">
           <span
             class="text-black font-family-secondary text-[14px] font-semibold"
+            >IVAN777</span
           >
-            IVAN777
-          </span>
           <span class="text-black font-family-secondary text-[14px]"> / </span>
-          <span class="text-black font-family-secondary text-[14px]">
-            ID:549854895
-          </span>
+          <span class="text-black font-family-secondary text-[14px]"
+            >ID:549854895</span
+          >
         </div>
       </a>
     </div>
