@@ -92,4 +92,35 @@ function toggleTextBlock(button) {
   }
 }
 
+// Открытие тултипа пароля
+
+document.addEventListener("DOMContentLoaded", () => {
+  const togglePassword = document.getElementById("toggle-password");
+  const passwordInput = document.getElementById("password-input");
+  const passwordTooltip = document.getElementById("password-tooltip");
+
+  // Переключение видимости пароля
+  if (togglePassword && passwordInput) {
+    togglePassword.addEventListener("click", () => {
+      const type =
+        passwordInput.getAttribute("type") === "password" ? "text" : "password";
+      passwordInput.setAttribute("type", type);
+    });
+  }
+
+  // Показать подсказку при фокусе
+  if (passwordInput && passwordTooltip) {
+    passwordInput.addEventListener("focus", () => {
+      passwordTooltip.classList.remove("hidden");
+    });
+
+    // Скрыть подсказку при потере фокуса
+    passwordInput.addEventListener("blur", () => {
+      setTimeout(() => {
+        passwordTooltip.classList.add("hidden");
+      }, 200);
+    });
+  }
+});
+
 window.toggleTextBlock = toggleTextBlock;
