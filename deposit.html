@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <link href="/src/index.css" rel="stylesheet" />
+    <title>Deposit</title>
   </head>
   <body class="bg-brand-primary">
     <!-- Депозит -->
@@ -37,6 +38,7 @@
           <!-- Tabs -->
           <div class="flex gap-2 mb-6">
             <button
+              onclick="window.location.href='/deposit.html'"
               class="px-10 py-2 flex bg-brand-secondary font-family-secondary text-black font-medium text-[18px] rounded-lg uppercase"
             >
               Крипто
@@ -52,7 +54,7 @@
             >
               Банк
               <img src="assets/icons/Bank.svg" alt="" class="pl-2 h-5" />
-          </a>
+            </a>
             <a
               href="/deposit-withdrawal.html"
               class="px-10 py-2 flex items-center justify-center bg-[#414F54] font-family-secondary text-[#111F24] text-[18px] font-medium rounded-lg hover:bg-[#2d4250] transition uppercase"
@@ -63,35 +65,39 @@
                 alt="PapaBet"
                 class="pl-2"
               />
-        </a>
+            </a>
           </div>
 
           <!-- Активировать гифт-карту -->
           <button
             onclick="window.location.href='/gift-card.html'"
             class="w-full py-3 mb-6 font-family-secondary bg-transparent border-2 border-brand-secondary text-brand-secondary font-medium text-[18px] rounded-lg hover:bg-brand-secondary hover:text-black transition cursor-pointer uppercase"
-              >
-              Активировать гифт-карту
+          >
+            Активировать гифт-карту
           </button>
 
           <!-- Лимит депозита -->
           <div class="mb-6">
             <div class="flex items-center justify-between mb-3">
               <div class="flex items-center gap-2">
-                <img src="assets/icons/Lock.svg" alt="" class="h-5 w-5"></img>
-                <span class="text-white font-family-base text-[24px] font-semibold"
+                <img src="assets/icons/Lock.svg" alt="" class="h-5 w-5" />
+                <span
+                  class="text-white font-family-base text-[24px] font-semibold"
                   >Лимит вашего депозита</span
                 >
               </div>
-              <div >
-                <button class="text-white font-family-secondary text-[14px] uppercase">скрыть
+              <div>
+                <button
+                  class="text-white font-family-secondary text-[14px] uppercase"
+                >
+                  скрыть
                 </button>
-                
               </div>
-              
             </div>
 
-            <div class="space-y-2 font-family-secondary uppercase text-[12px] text-gray-300">
+            <div
+              class="space-y-2 font-family-secondary uppercase text-[12px] text-gray-300"
+            >
               <div class="flex justify-between">
                 <span>минимальный депозит</span>
                 <span>1 USDT</span>
@@ -116,48 +122,154 @@
           </div>
 
           <!-- Выберите валюту -->
-          <div class="mb-4 ">
-            <label class="block text-white font-family-secondary text-sm font-semibold mb-2 uppercase"
+          <div class="mb-4">
+            <label
+              class="block text-white font-family-secondary text-sm font-semibold mb-2 uppercase"
               >Выберите валюту</label
             >
-            <select
-              class="w-full px-4 py-3 bg-[#273337] text-white font-family-secondary  rounded-lg border border-transparent focus:border-[#cddc39] focus:outline-none"
-            >
-              <option>USDT</option>
-              <option>BTC</option>
-              <option>ETH</option>
-            </select>
+            <div class="relative">
+              <button
+                id="currency-button"
+                class="w-full px-4 py-3 bg-[#273337] text-white font-family-secondary rounded-lg border border-transparent focus:border-[#cddc39] focus:outline-none flex items-center justify-between uppercase"
+              >
+                <span id="currency-selected">Выберите монету</span>
+                <img
+                  src="assets/icons/arrow-down-gray.svg"
+                  alt=""
+                  class="h-2"
+                />
+              </button>
+
+              <!-- Dropdown menu -->
+              <div
+                id="currency-dropdown"
+                class="hidden absolute top-full left-0 right-0 mt-2 bg-[#273337] rounded-lg border border-gray-700 z-10 max-h-48 overflow-y-auto"
+              >
+                <!-- Search input -->
+                <div class="p-3 border-b border-gray-700">
+                  <div class="relative">
+                    <input
+                      type="text"
+                      id="currency-search"
+                      placeholder="Поиск..."
+                      class="w-full px-3 py-2 pl-8 bg-[#1a2c38] text-white text-sm rounded-lg focus:outline-none focus:border-[#cddc39]"
+                    />
+                    <svg
+                      class="w-4 h-4 absolute left-2 top-1/2 -translate-y-1/2 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- Options -->
+                <div class="currency-options">
+                  <div
+                    class="currency-option px-4 py-3 hover:bg-[#2d4250] cursor-pointer text-white uppercase"
+                    data-value="USDT"
+                  >
+                    USDT
+                  </div>
+                  <div
+                    class="currency-option px-4 py-3 hover:bg-[#2d4250] cursor-pointer text-white uppercase"
+                    data-value="USDC"
+                  >
+                    USDC
+                  </div>
+                  <div
+                    class="currency-option px-4 py-3 hover:bg-[#2d4250] cursor-pointer text-white uppercase"
+                    data-value="BTC"
+                  >
+                    BTC
+                  </div>
+                  <div
+                    class="currency-option px-4 py-3 hover:bg-[#2d4250] cursor-pointer text-white uppercase"
+                    data-value="ETH"
+                  >
+                    ETH
+                  </div>
+                  <div
+                    class="currency-option px-4 py-3 hover:bg-[#2d4250] cursor-pointer text-white uppercase"
+                    data-value="SOL"
+                  >
+                    SOL
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- Выберите сеть -->
           <div class="mb-4">
-            <label class="block text-white font-family-secondary  text-sm font-semibold mb-2 uppercase"
+            <label
+              class="block text-white font-family-secondary text-sm font-semibold mb-2 uppercase"
               >Выберите сеть</label
             >
-            <select
-              class="w-full px-4 py-3 bg-[#273337] text-white font-family-secondary  rounded-lg border border-transparent focus:border-[#cddc39] focus:outline-none"
-            >
-              <option>TRC20</option>
-              <option>ERC20</option>
-              <option>BEP20</option>
-            </select>
+            <div class="relative">
+              <button
+                id="network-button"
+                class="w-full px-4 py-3 bg-[#273337] text-white font-family-secondary rounded-lg border border-transparent focus:border-[#cddc39] focus:outline-none flex items-center justify-between uppercase"
+              >
+                <span id="network-selected">TRC20</span>
+                <img
+                  src="assets/icons/arrow-down-gray.svg"
+                  alt=""
+                  class="h-2"
+                />
+              </button>
+
+              <!-- Dropdown menu -->
+              <div
+                id="network-dropdown"
+                class="hidden absolute top-full left-0 right-0 mt-2 bg-[#273337] rounded-lg border border-gray-700 z-10"
+              >
+                <div
+                  class="network-option px-4 py-3 hover:bg-[#2d4250] cursor-pointer text-white uppercase"
+                  data-value="TRC20"
+                >
+                  TRC20
+                </div>
+                <div
+                  class="network-option px-4 py-3 hover:bg-[#2d4250] cursor-pointer text-white uppercase"
+                  data-value="ERC20"
+                >
+                  ERC20
+                </div>
+                <div
+                  class="network-option px-4 py-3 hover:bg-[#2d4250] cursor-pointer text-white uppercase"
+                  data-value="BEP20"
+                >
+                  BEP20
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- Укажите сумму депозита -->
           <div class="mb-4 mt-10">
-            <label class="block text-white text-sm font-family-secondary  font-semibold mb-2 uppercase"
+            <label
+              class="block text-white text-sm font-family-secondary font-semibold mb-2 uppercase"
               >Укажите сумму депозита</label
             >
             <input
               type="text"
               value="1000 USDT"
-              class="w-full px-4 py-3 bg-[#273337] text-white font-family-secondary  rounded-lg border border-transparent focus:border-[#cddc39] focus:outline-none"
+              class="w-full px-4 py-3 bg-[#273337] text-white font-family-secondary rounded-lg border border-transparent focus:border-[#cddc39] focus:outline-none"
             />
           </div>
 
           <!-- Промокод -->
           <div class="mb-4 mt-10">
-            <label class="block text-white text-sm font-family-secondary  font-semibold mb-2 uppercase"
+            <label
+              class="block text-white text-sm font-family-secondary font-semibold mb-2 uppercase"
               >Промокод</label
             >
             <div class="relative">
@@ -187,7 +299,9 @@
           </div>
 
           <!-- Ошибка -->
-          <p class="text-red-500 text-xs text-center mb-6 uppercase mt-10 mb-10">
+          <p
+            class="text-red-500 text-xs text-center mb-6 uppercase mt-10 mb-10"
+          >
             сумма меньше минимального депозита
           </p>
 
@@ -197,7 +311,7 @@
             class="block text-center w-full py-3 bg-brand-secondary font-family-secondary text-black font-medium text-[18px] rounded-lg hover:bg-[#b8c935] transition uppercase"
           >
             Создать платеж
-        </a>
+          </a>
         </div>
       </div>
     </div>

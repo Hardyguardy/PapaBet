@@ -27,6 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
     "/src/components/header-logged.html"
   );
   loadComponent("footer-container", "/src/components/footer.html");
+
+  // ВАЖНО: Вызываем инициализацию дропдаунов
+  initCustomDropdowns();
 });
 
 // Функция инициализации поиска
@@ -93,7 +96,6 @@ function toggleTextBlock(button) {
 }
 
 // Открытие тултипа пароля
-
 document.addEventListener("DOMContentLoaded", () => {
   const togglePassword = document.getElementById("toggle-password");
   const passwordInput = document.getElementById("password-input");
@@ -122,5 +124,253 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// Функция инициализации кастомных дропдаунов
+function initCustomDropdowns() {
+  console.log("initCustomDropdowns called");
+
+  // === DEPOSIT PAGE (crypto) ===
+  const currencyButton = document.getElementById("currency-button");
+  const currencyDropdown = document.getElementById("currency-dropdown");
+  const currencySelected = document.getElementById("currency-selected");
+  const currencyOptions = document.querySelectorAll(".currency-option");
+  const currencySearch = document.getElementById("currency-search");
+
+  const networkButton = document.getElementById("network-button");
+  const networkDropdown = document.getElementById("network-dropdown");
+  const networkSelected = document.getElementById("network-selected");
+  const networkOptions = document.querySelectorAll(".network-option");
+
+  // === DEPOSIT BANK PAGE ===
+  const currencyButtonBank = document.getElementById("currency-button-bank");
+  const currencyDropdownBank = document.getElementById(
+    "currency-dropdown-bank"
+  );
+  const currencySelectedBank = document.getElementById(
+    "currency-selected-bank"
+  );
+  const currencyOptionsBank = document.querySelectorAll(
+    ".currency-option-bank"
+  );
+  const currencySearchBank = document.getElementById("currency-search-bank");
+
+  // === DEPOSIT WITHDRAWAL PAGE ===
+  const withdrawalMethodButton = document.getElementById(
+    "withdrawal-method-button"
+  );
+  const withdrawalMethodDropdown = document.getElementById(
+    "withdrawal-method-dropdown"
+  );
+  const withdrawalMethodSelected = document.getElementById(
+    "withdrawal-method-selected"
+  );
+  const withdrawalMethodOptions = document.querySelectorAll(
+    ".withdrawal-method-option"
+  );
+
+  const currencyButtonWithdrawal = document.getElementById(
+    "currency-button-withdrawal"
+  );
+  const currencyDropdownWithdrawal = document.getElementById(
+    "currency-dropdown-withdrawal"
+  );
+  const currencySelectedWithdrawal = document.getElementById(
+    "currency-selected-withdrawal"
+  );
+  const currencyOptionsWithdrawal = document.querySelectorAll(
+    ".currency-option-withdrawal"
+  );
+  const currencySearchWithdrawal = document.getElementById(
+    "currency-search-withdrawal"
+  );
+
+  const networkButtonWithdrawal = document.getElementById(
+    "network-button-withdrawal"
+  );
+  const networkDropdownWithdrawal = document.getElementById(
+    "network-dropdown-withdrawal"
+  );
+  const networkSelectedWithdrawal = document.getElementById(
+    "network-selected-withdrawal"
+  );
+  const networkOptionsWithdrawal = document.querySelectorAll(
+    ".network-option-withdrawal"
+  );
+
+  // Currency dropdown handlers (CRYPTO PAGE)
+  if (currencyButton && currencyDropdown) {
+    currencyButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      currencyDropdown.classList.toggle("hidden");
+      if (networkDropdown) {
+        networkDropdown.classList.add("hidden");
+      }
+    });
+
+    currencyOptions.forEach((option) => {
+      option.addEventListener("click", () => {
+        currencySelected.textContent = option.dataset.value;
+        currencyDropdown.classList.add("hidden");
+      });
+    });
+
+    if (currencySearch) {
+      currencySearch.addEventListener("input", (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        currencyOptions.forEach((option) => {
+          const text = option.textContent.toLowerCase();
+          option.style.display = text.includes(searchTerm) ? "block" : "none";
+        });
+      });
+    }
+
+    currencyDropdown.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+  }
+
+  // Network dropdown handlers (CRYPTO PAGE)
+  if (networkButton && networkDropdown) {
+    networkButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      networkDropdown.classList.toggle("hidden");
+      if (currencyDropdown) {
+        currencyDropdown.classList.add("hidden");
+      }
+    });
+
+    networkOptions.forEach((option) => {
+      option.addEventListener("click", () => {
+        networkSelected.textContent = option.dataset.value;
+        networkDropdown.classList.add("hidden");
+      });
+    });
+
+    networkDropdown.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+  }
+
+  // Currency dropdown handlers (BANK PAGE)
+  if (currencyButtonBank && currencyDropdownBank) {
+    currencyButtonBank.addEventListener("click", (e) => {
+      e.stopPropagation();
+      currencyDropdownBank.classList.toggle("hidden");
+    });
+
+    currencyOptionsBank.forEach((option) => {
+      option.addEventListener("click", () => {
+        currencySelectedBank.textContent = option.dataset.value;
+        currencyDropdownBank.classList.add("hidden");
+      });
+    });
+
+    if (currencySearchBank) {
+      currencySearchBank.addEventListener("input", (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        currencyOptionsBank.forEach((option) => {
+          const text = option.textContent.toLowerCase();
+          option.style.display = text.includes(searchTerm) ? "block" : "none";
+        });
+      });
+    }
+
+    currencyDropdownBank.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+  }
+
+  // Withdrawal method dropdown (WITHDRAWAL PAGE)
+  if (withdrawalMethodButton && withdrawalMethodDropdown) {
+    withdrawalMethodButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      withdrawalMethodDropdown.classList.toggle("hidden");
+      if (currencyDropdownWithdrawal)
+        currencyDropdownWithdrawal.classList.add("hidden");
+      if (networkDropdownWithdrawal)
+        networkDropdownWithdrawal.classList.add("hidden");
+    });
+
+    withdrawalMethodOptions.forEach((option) => {
+      option.addEventListener("click", () => {
+        withdrawalMethodSelected.textContent = option.dataset.value;
+        withdrawalMethodDropdown.classList.add("hidden");
+      });
+    });
+
+    withdrawalMethodDropdown.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+  }
+
+  // Currency dropdown handlers (WITHDRAWAL PAGE)
+  if (currencyButtonWithdrawal && currencyDropdownWithdrawal) {
+    currencyButtonWithdrawal.addEventListener("click", (e) => {
+      e.stopPropagation();
+      currencyDropdownWithdrawal.classList.toggle("hidden");
+      if (withdrawalMethodDropdown)
+        withdrawalMethodDropdown.classList.add("hidden");
+      if (networkDropdownWithdrawal)
+        networkDropdownWithdrawal.classList.add("hidden");
+    });
+
+    currencyOptionsWithdrawal.forEach((option) => {
+      option.addEventListener("click", () => {
+        currencySelectedWithdrawal.textContent = option.dataset.value;
+        currencyDropdownWithdrawal.classList.add("hidden");
+      });
+    });
+
+    if (currencySearchWithdrawal) {
+      currencySearchWithdrawal.addEventListener("input", (e) => {
+        const searchTerm = e.target.value.toLowerCase();
+        currencyOptionsWithdrawal.forEach((option) => {
+          const text = option.textContent.toLowerCase();
+          option.style.display = text.includes(searchTerm) ? "block" : "none";
+        });
+      });
+    }
+
+    currencyDropdownWithdrawal.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+  }
+
+  // Network dropdown handlers (WITHDRAWAL PAGE)
+  if (networkButtonWithdrawal && networkDropdownWithdrawal) {
+    networkButtonWithdrawal.addEventListener("click", (e) => {
+      e.stopPropagation();
+      networkDropdownWithdrawal.classList.toggle("hidden");
+      if (withdrawalMethodDropdown)
+        withdrawalMethodDropdown.classList.add("hidden");
+      if (currencyDropdownWithdrawal)
+        currencyDropdownWithdrawal.classList.add("hidden");
+    });
+
+    networkOptionsWithdrawal.forEach((option) => {
+      option.addEventListener("click", () => {
+        networkSelectedWithdrawal.textContent = option.dataset.value;
+        networkDropdownWithdrawal.classList.add("hidden");
+      });
+    });
+
+    networkDropdownWithdrawal.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+  }
+
+  // Close all dropdowns when clicking outside
+  document.addEventListener("click", () => {
+    if (currencyDropdown) currencyDropdown.classList.add("hidden");
+    if (networkDropdown) networkDropdown.classList.add("hidden");
+    if (currencyDropdownBank) currencyDropdownBank.classList.add("hidden");
+    if (withdrawalMethodDropdown)
+      withdrawalMethodDropdown.classList.add("hidden");
+    if (currencyDropdownWithdrawal)
+      currencyDropdownWithdrawal.classList.add("hidden");
+    if (networkDropdownWithdrawal)
+      networkDropdownWithdrawal.classList.add("hidden");
+  });
+}
 
 window.toggleTextBlock = toggleTextBlock;

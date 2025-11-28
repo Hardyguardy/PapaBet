@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <link href="/src/index.css" rel="stylesheet" />
+    <title>Deposit Bank</title>
   </head>
   <body class="bg-brand-primary">
     <!-- Депозит -->
@@ -37,8 +38,9 @@
 
           <!-- Tabs -->
           <div class="flex gap-2 mb-6">
-            <button
-              class="px-10 py-2 flex items-center justify-center bg-[#414F54] font-family-secondary text-[#111F24] text-[18px] font-medium rounded-lg hover:bg-[#2d4250] transition uppercase"
+            <a
+              href="/deposit.html"
+              class="px-10 py-2 flex items-center bg-[#414F54] font-family-secondary text-[#111F24] font-medium text-[18px] rounded-lg hover:bg-[#2d4250] transition uppercase"
             >
               Крипто
               <img
@@ -46,14 +48,13 @@
                 alt="PapaBet"
                 class="pl-2"
               />
-            </button>
-            <a
-              href="/deposit-bank.html"
+            </a>
+            <button
               class="px-10 py-2 flex items-center bg-brand-secondary font-family-secondary text-black font-medium text-[18px] rounded-lg uppercase"
             >
               Банк
               <img src="assets/icons/Bank.svg" alt="" class="pl-2 h-4" />
-            </a>
+            </button>
             <a
               href="/deposit-withdrawal.html"
               class="px-10 py-2 flex items-center justify-center bg-[#414F54] font-family-secondary text-[#111F24] text-[18px] font-medium rounded-lg hover:bg-[#2d4250] transition uppercase"
@@ -97,13 +98,84 @@
               class="block text-white font-family-secondary text-sm font-semibold mb-2 uppercase"
               >Выберите валюту</label
             >
-            <select
-              class="w-full px-4 py-3 bg-[#273337] text-white font-family-secondary rounded-lg border border-transparent focus:border-[#cddc39] focus:outline-none"
-            >
-              <option>USDT</option>
-              <option>BTC</option>
-              <option>ETH</option>
-            </select>
+            <div class="relative">
+              <button
+                id="currency-button-bank"
+                class="w-full px-4 py-3 bg-[#273337] text-white font-family-secondary rounded-lg border border-transparent focus:border-[#cddc39] focus:outline-none flex items-center justify-between uppercase"
+              >
+                <span id="currency-selected-bank">Выберите монету</span>
+                <img
+                  src="assets/icons/arrow-down-gray.svg"
+                  alt=""
+                  class="h-2"
+                />
+              </button>
+
+              <!-- Dropdown menu -->
+              <div
+                id="currency-dropdown-bank"
+                class="hidden absolute top-full left-0 right-0 mt-2 bg-[#273337] rounded-lg border border-gray-700 z-10 max-h-48 overflow-y-auto"
+              >
+                <!-- Search input -->
+                <div class="p-3 border-b border-gray-700">
+                  <div class="relative">
+                    <input
+                      type="text"
+                      id="currency-search-bank"
+                      placeholder="Поиск..."
+                      class="w-full px-3 py-2 pl-8 bg-[#1a2c38] text-white text-sm rounded-lg focus:outline-none focus:border-[#cddc39]"
+                    />
+                    <svg
+                      class="w-4 h-4 absolute left-2 top-1/2 -translate-y-1/2 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                      />
+                    </svg>
+                  </div>
+                </div>
+
+                <!-- Options -->
+                <div class="currency-options-bank">
+                  <div
+                    class="currency-option-bank px-4 py-3 hover:bg-[#2d4250] cursor-pointer text-white uppercase"
+                    data-value="USDT"
+                  >
+                    USDT
+                  </div>
+                  <div
+                    class="currency-option-bank px-4 py-3 hover:bg-[#2d4250] cursor-pointer text-white uppercase"
+                    data-value="USDC"
+                  >
+                    USDC
+                  </div>
+                  <div
+                    class="currency-option-bank px-4 py-3 hover:bg-[#2d4250] cursor-pointer text-white uppercase"
+                    data-value="BTC"
+                  >
+                    BTC
+                  </div>
+                  <div
+                    class="currency-option-bank px-4 py-3 hover:bg-[#2d4250] cursor-pointer text-white uppercase"
+                    data-value="ETH"
+                  >
+                    ETH
+                  </div>
+                  <div
+                    class="currency-option-bank px-4 py-3 hover:bg-[#2d4250] cursor-pointer text-white uppercase"
+                    data-value="SOL"
+                  >
+                    SOL
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- Укажите сумму депозита -->
@@ -115,7 +187,7 @@
             <input
               type="text"
               placeholder="1000 USDT"
-              class="w-full px-4 py-3 bg-[#273337] text-white font-family-secondary rounded-lg border border-transparent focus:border-[#cddc39] focus:outline-none"
+              class="w-full px-4 py-3 bg-[#273337] text-white placeholder-gray-500 font-family-secondary rounded-lg border border-transparent focus:border-[#cddc39] focus:outline-none"
             />
           </div>
 
@@ -151,7 +223,7 @@
             </div>
           </div>
 
-          <!-- Ошибка -->
+          <!-- Инфо текст -->
           <p class="text-white text-xs text-center mb-6 uppercase mt-10 mb-10">
             Вы будете перенаправлены на платежный шлюз где сможете выбрать
             удобный для вас способ пополнения.
