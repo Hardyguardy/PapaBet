@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/index.css" rel="stylesheet" />
+    <title>Гифт-карта</title>
+  </head>
+  <body class="bg-brand-primary">
+    <!-- Гифт-карта попап -->
+    <div
+      class="fixed inset-0 bg-black/70 z-[100] flex items-center justify-center"
+    >
+      <div class="bg-brand-primary rounded-2xl w-full max-w-lg mx-4 relative">
+        <!-- Кнопка "Назад" -->
+        <button
+          onclick="window.location.href='/deposit.html'"
+          class="absolute top-6 left-6 text-gray-400 hover:text-white transition flex items-center gap-2"
+        >
+          <svg
+            class="w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+          <span class="text-sm uppercase font-family-secondary">Назад</span>
+        </button>
+
+        <!-- Close Button -->
+        <button
+          onclick="window.location.href='/loggeduser.html'"
+          class="absolute top-6 right-6 text-gray-400 hover:text-white transition"
+        >
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+
+        <div class="p-8 pt-16">
+          <!-- Title -->
+          <h2 class="text-white text-3xl font-bold mb-8 mt-12 text-center">
+            Гифт-карта
+          </h2>
+
+          <!-- Введите номер карты -->
+          <div class="mb-6">
+            <label
+              class="block text-white text-sm font-family-secondary font-semibold mb-2 uppercase"
+              >Введите номер карты</label
+            >
+            <input
+              type="text"
+              placeholder="НОМЕР КАРТЫ"
+              class="w-full px-4 py-3 bg-[#273337] text-white placeholder-gray-500 font-family-secondary rounded-lg border border-transparent focus:border-[#cddc39] focus:outline-none"
+            />
+          </div>
+
+          <!-- Описание -->
+          <div class="mb-8">
+            <p
+              class="text-gray-400 text-sm font-family-secondary leading-relaxed"
+            >
+              Welcome to PapaBet, the next-generation crypto casino and
+              sportsbook that combines nonstop gaming, instant crypto payments,
+              and one-of-a-kind rewards.
+            </p>
+          </div>
+
+          <!-- Кнопка активировать -->
+          <button
+            class="w-full py-3 mt-12 bg-brand-secondary font-family-secondary text-black font-medium text-[18px] rounded-lg hover:bg-[#b8c935] transition uppercase"
+          >
+            Активировать
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
