@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/index.css" rel="stylesheet" />
+    <title>Аккаунт - PapaBet</title>
+  </head>
+  <body class="bg-brand-primary">
+    <div id="header-logged-container"></div>
+
+    <div class="pt-[57px] max-w-full mx-auto flex">
+      <!-- Сайдбар -->
+      <aside
+        class="fixed left-0 top-[57px] w-80 h-[calc(100vh-57px)] bg-brand-primary overflow-y-auto border-r border-gray-800 z-40"
+      >
+        <!-- Back Button + Title -->
+        <div class="px-6 py-6 border-b border-gray-800">
+          <div class="flex items-center gap-3 mb-8">
+            <button
+              onclick="window.location.href='/loggeduser.html'"
+              class="text-gray-400 hover:text-white transition"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+            <h2
+              class="text-gray-400 text-xl font-family-secondary uppercase tracking-wider"
+            >
+              Назад
+            </h2>
+          </div>
+
+          <!-- User Profile -->
+          <div class="flex items-center gap-3">
+            <h3
+              class="text-[#CBAA56] text-2xl font-family-secondary uppercase tracking-wide"
+            >
+              IVAN777
+            </h3>
+            <span
+              class="px-3 py-1 bg-transparent border-2 border-[#CBAA56] text-[#CBAA56] text-sm font-bold font-family-secondary rounded uppercase tracking-wide"
+              >GOLD</span
+            >
+          </div>
+        </div>
+
+        <!-- Nav Links -->
+        <nav class="px-6 py-6 space-y-1 font-family-base font-medium">
+          <a
+            href="#"
+            class="block text-brand-secondary hover:text-[#cddc39] transition text-[18px]"
+            >Аккаунт</a
+          >
+          <a
+            href="#"
+            class="block text-white hover:text-[#cddc39] transition text-[18px]"
+            >Настройки</a
+          >
+          <a
+            href="#"
+            class="block text-white hover:text-[#cddc39] transition text-[18px]"
+            >История ставок</a
+          >
+          <a
+            href="#"
+            class="block text-white hover:text-[#cddc39] transition text-[18px]"
+            >История транзакций</a
+          >
+          <a
+            href="#"
+            class="block text-white hover:text-[#cddc39] transition text-[18px]"
+            >Партнерство</a
+          >
+        </nav>
+      </aside>
+
+      <!-- Главный контент -->
+      <main class="flex-1 ml-80 min-w-0">
+        <div class="px-6 py-6">
+          <!-- Banner -->
+          <!-- Banner -->
+          <section class="mb-8 -mx-6">
+            <div
+              class="relative w-full h-[122px] rounded-lg overflow-hidden bg-gradient-to-r from-blue-600 via-purple-600 to-blue-600 mx-6"
+            >
+              <!-- Overlay -->
+              <div class="absolute inset-0 bg-black/30"></div>
+
+              <!-- Content -->
+              <div
+                class="relative z-10 flex items-center justify-center h-full"
+              >
+                <h2
+                  class="text-white text-3xl font-bold font-family-secondary uppercase tracking-wider"
+                >
+                  Баннер с важной инфой
+                </h2>
+              </div>
+            </div>
+          </section>
+
+          <!-- User Profile Header -->
+          <section class="mb-8">
+            <div class="flex items-center gap-6">
+              <!-- Avatar Large with GOLD badge -->
+              <div class="relative">
+                <div
+                  class="w-32 h-32 rounded-full flex items-center justify-center"
+                >
+                  <img
+                    src="/assets/icons/profile-gold.svg"
+                    alt="Avatar"
+                    class="w-20 h-20"
+                  />
+                </div>
+              </div>
+
+              <!-- User Info -->
+              <div class="">
+                <!-- Name + ID on same line -->
+                <div class="flex items-center gap-3 mb-3">
+                  <h1 class="text-white text-[32px] font-bold font-family-base">
+                    ivan777
+                  </h1>
+                  <span
+                    class="text-brand-secondary text-[32px] font-family-base"
+                    >id:549854895</span
+                  >
+                </div>
+                <!-- Verification Level -->
+                <div class="flex items-center gap-4">
+                  <span
+                    class="text-gray-400 font-family-secondary uppercase text-sm tracking-wide"
+                    >Уровень верификации:</span
+                  >
+                  <span
+                    class="text-white font-family-secondary uppercase text-sm tracking-wide"
+                    >Начальный</span
+                  >
+                  <a
+                    href="#"
+                    class="text-[#cddc39] font-family-secondary uppercase text-sm hover:text-[#b8c935] transition tracking-wide ml-4"
+                    style="
+                      text-decoration: underline;
+                      text-underline-offset: 4px;
+                    "
+                    >Пройти верификацию</a
+                  >
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Level Progress -->
+          <section class="mb-8">
+            <div class="mt-[60px]">
+              <div class="flex items-center justify-between mb-4">
+                <h3 class="text-white text-xl font-bold">Уровень</h3>
+                <button class="text-gray-400 hover:text-white transition">
+                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                    <path
+                      d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Progress Bar -->
+              <div class="mb-2">
+                <div
+                  class="w-full h-2 bg-[#1a2c38] rounded-full overflow-hidden"
+                >
+                  <div
+                    class="h-full bg-gradient-to-r from-[#cddc39] to-[#b8c935]"
+                    style="width: 40%"
+                  ></div>
+                </div>
+                <div
+                  class="flex justify-between text-xs text-gray-400 mb-1 mt-2"
+                >
+                  <span>0 XP</span>
+                  <span class="text-[#cddc39]">GOLD: 100 XP</span>
+                  <span>250 XP</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Statistics -->
+          <section class="mb-8">
+            <div class="flex items-center gap-3 mb-6">
+              <svg
+                class="w-8 h-8 text-white"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"
+                />
+              </svg>
+              <h2 class="text-white text-3xl font-bold font-family-base">
+                Статистика
+              </h2>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+              <!-- Всего ставок -->
+              <div
+                class="bg-[#273337] rounded-lg p-6 min-h-[200px] flex flex-col"
+              >
+                <div class="flex items-start justify-start mb-auto">
+                  <span
+                    class="px-3 py-1 bg-white/10 text-white text-xs uppercase font-family-secondary tracking-wide rounded"
+                    >#Ставки</span
+                  >
+                </div>
+                <div class="flex items-end justify-between mt-16">
+                  <p
+                    class="text-gray-400 text-sm uppercase font-family-secondary tracking-wide"
+                  >
+                    Всего ставок
+                  </p>
+                  <p
+                    class="text-[#cddc39] text-4xl font-bold font-family-base leading-none"
+                  >
+                    120 Ставок
+                  </p>
+                </div>
+              </div>
+
+              <!-- Сумма выигрышей -->
+              <div
+                class="bg-[#273337] rounded-lg p-6 h-[240px] flex flex-col justify-between"
+              >
+                <div class="flex items-start justify-start">
+                  <span
+                    class="px-3 py-1 bg-white/10 text-white text-xs uppercase font-family-secondary tracking-wide rounded"
+                    >#Выигрыш</span
+                  >
+                </div>
+                <div class="flex items-end justify-between">
+                  <p
+                    class="text-gray-400 text-sm uppercase font-family-secondary tracking-wide"
+                  >
+                    Сумма выигрышей
+                  </p>
+                  <p
+                    class="text-[#cddc39] text-4xl font-bold font-family-base leading-none"
+                  >
+                    $ 100 000
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Самые популярные игры -->
+          <section class="mb-8">
+            <div class="flex items-center justify-between mb-6">
+              <div class="flex items-center gap-3">
+                <img
+                  src="assets/icons/Heart-icon.svg"
+                  alt="PapaBet"
+                  class="h-8"
+                />
+                <h2 class="text-white text-3xl font-bold">
+                  Самые популярные игры
+                </h2>
+              </div>
+              <!-- Navigation Arrows -->
+              <div class="flex gap-2">
+                <button
+                  class="w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition"
+                >
+                  <svg
+                    class="w-4 h-4 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 19l-7-7 7-7"
+                    />
+                  </svg>
+                </button>
+                <button
+                  class="w-8 h-8 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition"
+                >
+                  <svg
+                    class="w-4 h-4 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M9 5l7 7-7 7"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Games Grid -->
+            <div class="grid grid-cols-5 gap-4">
+              <!-- Game 1 -->
+              <div class="cursor-pointer">
+                <div
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+                <h3 class="text-white font-semibold text-[16px]">Bash Bros</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
+                >
+                  Hacksaw Gaming
+                </p>
+              </div>
+
+              <!-- Game 2 -->
+              <div class="cursor-pointer">
+                <div
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+                <h3 class="text-white font-semibold text-[16px]">Barbarossa</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
+                >
+                  Peter & Sons
+                </p>
+              </div>
+
+              <!-- Game 3 -->
+              <div class="cursor-pointer">
+                <div
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+                <h3 class="text-white font-semibold text-[16px]">Bash Bros</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
+                >
+                  Hacksaw Gaming
+                </p>
+              </div>
+
+              <!-- Game 4 -->
+              <div class="cursor-pointer">
+                <div
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+                <h3 class="text-white font-semibold text-[16px]">Barbarossa</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
+                >
+                  Peter & Sons
+                </p>
+              </div>
+
+              <!-- Game 5 -->
+              <div class="cursor-pointer">
+                <div
+                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                ></div>
+                <h3 class="text-white font-semibold text-[16px]">Bash Bros</h3>
+                <p
+                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
+                >
+                  Hacksaw Gaming
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Последние 10 игр -->
+          <section class="mb-8">
+            <div class="flex items-center gap-3 mb-6">
+              <img src="assets/icons/megaphone.svg" alt="PapaBet" class="h-8" />
+              <h2 class="text-white text-3xl font-bold">Последние 10 игр</h2>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="flex gap-2 mb-6">
+              <button
+                class="px-4 py-2 bg-[#cddc39] text-black text-sm font-semibold rounded-lg uppercase"
+              >
+                ВСЕ
+              </button>
+              <button
+                class="px-4 py-2 bg-white/10 text-white text-sm font-semibold rounded-lg hover:bg-white/20 transition uppercase"
+              >
+                Сегодня
+              </button>
+              <button
+                class="px-4 py-2 bg-white/10 text-white text-sm font-semibold rounded-lg hover:bg-white/20 transition uppercase"
+              >
+                Вчера
+              </button>
+              <button
+                class="px-4 py-2 bg-white/10 text-white text-sm font-semibold rounded-lg hover:bg-white/20 transition uppercase"
+              >
+                7 дней
+              </button>
+            </div>
+
+            <!-- Table -->
+            <div class="bg-[#273337] rounded-lg overflow-hidden">
+              <!-- Header -->
+              <div
+                class="grid grid-cols-5 gap-4 px-6 py-4 border-b border-gray-700"
+              >
+                <div class="text-gray-400 text-sm font-semibold uppercase">
+                  Игра
+                </div>
+                <div class="text-gray-400 text-sm font-semibold uppercase">
+                  Игрок
+                </div>
+                <div class="text-gray-400 text-sm font-semibold uppercase">
+                  Время
+                </div>
+                <div class="text-[#627EEA] text-sm font-semibold uppercase">
+                  Множитель
+                </div>
+                <div
+                  class="text-gray-400 text-sm font-semibold uppercase text-right"
+                >
+                  Выигрыш/Проигрыш
+                </div>
+              </div>
+
+              <!-- Rows -->
+              <div>
+                <!-- Row 1 - Win -->
+                <div
+                  class="grid grid-cols-5 gap-4 px-6 py-4 border-b border-gray-700/50 hover:bg-white/5 transition"
+                >
+                  <div class="text-white text-sm">SWEET BONANZA SUPER</div>
+                  <div class="text-white text-sm">IVANPAD111</div>
+                  <div class="text-gray-400 text-sm">08:45 AM</div>
+                  <div class="text-[#627EEA] text-sm font-semibold">X 0.5</div>
+                  <div class="text-[#4ADE80] text-sm font-semibold text-right">
+                    +27.8 USDT
+                  </div>
+                </div>
+
+                <!-- Row 2 - Loss -->
+                <div
+                  class="grid grid-cols-5 gap-4 px-6 py-4 border-b border-gray-700/50 hover:bg-white/5 transition"
+                >
+                  <div class="text-white text-sm">SWEET BONANZA SUPER</div>
+                  <div class="text-white text-sm">IVANPAD111</div>
+                  <div class="text-gray-400 text-sm">08:45 AM</div>
+                  <div class="text-[#627EEA] text-sm font-semibold">X 0.5</div>
+                  <div class="text-[#EF4444] text-sm font-semibold text-right">
+                    -27.8 USDT
+                  </div>
+                </div>
+
+                <!-- Row 3 - Win -->
+                <div
+                  class="grid grid-cols-5 gap-4 px-6 py-4 border-b border-gray-700/50 hover:bg-white/5 transition"
+                >
+                  <div class="text-white text-sm">SWEET BONANZA SUPER</div>
+                  <div class="text-white text-sm">IVANPAD111</div>
+                  <div class="text-gray-400 text-sm">08:45 AM</div>
+                  <div class="text-[#627EEA] text-sm font-semibold">X 0.5</div>
+                  <div class="text-[#4ADE80] text-sm font-semibold text-right">
+                    +27.8 USDT
+                  </div>
+                </div>
+
+                <!-- Additional rows... -->
+                <div
+                  class="grid grid-cols-5 gap-4 px-6 py-4 border-b border-gray-700/50 hover:bg-white/5 transition"
+                >
+                  <div class="text-white text-sm">SWEET BONANZA SUPER</div>
+                  <div class="text-white text-sm">IVANPAD111</div>
+                  <div class="text-gray-400 text-sm">08:45 AM</div>
+                  <div class="text-[#627EEA] text-sm font-semibold">X 0.5</div>
+                  <div class="text-[#4ADE80] text-sm font-semibold text-right">
+                    +27.8 USDT
+                  </div>
+                </div>
+
+                <div
+                  class="grid grid-cols-5 gap-4 px-6 py-4 border-b border-gray-700/50 hover:bg-white/5 transition"
+                >
+                  <div class="text-white text-sm">SWEET BONANZA SUPER</div>
+                  <div class="text-white text-sm">IVANPAD111</div>
+                  <div class="text-gray-400 text-sm">08:45 AM</div>
+                  <div class="text-[#627EEA] text-sm font-semibold">X 0.5</div>
+                  <div class="text-[#EF4444] text-sm font-semibold text-right">
+                    -27.8 USDT
+                  </div>
+                </div>
+
+                <div
+                  class="grid grid-cols-5 gap-4 px-6 py-4 border-b border-gray-700/50 hover:bg-white/5 transition"
+                >
+                  <div class="text-white text-sm">SWEET BONANZA SUPER</div>
+                  <div class="text-white text-sm">IVANPAD111</div>
+                  <div class="text-gray-400 text-sm">08:45 AM</div>
+                  <div class="text-[#627EEA] text-sm font-semibold">X 0.5</div>
+                  <div class="text-[#4ADE80] text-sm font-semibold text-right">
+                    +27.8 USDT
+                  </div>
+                </div>
+
+                <div
+                  class="grid grid-cols-5 gap-4 px-6 py-4 border-b border-gray-700/50 hover:bg-white/5 transition"
+                >
+                  <div class="text-white text-sm">SWEET BONANZA SUPER</div>
+                  <div class="text-white text-sm">IVANPAD111</div>
+                  <div class="text-gray-400 text-sm">08:45 AM</div>
+                  <div class="text-[#627EEA] text-sm font-semibold">X 0.5</div>
+                  <div class="text-[#EF4444] text-sm font-semibold text-right">
+                    -27.8 USDT
+                  </div>
+                </div>
+
+                <div
+                  class="grid grid-cols-5 gap-4 px-6 py-4 border-b border-gray-700/50 hover:bg-white/5 transition"
+                >
+                  <div class="text-white text-sm">SWEET BONANZA SUPER</div>
+                  <div class="text-white text-sm">IVANPAD111</div>
+                  <div class="text-gray-400 text-sm">08:45 AM</div>
+                  <div class="text-[#627EEA] text-sm font-semibold">X 0.5</div>
+                  <div class="text-[#4ADE80] text-sm font-semibold text-right">
+                    +27.8 USDT
+                  </div>
+                </div>
+
+                <div
+                  class="grid grid-cols-5 gap-4 px-6 py-4 border-b border-gray-700/50 hover:bg-white/5 transition"
+                >
+                  <div class="text-white text-sm">SWEET BONANZA SUPER</div>
+                  <div class="text-white text-sm">IVANPAD111</div>
+                  <div class="text-gray-400 text-sm">08:45 AM</div>
+                  <div class="text-[#627EEA] text-sm font-semibold">X 0.5</div>
+                  <div class="text-[#EF4444] text-sm font-semibold text-right">
+                    -27.8 USDT
+                  </div>
+                </div>
+
+                <div
+                  class="grid grid-cols-5 gap-4 px-6 py-4 hover:bg-white/5 transition"
+                >
+                  <div class="text-white text-sm">SWEET BONANZA SUPER</div>
+                  <div class="text-white text-sm">IVANPAD111</div>
+                  <div class="text-gray-400 text-sm">08:45 AM</div>
+                  <div class="text-[#627EEA] text-sm font-semibold">X 0.5</div>
+                  <div class="text-[#4ADE80] text-sm font-semibold text-right">
+                    +27.8 USDT
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <!-- Футер -->
+    <div id="footer-container"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
