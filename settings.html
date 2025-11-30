@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/index.css" rel="stylesheet" />
+    <title>Настройки - PapaBet</title>
+  </head>
+  <body class="bg-brand-primary">
+    <div id="header-logged-container"></div>
+
+    <div class="pt-[57px] max-w-full mx-auto flex">
+      <!-- Сайдбар -->
+      <aside
+        class="fixed left-0 top-[57px] w-80 h-[calc(100vh-57px)] bg-brand-primary overflow-y-auto border-r border-gray-800 z-40"
+      >
+        <!-- Back Button + Title -->
+        <div class="px-6 py-6 border-b border-gray-800">
+          <div class="flex items-center gap-3 mb-8">
+            <button
+              onclick="window.location.href='/loggeduser.html'"
+              class="text-gray-400 hover:text-white transition"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </button>
+            <h2
+              class="text-gray-400 text-xl font-family-secondary uppercase tracking-wider"
+            >
+              Назад
+            </h2>
+          </div>
+
+          <!-- User Profile -->
+          <div class="flex items-center gap-3">
+            <h3
+              class="text-[#cddc39] text-2xl font-family-secondary uppercase tracking-wide"
+            >
+              IVAN777
+            </h3>
+            <span
+              class="px-3 py-1 bg-transparent border-2 border-[#cddc39] text-[#cddc39] text-sm font-bold font-family-secondary rounded uppercase tracking-wide"
+              >GOLD</span
+            >
+          </div>
+        </div>
+
+        <!-- Nav Links -->
+        <nav class="px-6 py-6 space-y-1 font-family-base font-medium">
+          <a
+            href="/profile.html"
+            class="block text-white hover:text-[#cddc39] transition text-[18px]"
+            >Аккаунт</a
+          >
+          <a
+            href="/settings.html"
+            class="block text-brand-secondary hover:text-[#cddc39] transition text-[18px]"
+            >Настройки</a
+          >
+          <a
+            href="#"
+            class="block text-white hover:text-[#cddc39] transition text-[18px]"
+            >История ставок</a
+          >
+          <a
+            href="#"
+            class="block text-white hover:text-[#cddc39] transition text-[18px]"
+            >История транзакций</a
+          >
+          <a
+            href="#"
+            class="block text-white hover:text-[#cddc39] transition text-[18px]"
+            >Партнерство</a
+          >
+        </nav>
+      </aside>
+
+      <!-- Главный контент -->
+      <main class="flex-1 ml-80 min-w-0">
+        <div class="px-6 py-6">
+          <!-- Banner -->
+          <section class="mb-8 -mx-6 px-6">
+            <div
+              class="relative w-full h-[122px] rounded-lg overflow-hidden bg-black/30"
+            >
+              <div class="absolute inset-0 bg-black/30"></div>
+              <div
+                class="relative z-10 flex items-center justify-center h-full"
+              >
+                <h2
+                  class="text-white text-3xl font-bold font-family-secondary uppercase tracking-wider"
+                >
+                  Баннер с важной инфой
+                </h2>
+              </div>
+            </div>
+          </section>
+
+          <!-- User Profile Header -->
+          <section class="mb-8">
+            <div class="flex items-center gap-6">
+              <!-- Avatar Large -->
+              <div class="relative">
+                <div
+                  class="w-32 h-32 rounded-full flex items-center justify-center"
+                >
+                  <img
+                    src="/assets/icons/profile-gold.svg"
+                    alt="Avatar"
+                    class="w-20 h-20"
+                  />
+                </div>
+              </div>
+
+              <!-- User Info -->
+              <div class="">
+                <!-- Name + ID on same line -->
+                <div class="flex items-center gap-3 mb-3">
+                  <h1 class="text-white text-[32px] font-bold font-family-base">
+                    ivan777
+                  </h1>
+                  <span
+                    class="text-brand-secondary text-[32px] font-family-base"
+                    >id:549854895</span
+                  >
+                </div>
+                <!-- Verification Level -->
+                <div class="flex items-center gap-4">
+                  <span
+                    class="text-gray-400 font-family-secondary uppercase text-sm tracking-wide"
+                    >Уровень верификации:</span
+                  >
+                  <span
+                    class="text-white font-family-secondary uppercase text-sm tracking-wide"
+                    >Начальный</span
+                  >
+                  <a
+                    href="#"
+                    class="text-[#cddc39] font-family-secondary uppercase text-sm hover:text-[#b8c935] transition tracking-wide ml-4"
+                    style="
+                      text-decoration: underline;
+                      text-underline-offset: 4px;
+                    "
+                    >Пройти верификацию</a
+                  >
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Сменить пароль -->
+          <section class="mb-8">
+            <div class="bg-[#273337] rounded-lg p-6">
+              <div class="flex items-center justify-between mb-6">
+                <h3 class="text-white text-2xl font-bold font-family-base">
+                  Сменить пароль
+                </h3>
+                <button class="text-gray-400 hover:text-white transition">
+                  <img src="/assets/icons/arrow-close.svg" alt="" />
+                </button>
+              </div>
+
+              <!-- Form Fields -->
+              <div class="space-y-4">
+                <!-- Старый пароль -->
+                <div>
+                  <label
+                    class="block text-gray-400 text-sm uppercase font-family-secondary tracking-wide mb-2"
+                    >Старый пароль</label
+                  >
+                  <input
+                    type="password"
+                    placeholder="ВВЕДИТЕ СТАРЫЙ ПАРОЛЬ"
+                    class="w-full bg-brand-primary text-white placeholder-gray-500 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#cddc39] font-family-secondary text-sm uppercase"
+                  />
+                </div>
+
+                <!-- Новый пароль -->
+                <div>
+                  <label
+                    class="block text-gray-400 text-sm uppercase font-family-secondary tracking-wide mb-2"
+                    >Новый пароль</label
+                  >
+                  <div class="relative">
+                    <input
+                      type="password"
+                      placeholder="ВВЕДИТЕ ПАРОЛЬ"
+                      class="w-full bg-brand-primary text-white placeholder-gray-500 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#cddc39] font-family-secondary text-sm uppercase pr-12"
+                    />
+                    <button
+                      class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition"
+                    >
+                      <svg
+                        class="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Повторите новый пароль -->
+                <div>
+                  <label
+                    class="block text-gray-400 text-sm uppercase font-family-secondary tracking-wide mb-2"
+                    >Повторите новый пароль</label
+                  >
+                  <div class="relative">
+                    <input
+                      type="password"
+                      placeholder="ВВЕДИТЕ НОВЫЙ ПАРОЛЬ ЕЩЕ РАЗ"
+                      class="w-full bg-brand-primary text-white placeholder-gray-500 px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#cddc39] font-family-secondary text-sm uppercase pr-12"
+                    />
+                    <button
+                      class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white transition"
+                    >
+                      <svg
+                        class="w-5 h-5"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Button -->
+                <button
+                  class="w-full sm:w-auto px-8 py-3 bg-[#cddc39] text-black font-bold text-sm uppercase tracking-wider rounded-lg hover:bg-[#b8c935] transition mt-4"
+                >
+                  Сменить пароль
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Верификация -->
+          <section class="mb-8">
+            <div class="bg-[#273337] rounded-lg p-6">
+              <div class="flex items-center justify-between mb-6">
+                <h3 class="text-white text-2xl font-bold font-family-base">
+                  Верификация
+                </h3>
+                <button class="text-gray-400 hover:text-white transition">
+                  <img src="/assets/icons/arrow-close.svg" alt="" />
+                </button>
+              </div>
+
+              <p class="text-gray-300 text-sm leading-relaxed mb-4">
+                Welcome to PapaBet, the next-generation crypto casino and
+                sportsbook that combines nonstop gaming, instant crypto
+                payments, and one-of-a-kind rewards. Play provably fair casino
+                games, bet on live sports, and climb through missions,
+                lootboxes, and seasonal Battle Pass tiers to unlock exclusive
+                perks. With up to 20% daily cashback, a Refer-a-Friend program,
+                and unique Tribes for social play, PapaBet isn't just another
+                online casino it's the future of blockchain gaming.
+              </p>
+
+              <a
+                href="#"
+                class="text-[#cddc39] font-family-secondary uppercase text-sm hover:text-[#b8c935] transition tracking-wide"
+                style="text-decoration: underline; text-underline-offset: 4px"
+                >Пройти верификацию</a
+              >
+            </div>
+          </section>
+
+          <!-- Двухфакторная аутентификация (2FA) -->
+          <section class="mb-8">
+            <div class="bg-[#273337] rounded-lg p-6">
+              <div class="flex items-center justify-between mb-6">
+                <h3 class="text-white text-2xl font-bold font-family-base">
+                  Двухфакторная аутентификация (2FA)
+                </h3>
+                <button class="text-gray-400 hover:text-white transition">
+                  <img src="/assets/icons/arrow-open.svg" alt="" />
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Язык -->
+          <section class="mb-8">
+            <div class="bg-[#273337] rounded-lg p-6">
+              <div class="flex items-center justify-between mb-6">
+                <h3 class="text-white text-2xl font-bold font-family-base">
+                  Язык: <span class="text-[#cddc39]">Русский</span>
+                </h3>
+                <button class="text-gray-400 hover:text-white transition">
+                  <img src="/assets/icons/arrow-close.svg" alt="" />
+                </button>
+              </div>
+
+              <!-- Language Grid -->
+              <div class="grid grid-cols-3 gap-3">
+                <button
+                  class="px-4 py-2 bg-brand-primary text-white text-sm uppercase font-family-secondary rounded-lg hover:bg-[#cddc39] hover:text-black transition"
+                >
+                  Русский
+                </button>
+                <button
+                  class="px-4 py-2 bg-brand-primary text-white text-sm uppercase font-family-secondary rounded-lg hover:bg-[#cddc39] hover:text-black transition"
+                >
+                  Английский
+                </button>
+                <button
+                  class="px-4 py-2 bg-brand-primary text-white text-sm uppercase font-family-secondary rounded-lg hover:bg-[#cddc39] hover:text-black transition"
+                >
+                  Украинский
+                </button>
+                <button
+                  class="px-4 py-2 bg-brand-primary text-white text-sm uppercase font-family-secondary rounded-lg hover:bg-[#cddc39] hover:text-black transition"
+                >
+                  Украинский
+                </button>
+                <button
+                  class="px-4 py-2 bg-brand-primary text-white text-sm uppercase font-family-secondary rounded-lg hover:bg-[#cddc39] hover:text-black transition"
+                >
+                  Казахский
+                </button>
+                <button
+                  class="px-4 py-2 bg-brand-primary text-white text-sm uppercase font-family-secondary rounded-lg hover:bg-[#cddc39] hover:text-black transition"
+                >
+                  Казахский
+                </button>
+                <button
+                  class="px-4 py-2 bg-brand-primary text-white text-sm uppercase font-family-secondary rounded-lg hover:bg-[#cddc39] hover:text-black transition"
+                >
+                  Казахский
+                </button>
+                <button
+                  class="px-4 py-2 bg-brand-primary text-white text-sm uppercase font-family-secondary rounded-lg hover:bg-[#cddc39] hover:text-black transition"
+                >
+                  Украинский
+                </button>
+                <button
+                  class="px-4 py-2 bg-brand-primary text-white text-sm uppercase font-family-secondary rounded-lg hover:bg-[#cddc39] hover:text-black transition"
+                >
+                  Русский
+                </button>
+                <button
+                  class="px-4 py-2 bg-brand-primary text-white text-sm uppercase font-family-secondary rounded-lg hover:bg-[#cddc39] hover:text-black transition"
+                >
+                  Английский
+                </button>
+                <button
+                  class="px-4 py-2 bg-brand-primary text-white text-sm uppercase font-family-secondary rounded-lg hover:bg-[#cddc39] hover:text-black transition"
+                >
+                  Русский
+                </button>
+                <button
+                  class="px-4 py-2 bg-brand-primary text-white text-sm uppercase font-family-secondary rounded-lg hover:bg-[#cddc39] hover:text-black transition"
+                >
+                  Английский
+                </button>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <!-- Футер -->
+    <div id="footer-container"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
