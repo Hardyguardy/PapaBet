@@ -373,4 +373,40 @@ function initCustomDropdowns() {
   });
 }
 
+// Тултип
+function initLevelTooltip() {
+  const button = document.getElementById("level-info-button");
+  const tooltip = document.getElementById("level-info-tooltip");
+
+  if (button && tooltip) {
+    button.addEventListener("click", (e) => {
+      e.stopPropagation();
+      tooltip.classList.toggle("hidden");
+    });
+
+    // Закрытие
+    document.addEventListener("click", (e) => {
+      if (!button.contains(e.target) && !tooltip.contains(e.target)) {
+        tooltip.classList.add("hidden");
+      }
+    });
+
+    // Предотвращение закрытия
+    tooltip.addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+  }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadComponent("header-container", "/src/components/header.html");
+  loadComponent(
+    "header-logged-container",
+    "/src/components/header-logged.html"
+  );
+  loadComponent("footer-container", "/src/components/footer.html");
+  initCustomDropdowns();
+  initLevelTooltip();
+});
+
 window.toggleTextBlock = toggleTextBlock;
