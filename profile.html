@@ -180,7 +180,6 @@
                     id="level-info-tooltip"
                     class="hidden absolute left-full ml-3 top-1/2 -translate-y-1/2 z-50"
                   >
-                    <!-- Arrow -->
                     <div
                       class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2"
                     >
@@ -188,26 +187,17 @@
                         class="w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-transparent border-r-8 border-r-gray-200"
                       ></div>
                     </div>
-                    <!-- Tooltip Content -->
                     <div
                       class="bg-gray-200 text-black text-sm rounded-lg p-4 shadow-xl min-w-[380px]"
                     >
                       <p class="leading-relaxed font-family-base">
-                        Bronze: 0 - 50 XP / Silver: 0 - 50 XP / Gold: 0 - 50 XP
-                        / Diamond: 0 - 50 XP / Platinum: 0 - 50 XP / Elite: 0 -
-                        50 XP
+                        Bronze: 0 - 50 XP / Silver: 51 - 100 XP / Gold: 101 -
+                        200 XP / Diamond: 201 - 350 XP / Platinum: 351 - 500 XP
+                        / Elite: 501+ XP
                       </p>
                     </div>
                   </div>
                 </div>
-
-                <button class="text-gray-400 hover:text-white transition">
-                  <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                    <path
-                      d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"
-                    />
-                  </svg>
-                </button>
               </div>
 
               <!-- Progress Bar -->
@@ -216,16 +206,19 @@
                   class="w-full h-2 bg-[#1a2c38] rounded-full overflow-hidden"
                 >
                   <div
-                    class="h-full bg-gradient-to-r from-[#cddc39] to-[#b8c935]"
-                    style="width: 40%"
+                    id="level-progress-bar"
+                    class="h-full bg-gradient-to-r from-[#cddc39] to-[#b8c935] transition-all duration-500"
+                    style="width: 0%"
                   ></div>
                 </div>
                 <div
                   class="flex justify-between text-xs text-gray-400 mb-1 mt-2"
                 >
-                  <span>0 XP</span>
-                  <span class="text-[#cddc39]">GOLD: 100 XP</span>
-                  <span>250 XP</span>
+                  <span id="level-min-xp">0 XP</span>
+                  <span class="text-[#cddc39]" id="level-current-label"
+                    >BRONZE: 0 XP</span
+                  >
+                  <span id="level-max-xp">50 XP</span>
                 </div>
               </div>
             </div>
