@@ -1,7 +1,6 @@
 import "./index.css";
 
 // Header footer load
-
 async function loadComponent(elementId, filePath) {
   try {
     const response = await fetch(filePath);
@@ -10,7 +9,6 @@ async function loadComponent(elementId, filePath) {
 
     // Инициализируем поиск после загрузки хедера
     if (elementId === "header-logged-container") {
-      // Используем setTimeout чтобы дать браузеру время отрендерить HTML
       setTimeout(() => {
         initSearch();
       }, 100);
@@ -19,18 +17,6 @@ async function loadComponent(elementId, filePath) {
     console.error(`Error loading ${filePath}:`, error);
   }
 }
-
-document.addEventListener("DOMContentLoaded", () => {
-  loadComponent("header-container", "/src/components/header.html");
-  loadComponent(
-    "header-logged-container",
-    "/src/components/header-logged.html"
-  );
-  loadComponent("footer-container", "/src/components/footer.html");
-
-  // ВАЖНО: Вызываем инициализацию дропдаунов
-  initCustomDropdowns();
-});
 
 // Функция инициализации поиска
 function initSearch() {
@@ -42,20 +28,18 @@ function initSearch() {
     searchButton,
     searchDropdown,
     searchInput,
-  }); // Для отладки
+  });
 
   if (searchButton && searchDropdown && searchInput) {
-    // Открытие/закрытие поиска
     searchButton.addEventListener("click", (e) => {
       e.stopPropagation();
-      console.log("Search button clicked"); // Для отладки
+      console.log("Search button clicked");
       searchDropdown.classList.toggle("hidden");
       if (!searchDropdown.classList.contains("hidden")) {
         searchInput.focus();
       }
     });
 
-    // Закрытие при клике вне меню
     document.addEventListener("click", (e) => {
       if (
         !searchButton.contains(e.target) &&
@@ -65,12 +49,11 @@ function initSearch() {
       }
     });
 
-    // Предотвращение закрытия при клике внутри меню
     searchDropdown.addEventListener("click", (e) => {
       e.stopPropagation();
     });
   } else {
-    console.error("Search elements not found!"); // Для отладки
+    console.error("Search elements not found!");
   }
 }
 
@@ -83,12 +66,10 @@ function toggleTextBlock(button) {
   const isExpanded = textContent.style.maxHeight !== "100px";
 
   if (isExpanded) {
-    // Сворачивание кнопки
     textContent.style.maxHeight = "100px";
     gradientOverlay.style.opacity = "1";
     button.textContent = "Show more";
   } else {
-    // Разворачивание кнопки
     textContent.style.maxHeight = textContent.scrollHeight + "px";
     gradientOverlay.style.opacity = "0";
     button.textContent = "Show less";
@@ -96,12 +77,11 @@ function toggleTextBlock(button) {
 }
 
 // Открытие тултипа пароля
-document.addEventListener("DOMContentLoaded", () => {
+function initPasswordToggle() {
   const togglePassword = document.getElementById("toggle-password");
   const passwordInput = document.getElementById("password-input");
   const passwordTooltip = document.getElementById("password-tooltip");
 
-  // Переключение видимости пароля
   if (togglePassword && passwordInput) {
     togglePassword.addEventListener("click", () => {
       const type =
@@ -110,20 +90,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Показать подсказку при фокусе
   if (passwordInput && passwordTooltip) {
     passwordInput.addEventListener("focus", () => {
       passwordTooltip.classList.remove("hidden");
     });
 
-    // Скрыть подсказку при потере фокуса
     passwordInput.addEventListener("blur", () => {
       setTimeout(() => {
         passwordTooltip.classList.add("hidden");
       }, 200);
     });
   }
-});
+}
 
 // Функция инициализации кастомных дропдаунов
 function initCustomDropdowns() {
@@ -197,14 +175,20 @@ function initCustomDropdowns() {
     ".network-option-withdrawal"
   );
 
+  console.log("Elements found:", {
+    currencyButton,
+    networkButton,
+    currencyButtonBank,
+    withdrawalMethodButton,
+  });
+
   // Currency dropdown handlers (CRYPTO PAGE)
   if (currencyButton && currencyDropdown) {
     currencyButton.addEventListener("click", (e) => {
       e.stopPropagation();
+      console.log("Currency button clicked");
       currencyDropdown.classList.toggle("hidden");
-      if (networkDropdown) {
-        networkDropdown.classList.add("hidden");
-      }
+      if (networkDropdown) networkDropdown.classList.add("hidden");
     });
 
     currencyOptions.forEach((option) => {
@@ -233,10 +217,9 @@ function initCustomDropdowns() {
   if (networkButton && networkDropdown) {
     networkButton.addEventListener("click", (e) => {
       e.stopPropagation();
+      console.log("Network button clicked");
       networkDropdown.classList.toggle("hidden");
-      if (currencyDropdown) {
-        currencyDropdown.classList.add("hidden");
-      }
+      if (currencyDropdown) currencyDropdown.classList.add("hidden");
     });
 
     networkOptions.forEach((option) => {
@@ -255,6 +238,7 @@ function initCustomDropdowns() {
   if (currencyButtonBank && currencyDropdownBank) {
     currencyButtonBank.addEventListener("click", (e) => {
       e.stopPropagation();
+      console.log("Bank currency button clicked");
       currencyDropdownBank.classList.toggle("hidden");
     });
 
@@ -284,6 +268,7 @@ function initCustomDropdowns() {
   if (withdrawalMethodButton && withdrawalMethodDropdown) {
     withdrawalMethodButton.addEventListener("click", (e) => {
       e.stopPropagation();
+      console.log("Withdrawal method button clicked");
       withdrawalMethodDropdown.classList.toggle("hidden");
       if (currencyDropdownWithdrawal)
         currencyDropdownWithdrawal.classList.add("hidden");
@@ -307,6 +292,7 @@ function initCustomDropdowns() {
   if (currencyButtonWithdrawal && currencyDropdownWithdrawal) {
     currencyButtonWithdrawal.addEventListener("click", (e) => {
       e.stopPropagation();
+      console.log("Withdrawal currency button clicked");
       currencyDropdownWithdrawal.classList.toggle("hidden");
       if (withdrawalMethodDropdown)
         withdrawalMethodDropdown.classList.add("hidden");
@@ -340,6 +326,7 @@ function initCustomDropdowns() {
   if (networkButtonWithdrawal && networkDropdownWithdrawal) {
     networkButtonWithdrawal.addEventListener("click", (e) => {
       e.stopPropagation();
+      console.log("Withdrawal network button clicked");
       networkDropdownWithdrawal.classList.toggle("hidden");
       if (withdrawalMethodDropdown)
         withdrawalMethodDropdown.classList.add("hidden");
@@ -373,7 +360,7 @@ function initCustomDropdowns() {
   });
 }
 
-// Тултип
+// Тултип уровня
 function initLevelTooltip() {
   const button = document.getElementById("level-info-button");
   const tooltip = document.getElementById("level-info-tooltip");
@@ -384,29 +371,35 @@ function initLevelTooltip() {
       tooltip.classList.toggle("hidden");
     });
 
-    // Закрытие
     document.addEventListener("click", (e) => {
       if (!button.contains(e.target) && !tooltip.contains(e.target)) {
         tooltip.classList.add("hidden");
       }
     });
 
-    // Предотвращение закрытия
     tooltip.addEventListener("click", (e) => {
       e.stopPropagation();
     });
   }
 }
 
+// ГЛАВНАЯ ИНИЦИАЛИЗАЦИЯ
 document.addEventListener("DOMContentLoaded", () => {
+  // Загрузка компонентов
   loadComponent("header-container", "/src/components/header.html");
   loadComponent(
     "header-logged-container",
     "/src/components/header-logged.html"
   );
   loadComponent("footer-container", "/src/components/footer.html");
-  initCustomDropdowns();
-  initLevelTooltip();
+
+  // Инициализация с задержкой для элементов страницы
+  setTimeout(() => {
+    initCustomDropdowns();
+    initLevelTooltip();
+    initPasswordToggle();
+  }, 100);
 });
 
+// Экспорт функции для глобального использования
 window.toggleTextBlock = toggleTextBlock;
