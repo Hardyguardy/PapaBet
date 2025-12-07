@@ -48,7 +48,7 @@
 
     <!-- Кнопка "Начать" и бургер меню -->
     <div class="flex items-center gap-3 md:gap-4">
-      <!-- Кнопка Начать -->
+      <!-- Кнопка Начать - скрыта на мобильных -->
       <a href="/registration.html" class="hidden md:flex items-center">
         <span
           class="text-white bg-brand-primary rounded-lg px-4 md:px-6 py-1.5 md:py-2 font-family-secondary text-xs md:text-sm font-medium uppercase tracking-wide"
@@ -57,14 +57,15 @@
         </span>
       </a>
 
-      <!-- Бургер меню - только на мобильных -->
+      <!-- Бургер меню / Крестик - только на мобильных -->
       <button
         id="mobile-menu-button"
-        class="lg:hidden w-10 h-10 flex items-center justify-center"
+        class="lg:hidden w-10 h-10 flex items-center justify-center relative z-50"
       >
-        <img src="/assets/icons/menu.svg" alt="" />
-        <!-- <svg
-          class="w-6 h-6 text-brand-primary"
+        <!-- Иконка бургера -->
+        <svg
+          id="menu-icon-burger"
+          class="w-6 h-6 text-brand-primary transition-all duration-300"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -75,51 +76,133 @@
             stroke-width="2"
             d="M4 6h16M4 12h16M4 18h16"
           />
-        </svg> -->
+        </svg>
+        <!-- Иконка крестика -->
+        <svg
+          id="menu-icon-close"
+          class="w-6 h-6 text-brand-primary absolute opacity-0 transition-all duration-300"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
       </button>
     </div>
   </div>
+</header>
 
-  <!-- Мобильное меню -->
+<!-- Мобильное меню (полноэкранное) - ВЫНЕСЕНО ЗА ПРЕДЕЛЫ HEADER -->
+<div
+  id="mobile-menu"
+  class="lg:hidden fixed inset-0 bg-brand-secondary transform translate-x-full transition-transform duration-300 ease-in-out"
+  style="z-index: 9999"
+>
+  <!-- Хедер меню с логотипом и крестиком -->
   <div
-    id="mobile-menu"
-    class="hidden lg:hidden absolute top-full left-0 right-0 bg-brand-secondary border-t border-black/10 shadow-lg"
+    class="fixed top-0 left-0 right-0 h-[57px] bg-brand-secondary flex items-center justify-between px-4"
   >
-    <nav class="flex flex-col font-family-secondary p-4 space-y-2">
+    <!-- Логотип -->
+    <div class="flex items-center gap-2">
+      <img src="/assets/icons/Logo.svg" alt="PapaBet" class="h-8" />
+    </div>
+
+    <!-- Кнопка закрытия -->
+    <button
+      id="mobile-menu-close"
+      class="w-10 h-10 flex items-center justify-center"
+    >
+      <svg
+        class="w-6 h-6 text-brand-primary"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"
+        />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Контент меню -->
+  <div class="flex flex-col h-full pt-[57px]">
+    <!-- Поиск -->
+    <div class="px-6 py-6 border-b border-brand-primary/20">
+      <div class="relative">
+        <input
+          type="text"
+          placeholder="Поиск..."
+          class="w-full bg-transparent border-b-2 border-brand-primary text-brand-primary placeholder-brand-primary/60 py-3 pl-10 pr-10 focus:outline-none font-family-secondary text-sm uppercase"
+        />
+        <!-- Иконка поиска слева -->
+        <img
+          src="/assets/icons/Search.svg"
+          alt="Search"
+          class="w-5 h-5 absolute left-0 top-1/2 -translate-y-1/2"
+        />
+        <!-- Иконка стрелки справа -->
+        <img
+          src="/assets/icons/arrow-right-black.svg"
+          alt="Arrow"
+          class="w-2 h-2 absolute right-0 top-1/2 -translate-y-1/2"
+        />
+      </div>
+    </div>
+
+    <!-- Навигация -->
+    <nav
+      class="flex-1 flex flex-col items-center justify-center font-family-secondary space-y-8 px-6"
+    >
       <a
         href="#"
-        class="flex items-center gap-3 text-black text-sm font-medium uppercase tracking-wide hover:bg-black/10 p-3 rounded-lg transition"
+        class="flex items-center gap-4 text-brand-primary text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition"
       >
-        <img src="/assets/icons/Casino.svg" alt="" class="h-5 w-5" />
+        <img src="/assets/icons/Casino.svg" alt="" class="h-8 w-8" />
         <span>Казино</span>
       </a>
+
       <a
         href="#"
-        class="flex items-center gap-3 text-black text-sm font-medium uppercase tracking-wide hover:bg-black/10 p-3 rounded-lg transition"
+        class="flex items-center gap-4 text-brand-primary text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition"
       >
-        <img src="/assets/icons/Livecasino.svg" alt="" class="h-5 w-5" />
+        <img src="/assets/icons/Livecasino.svg" alt="" class="h-8 w-8" />
         <span>Live Казино</span>
       </a>
+
       <a
         href="#"
-        class="flex items-center gap-3 text-black text-sm font-medium uppercase tracking-wide hover:bg-black/10 p-3 rounded-lg transition"
+        class="flex items-center gap-4 text-brand-primary text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition"
       >
-        <img src="/assets/icons/Sport.svg" alt="" class="h-5 w-5" />
+        <img src="/assets/icons/Sport.svg" alt="" class="h-8 w-8" />
         <span>Спорт</span>
       </a>
+
       <a
         href="#"
-        class="flex items-center gap-3 text-black text-sm font-medium uppercase tracking-wide hover:bg-black/10 p-3 rounded-lg transition"
+        class="flex items-center gap-4 text-brand-primary text-2xl font-bold uppercase tracking-wide hover:opacity-70 transition"
       >
-        <img src="/assets/icons/Gacha.svg" alt="" class="h-5 w-5" />
+        <img src="/assets/icons/Gacha.svg" alt="" class="h-8 w-8" />
         <span>Gacha</span>
       </a>
-      <button
-        class="flex items-center gap-3 text-black text-sm font-medium uppercase tracking-wide hover:bg-black/10 p-3 rounded-lg transition"
-      >
-        <img src="/assets/icons/Search.svg" alt="PapaBet" class="h-5 w-5" />
-        <span>Поиск</span>
-      </button>
     </nav>
+
+    <!-- Кнопка "Начать" внизу -->
+    <div class="px-6 pb-8">
+      <a
+        href="/registration.html"
+        class="block w-full text-center bg-brand-primary text-white font-family-secondary text-lg font-bold uppercase tracking-wide py-4 rounded-lg hover:bg-brand-primary/90 transition"
+      >
+        Начать
+      </a>
+    </div>
   </div>
-</header>
+</div>

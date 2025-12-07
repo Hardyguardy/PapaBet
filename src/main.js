@@ -383,6 +383,95 @@ function initLevelTooltip() {
   }
 }
 
+// Мобильное меню
+// Мобильное меню (полноэкранное)
+function initMobileMenu() {
+  console.log("initMobileMenu called");
+
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const mobileMenuClose = document.getElementById("mobile-menu-close");
+  const menuIconBurger = document.getElementById("menu-icon-burger");
+  const menuIconClose = document.getElementById("menu-icon-close");
+
+  console.log("Mobile menu elements:", {
+    mobileMenuButton,
+    mobileMenu,
+    mobileMenuClose,
+  });
+
+  if (mobileMenuButton && mobileMenu) {
+    let isOpen = false;
+
+    // Открытие меню по клику на бургер
+    mobileMenuButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      console.log("Mobile menu button clicked");
+
+      if (!isOpen) {
+        // Открыть меню
+        mobileMenu.classList.remove("translate-x-full");
+        mobileMenu.classList.add("translate-x-0");
+        if (menuIconBurger) {
+          menuIconBurger.classList.remove("opacity-100");
+          menuIconBurger.classList.add("opacity-0");
+        }
+        if (menuIconClose) {
+          menuIconClose.classList.remove("opacity-0");
+          menuIconClose.classList.add("opacity-100");
+        }
+        document.body.style.overflow = "hidden";
+        isOpen = true;
+        console.log("Menu opened");
+      }
+    });
+
+    // Закрытие меню по клику на крестик
+    if (mobileMenuClose) {
+      mobileMenuClose.addEventListener("click", (e) => {
+        e.stopPropagation();
+        console.log("Close button clicked");
+
+        // Закрыть меню
+        mobileMenu.classList.remove("translate-x-0");
+        mobileMenu.classList.add("translate-x-full");
+        if (menuIconBurger) {
+          menuIconBurger.classList.remove("opacity-0");
+          menuIconBurger.classList.add("opacity-100");
+        }
+        if (menuIconClose) {
+          menuIconClose.classList.remove("opacity-100");
+          menuIconClose.classList.add("opacity-0");
+        }
+        document.body.style.overflow = "";
+        isOpen = false;
+        console.log("Menu closed");
+      });
+    }
+
+    // Закрытие при клике на ссылку в меню
+    const menuLinks = mobileMenu.querySelectorAll("a");
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("translate-x-0");
+        mobileMenu.classList.add("translate-x-full");
+        if (menuIconBurger) {
+          menuIconBurger.classList.remove("opacity-0");
+          menuIconBurger.classList.add("opacity-100");
+        }
+        if (menuIconClose) {
+          menuIconClose.classList.remove("opacity-100");
+          menuIconClose.classList.add("opacity-0");
+        }
+        document.body.style.overflow = "";
+        isOpen = false;
+      });
+    });
+  } else {
+    console.error("Mobile menu elements not found!");
+  }
+}
+
 // ГЛАВНАЯ ИНИЦИАЛИЗАЦИЯ
 document.addEventListener("DOMContentLoaded", () => {
   // Загрузка компонентов
@@ -398,6 +487,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initCustomDropdowns();
     initLevelTooltip();
     initPasswordToggle();
+    initMobileMenu();
   }, 100);
 });
 
