@@ -1,15 +1,16 @@
 <header
   class="fixed top-0 left-1/2 -translate-x-1/2 h-[57px] w-full bg-brand-secondary z-50"
 >
-  <div class="flex items-center h-full px-6 gap-30">
+  <div class="flex items-center justify-between h-full px-4 md:px-6">
     <!-- Логотип -->
-    <div class="flex items-center gap-3">
-      <img src="/assets/icons/Logo.svg" alt="PapaBet" class="h-10" />
-      <div class="flex items-baseline gap-1"></div>
+    <div class="flex items-center gap-2 md:gap-3">
+      <img src="/assets/icons/Logo.svg" alt="PapaBet" class="h-8 md:h-10" />
     </div>
 
-    <!-- Навигация -->
-    <nav class="flex font-family-secondary items-center gap-8 flex-1">
+    <!-- Навигация - скрыта на мобильных -->
+    <nav
+      class="hidden lg:flex font-family-secondary items-center gap-8 flex-1 ml-8"
+    >
       <a
         href="#"
         class="flex items-center gap-2 text-black text-sm font-medium uppercase tracking-wide hover:opacity-70"
@@ -29,15 +30,15 @@
         class="flex items-center gap-2 text-black text-sm font-medium uppercase tracking-wide hover:opacity-70"
       >
         <img src="/assets/icons/Sport.svg" alt="" class="h-5 w-5" />
-        <span> Спорт</span></a
-      >
+        <span>Спорт</span>
+      </a>
       <a
         href="#"
         class="flex items-center gap-2 text-black text-sm font-medium uppercase tracking-wide hover:opacity-70"
       >
         <img src="/assets/icons/Gacha.svg" alt="" class="h-5 w-5" />
-        <span>Gacha</span></a
-      >
+        <span>Gacha</span>
+      </a>
       <button
         class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-black/10"
       >
@@ -45,18 +46,80 @@
       </button>
     </nav>
 
-    <!-- Поиск и логин -->
-    <div class="flex items-center gap-4">
-      <!-- Логин -->
-      <a
-        href="/registration.html"
-        class="flex items-center gap-2 py-2 rounded-lg hover:bg-black/10"
-      >
+    <!-- Кнопка "Начать" и бургер меню -->
+    <div class="flex items-center gap-3 md:gap-4">
+      <!-- Кнопка Начать -->
+      <a href="/registration.html" class="hidden md:flex items-center">
         <span
-          class="text-white bg-brand-primary rounded-lg px-6 py-2 font-family-secondary text-sm font-medium uppercase tracking-wide"
-          >Начать</span
+          class="text-white bg-brand-primary rounded-lg px-4 md:px-6 py-1.5 md:py-2 font-family-secondary text-xs md:text-sm font-medium uppercase tracking-wide"
         >
+          Начать
+        </span>
       </a>
+
+      <!-- Бургер меню - только на мобильных -->
+      <button
+        id="mobile-menu-button"
+        class="lg:hidden w-10 h-10 flex items-center justify-center"
+      >
+        <img src="/assets/icons/menu.svg" alt="" />
+        <!-- <svg
+          class="w-6 h-6 text-brand-primary"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg> -->
+      </button>
     </div>
+  </div>
+
+  <!-- Мобильное меню -->
+  <div
+    id="mobile-menu"
+    class="hidden lg:hidden absolute top-full left-0 right-0 bg-brand-secondary border-t border-black/10 shadow-lg"
+  >
+    <nav class="flex flex-col font-family-secondary p-4 space-y-2">
+      <a
+        href="#"
+        class="flex items-center gap-3 text-black text-sm font-medium uppercase tracking-wide hover:bg-black/10 p-3 rounded-lg transition"
+      >
+        <img src="/assets/icons/Casino.svg" alt="" class="h-5 w-5" />
+        <span>Казино</span>
+      </a>
+      <a
+        href="#"
+        class="flex items-center gap-3 text-black text-sm font-medium uppercase tracking-wide hover:bg-black/10 p-3 rounded-lg transition"
+      >
+        <img src="/assets/icons/Livecasino.svg" alt="" class="h-5 w-5" />
+        <span>Live Казино</span>
+      </a>
+      <a
+        href="#"
+        class="flex items-center gap-3 text-black text-sm font-medium uppercase tracking-wide hover:bg-black/10 p-3 rounded-lg transition"
+      >
+        <img src="/assets/icons/Sport.svg" alt="" class="h-5 w-5" />
+        <span>Спорт</span>
+      </a>
+      <a
+        href="#"
+        class="flex items-center gap-3 text-black text-sm font-medium uppercase tracking-wide hover:bg-black/10 p-3 rounded-lg transition"
+      >
+        <img src="/assets/icons/Gacha.svg" alt="" class="h-5 w-5" />
+        <span>Gacha</span>
+      </a>
+      <button
+        class="flex items-center gap-3 text-black text-sm font-medium uppercase tracking-wide hover:bg-black/10 p-3 rounded-lg transition"
+      >
+        <img src="/assets/icons/Search.svg" alt="PapaBet" class="h-5 w-5" />
+        <span>Поиск</span>
+      </button>
+    </nav>
   </div>
 </header>
