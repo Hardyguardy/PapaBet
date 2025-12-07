@@ -605,111 +605,180 @@
               </div>
 
               <!-- Таблица -->
-              <div class="overflow-x-auto -mx-4 md:mx-0">
+              <div class="bg-brand-primary/50 rounded-lg overflow-hidden">
+                <!-- Хедер таблицы - ДЕСКТОП (5 колонок) -->
                 <div
-                  class="bg-brand-primary/50 rounded-lg overflow-hidden min-w-[600px] md:min-w-0"
+                  class="hidden md:grid md:grid-cols-5 gap-4 px-4 md:px-6 py-3 md:py-4 border-b border-gray-700"
                 >
                   <div
-                    class="grid grid-cols-5 gap-4 px-4 md:px-6 py-3 md:py-4 border-b border-gray-700"
+                    class="text-gray-400 text-xs md:text-sm font-semibold uppercase tracking-wide"
+                  >
+                    Игра
+                  </div>
+                  <div
+                    class="text-gray-400 text-xs md:text-sm font-semibold uppercase tracking-wide"
+                  >
+                    Игрок
+                  </div>
+                  <div
+                    class="text-gray-400 text-xs md:text-sm font-semibold uppercase tracking-wide"
+                  >
+                    Время
+                  </div>
+                  <div
+                    class="text-[#627EEA] text-xs md:text-sm font-semibold uppercase tracking-wide"
+                  >
+                    Множ.
+                  </div>
+                  <div
+                    class="text-gray-400 text-xs md:text-sm font-semibold uppercase tracking-wide text-right"
+                  >
+                    Выигрыш
+                  </div>
+                </div>
+
+                <!-- Хедер таблицы - МОБИЛЬНЫЙ (3 колонки) -->
+                <div
+                  class="grid md:hidden grid-cols-3 gap-4 px-4 py-3 border-b border-gray-700"
+                >
+                  <div
+                    class="text-gray-400 text-xs font-semibold uppercase tracking-wide"
+                  >
+                    Игра
+                  </div>
+                  <div
+                    class="text-gray-400 text-xs font-semibold uppercase tracking-wide"
+                  >
+                    Игрок
+                  </div>
+                  <div
+                    class="text-gray-400 text-xs font-semibold uppercase tracking-wide text-right"
+                  >
+                    Выигрыш
+                  </div>
+                </div>
+
+                <div id="bets-container">
+                  <!-- Строка 1 - Выигрыш -->
+                  <!-- ДЕСКТОП версия (5 колонок) -->
+                  <div
+                    class="hidden md:grid bg-[#253236] md:grid-cols-5 gap-4 px-4 md:px-6 py-3 md:py-4 border-b border-gray-700/50 hover:bg-white/5 transition"
                   >
                     <div
-                      class="text-gray-400 text-xs md:text-sm font-semibold uppercase tracking-wide"
+                      class="text-white text-xs md:text-sm font-medium truncate"
                     >
-                      Игра
+                      SWEET BONANZA
+                    </div>
+                    <div class="text-white text-xs md:text-sm truncate">
+                      IVAN777
+                    </div>
+                    <div class="text-gray-400 text-xs md:text-sm">08:45</div>
+                    <div
+                      class="text-[#627EEA] text-xs md:text-sm font-semibold"
+                    >
+                      X 0.5
                     </div>
                     <div
-                      class="text-gray-400 text-xs md:text-sm font-semibold uppercase tracking-wide"
+                      class="text-[#4ADE80] text-xs md:text-sm font-semibold text-right"
                     >
-                      Игрок
-                    </div>
-                    <div
-                      class="text-gray-400 text-xs md:text-sm font-semibold uppercase tracking-wide"
-                    >
-                      Время
-                    </div>
-                    <div
-                      class="text-[#627EEA] text-xs md:text-sm font-semibold uppercase tracking-wide"
-                    >
-                      Множ.
-                    </div>
-                    <div
-                      class="text-gray-400 text-xs md:text-sm font-semibold uppercase tracking-wide text-right"
-                    >
-                      Выигрыш
+                      +27.8 USDT
                     </div>
                   </div>
 
-                  <div id="bets-container">
-                    <div
-                      class="grid bg-[#253236] grid-cols-5 gap-4 px-4 md:px-6 py-3 md:py-4 border-b border-gray-700/50 hover:bg-white/5 transition"
-                    >
-                      <div
-                        class="text-white text-xs md:text-sm font-medium truncate"
-                      >
-                        SWEET BONANZA
-                      </div>
-                      <div class="text-white text-xs md:text-sm truncate">
-                        IVAN777
-                      </div>
-                      <div class="text-gray-400 text-xs md:text-sm">08:45</div>
-                      <div
-                        class="text-[#627EEA] text-xs md:text-sm font-semibold"
-                      >
-                        X 0.5
-                      </div>
-                      <div
-                        class="text-[#4ADE80] text-xs md:text-sm font-semibold text-right"
-                      >
-                        +27.8
-                      </div>
+                  <!-- МОБИЛЬНАЯ версия (3 колонки) -->
+                  <div
+                    class="grid md:hidden bg-[#253236] grid-cols-3 gap-4 px-4 py-3 border-b border-gray-700/50"
+                  >
+                    <div class="text-white text-xs font-medium truncate">
+                      SWEET BONANZA
                     </div>
-
+                    <div class="text-white text-xs truncate">IVAN777</div>
                     <div
-                      class="grid grid-cols-5 gap-4 px-4 md:px-6 py-3 md:py-4 border-b border-gray-700/50 hover:bg-white/5 transition"
+                      class="text-[#4ADE80] text-xs font-semibold text-right"
                     >
-                      <div
-                        class="text-white text-xs md:text-sm font-medium truncate"
-                      >
-                        SWEET BONANZA
-                      </div>
-                      <div class="text-white text-xs md:text-sm truncate">
-                        IVAN777
-                      </div>
-                      <div class="text-gray-400 text-xs md:text-sm">08:45</div>
-                      <div
-                        class="text-[#627EEA] text-xs md:text-sm font-semibold"
-                      >
-                        X 0.5
-                      </div>
-                      <div
-                        class="text-[#EF4444] text-xs md:text-sm font-semibold text-right"
-                      >
-                        -27.8
-                      </div>
+                      +27.8
                     </div>
+                  </div>
 
+                  <!-- Строка 2 - Проигрыш -->
+                  <!-- ДЕСКТОП версия -->
+                  <div
+                    class="hidden md:grid md:grid-cols-5 gap-4 px-4 md:px-6 py-3 md:py-4 border-b border-gray-700/50 hover:bg-white/5 transition"
+                  >
                     <div
-                      class="grid bg-[#253236] grid-cols-5 gap-4 px-4 md:px-6 py-3 md:py-4 hover:bg-white/5 transition"
+                      class="text-white text-xs md:text-sm font-medium truncate"
                     >
-                      <div
-                        class="text-white text-xs md:text-sm font-medium truncate"
-                      >
-                        SWEET BONANZA
-                      </div>
-                      <div class="text-white text-xs md:text-sm truncate">
-                        IVAN777
-                      </div>
-                      <div class="text-gray-400 text-xs md:text-sm">08:45</div>
-                      <div
-                        class="text-[#627EEA] text-xs md:text-sm font-semibold"
-                      >
-                        X 0.5
-                      </div>
-                      <div
-                        class="text-[#4ADE80] text-xs md:text-sm font-semibold text-right"
-                      >
-                        +27.8
-                      </div>
+                      SWEET BONANZA
+                    </div>
+                    <div class="text-white text-xs md:text-sm truncate">
+                      IVAN777
+                    </div>
+                    <div class="text-gray-400 text-xs md:text-sm">08:45</div>
+                    <div
+                      class="text-[#627EEA] text-xs md:text-sm font-semibold"
+                    >
+                      X 0.5
+                    </div>
+                    <div
+                      class="text-[#EF4444] text-xs md:text-sm font-semibold text-right"
+                    >
+                      -27.8 USDT
+                    </div>
+                  </div>
+
+                  <!-- МОБИЛЬНАЯ версия -->
+                  <div
+                    class="grid md:hidden grid-cols-3 gap-4 px-4 py-3 border-b border-gray-700/50"
+                  >
+                    <div class="text-white text-xs font-medium truncate">
+                      SWEET BONANZA
+                    </div>
+                    <div class="text-white text-xs truncate">IVAN777</div>
+                    <div
+                      class="text-[#EF4444] text-xs font-semibold text-right"
+                    >
+                      -27.8
+                    </div>
+                  </div>
+
+                  <!-- Строка 3 - Выигрыш -->
+                  <!-- ДЕСКТОП версия -->
+                  <div
+                    class="hidden md:grid bg-[#253236] md:grid-cols-5 gap-4 px-4 md:px-6 py-3 md:py-4 hover:bg-white/5 transition"
+                  >
+                    <div
+                      class="text-white text-xs md:text-sm font-medium truncate"
+                    >
+                      SWEET BONANZA
+                    </div>
+                    <div class="text-white text-xs md:text-sm truncate">
+                      IVAN777
+                    </div>
+                    <div class="text-gray-400 text-xs md:text-sm">08:45</div>
+                    <div
+                      class="text-[#627EEA] text-xs md:text-sm font-semibold"
+                    >
+                      X 0.5
+                    </div>
+                    <div
+                      class="text-[#4ADE80] text-xs md:text-sm font-semibold text-right"
+                    >
+                      +27.8 USDT
+                    </div>
+                  </div>
+
+                  <!-- МОБИЛЬНАЯ версия -->
+                  <div
+                    class="grid md:hidden bg-[#253236] grid-cols-3 gap-4 px-4 py-3"
+                  >
+                    <div class="text-white text-xs font-medium truncate">
+                      SWEET BONANZA
+                    </div>
+                    <div class="text-white text-xs truncate">IVAN777</div>
+                    <div
+                      class="text-[#4ADE80] text-xs font-semibold text-right"
+                    >
+                      +27.8
                     </div>
                   </div>
                 </div>
