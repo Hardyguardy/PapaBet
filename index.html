@@ -9,971 +9,940 @@
   <body class="bg-brand-primary">
     <div id="header-container"></div>
 
-    <div class="pt-[57px] max-w-full mx-auto flex">
-      <!-- Сайдбар -->
-      <aside
-        class="fixed left-0 top-[57px] w-80 h-[calc(100vh-57px)] bg-brand-primary overflow-y-auto border-r border-gray-800 z-40"
-      >
-        <!-- Battlepass -->
-        <div class="px-6 mb-6 mt-6">
-          <div class="relative rounded-lg overflow-hidden bg-black/30 h-48">
-            <!-- Текст сверху -->
-            <div class="absolute top-4 left-4">
-              <h3 class="text-white text-2xl font-bold mb-2">Battlepass</h3>
-            </div>
+    <div class="pt-[57px] max-w-full mx-auto">
+      <!-- Мобильный сайдбар (под хедером) - видим только на мобильных -->
+      <!-- Мобильный сайдбар (под хедером) - видим только на мобильных -->
+      <div class="lg:hidden w-full bg-brand-primary border-b border-gray-800">
+        <div class="flex items-center justify-between px-4 py-4">
+          <!-- ИГРЫ -->
+          <button id="mobile-games-button" class="flex items-center gap-2">
+            <img src="/assets/icons/dinosaur.svg" alt="" class="h-5 w-5" />
+            <span
+              class="text-brand-secondary text-base font-bold font-family-secondary uppercase tracking-wide"
+              >Игры</span
+            >
+          </button>
 
-            <!-- Кнопка снизу -->
-            <div class="absolute bottom-4 left-4">
-              <button
-                class="px-6 py-2 bg-[#cddc39] text-black font-bold rounded-lg hover:bg-[#b8c935] transition uppercase"
-              >
-                Начать
-              </button>
-            </div>
-          </div>
+          <!-- СЕРВИСЫ -->
+          <button id="mobile-services-button" class="flex items-center gap-2">
+            <img src="/assets/icons/cocktail.svg" alt="" class="h-5 w-5" />
+            <span
+              class="text-gray-400 text-base font-bold font-family-secondary uppercase tracking-wide"
+              >Сервисы</span
+            >
+          </button>
 
-          <p class="mt-3 text-sm text-[#cddc39]">
-            Получите потрясающие награды с battlepass
-          </p>
+          <!-- Иконка стрелки (справа) -->
+          <button
+            id="mobile-toggle-button"
+            class="w-8 h-8 flex items-center justify-center"
+          >
+            <img
+              id="arrow-icon"
+              src="/assets/icons/arrow-right.svg"
+              alt=""
+              class="h-2 w-2 transition-transform duration-300"
+            />
+          </button>
         </div>
 
-        <!-- Игры -->
-        <div class="px-6 mb-6">
-          <div class="flex items-center gap-2 mb-4">
-            <img src="/assets/icons/dinosaur.svg" alt="" class="h-5" />
-            <h4
-              class="text-[20px] font-family-secondary uppercase tracking-wider text-brand-secondary font-regular"
-            >
-              Игры
-            </h4>
-          </div>
-          <nav class="space-y-1 font-family-base font-medium">
+        <!-- Выпадающее меню ИГРЫ -->
+        <div
+          id="mobile-games-menu"
+          class="hidden bg-[#1a2c38] border-t border-gray-800"
+        >
+          <nav
+            class="px-4 py-3 space-y-2 font-family-base font-medium max-h-[400px] overflow-y-auto"
+          >
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              class="block text-white hover:text-[#cddc39] transition text-base py-2"
               >Главная</a
             >
             <a
               href="all-games-popular.html"
-              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              class="block text-white hover:text-[#cddc39] transition text-base py-2"
               >Популярные игры</a
             >
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              class="block text-white hover:text-[#cddc39] transition text-base py-2"
               >Слоты</a
             >
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              class="block text-white hover:text-[#cddc39] transition text-base py-2"
               >Лотерея</a
             >
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              class="block text-white hover:text-[#cddc39] transition text-base py-2"
               >LIVE казино</a
             >
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              class="block text-white hover:text-[#cddc39] transition text-base py-2"
               >Ставки на спорт</a
             >
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              class="block text-white hover:text-[#cddc39] transition text-base py-2"
               >Новинки</a
             >
             <a
               href="all-games-provider.html"
-              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              class="block text-white hover:text-[#cddc39] transition text-base py-2"
               >Провайдеры</a
             >
           </nav>
         </div>
 
-        <!-- Сервисы -->
-        <div class="px-6 pb-6">
-          <div class="flex items-center gap-2 mb-4">
-            <img src="/assets/icons/cocktail.svg" alt="" class="h-5" />
-            <h4
-              class="text-[20px] font-family-secondary uppercase tracking-wider text-brand-accent font-regular"
-            >
-              Сервисы
-            </h4>
-          </div>
-          <nav class="space-y-1 font-family-base font-medium">
+        <!-- Выпадающее меню СЕРВИСЫ -->
+        <div
+          id="mobile-services-menu"
+          class="hidden bg-[#1a2c38] border-t border-gray-800"
+        >
+          <nav
+            class="px-4 py-3 space-y-2 font-family-base font-medium max-h-[400px] overflow-y-auto"
+          >
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              class="block text-white hover:text-[#cddc39] transition text-base py-2"
               >VIP клуб</a
             >
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              class="block text-white hover:text-[#cddc39] transition text-base py-2"
               >Партнерство</a
             >
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              class="block text-white hover:text-[#cddc39] transition text-base py-2"
               >Заработать</a
             >
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              class="block text-white hover:text-[#cddc39] transition text-base py-2"
               >Честность игр</a
             >
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              class="block text-white hover:text-[#cddc39] transition text-base py-2"
               >Ответственная игры</a
             >
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              class="block text-white hover:text-[#cddc39] transition text-base py-2"
               >Техподдержка</a
             >
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              class="block text-white hover:text-[#cddc39] transition text-base py-2"
               >Акции</a
             >
           </nav>
-        </div>
-      </aside>
 
-      <!-- Главный контент -->
-      <main class="flex-1 ml-80 min-w-0">
-        <div class="px-6 py-6">
-          <div class="relative w-full h-[326px] rounded-[5px] overflow-hidden">
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-[#C7F121] to-transparent"
-            ></div>
+          <!-- Battlepass  -->
+          <div class="px-4 pb-4 pt-2">
+            <div class="relative rounded-lg overflow-hidden h-48">
+              <!-- Фоновое изображение -->
+              <!-- <img
+                src="/assets/images/battlepass-bg.jpg"
+                alt="Battlepass"
+                class="absolute inset-0 w-full h-full object-cover"
+              /> -->
 
-            <!-- Фон -->
-            <div class="absolute inset-0 bg-black opacity-30"></div>
+              <!-- Overlay -->
+              <div class="absolute inset-0 bg-black/30"></div>
 
-            <!-- Контент -->
-            <div
-              class="relative z-10 flex flex-col items-center justify-center h-full px-12 text-center"
-            >
-              <!-- Текст -->
-              <p
-                class="text-white font-family-secondary text-sm uppercase tracking-widest mb-6"
+              <!-- Контент -->
+              <div
+                class="relative z-10 h-full flex flex-col justify-between p-4"
               >
-                Регистрируйся и получи бонус к<br />
-                депозиту до 1000$ и 30 фриспинов!
-              </p>
-
-              <!-- Главный текст -->
-              <h1
-                class="text-white font-family-base font-bold text-6xl mb-8 leading-tight"
-              >
-                Крутани как папа!
-              </h1>
-
-              <!-- Кнопка -->
-              <button
-                class="px-4 py-2 bg-[#1a2c38] text-white font-family-secondary font-regularr text-lg rounded-lg hover:bg-[#253847] transition uppercase tracking-wide"
-              >
-                Начать игру
-              </button>
+                <h3 class="text-white text-xl font-bold">Battlepass</h3>
+                <div>
+                  <button
+                    class="px-4 py-1.5 bg-[#cddc39] text-black text-sm font-bold rounded-lg hover:bg-[#b8c935] transition uppercase"
+                  >
+                    Начать
+                  </button>
+                </div>
+              </div>
             </div>
+            <p class="mt-2 text-xs text-[#cddc39]">
+              Получите потрясающие награды с battlepass
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Контент с сайдбаром -->
+      <div class="flex">
+        <!-- Десктопный сайдбар - скрыт на мобильных -->
+        <aside
+          class="hidden lg:block fixed left-0 top-[57px] w-80 h-[calc(100vh-57px)] bg-brand-primary overflow-y-auto border-r border-gray-800 z-40"
+        >
+          <!-- Battlepass -->
+          <div class="px-6 mb-6 mt-6">
+            <div class="relative rounded-lg overflow-hidden bg-black/30 h-48">
+              <div class="absolute top-4 left-4">
+                <h3 class="text-white text-2xl font-bold mb-2">Battlepass</h3>
+              </div>
+              <div class="absolute bottom-4 left-4">
+                <button
+                  class="px-6 py-2 bg-[#cddc39] text-black font-bold rounded-lg hover:bg-[#b8c935] transition uppercase"
+                >
+                  Начать
+                </button>
+              </div>
+            </div>
+            <p class="mt-3 text-sm text-[#cddc39]">
+              Получите потрясающие награды с battlepass
+            </p>
           </div>
 
-          <!-- Популярные игры -->
-          <section>
-            <!-- Заголовок -->
-            <div class="flex items-center gap-3 mb-6 mt-[60px]">
-              <img src="assets/icons/Guitar.svg" alt="PapaBet" class="h-8" />
+          <!-- Игры -->
+          <div class="px-6 mb-6">
+            <div class="flex items-center gap-2 mb-4">
+              <img src="/assets/icons/dinosaur.svg" alt="" class="h-5" />
+              <h4
+                class="text-[20px] font-family-secondary uppercase tracking-wider text-brand-secondary font-regular"
+              >
+                Игры
+              </h4>
+            </div>
+            <nav class="space-y-1 font-family-base font-medium">
+              <a
+                href="#"
+                class="block text-white hover:text-[#cddc39] transition text-[18px]"
+                >Главная</a
+              >
+              <a
+                href="all-games-popular.html"
+                class="block text-white hover:text-[#cddc39] transition text-[18px]"
+                >Популярные игры</a
+              >
+              <a
+                href="#"
+                class="block text-white hover:text-[#cddc39] transition text-[18px]"
+                >Слоты</a
+              >
+              <a
+                href="#"
+                class="block text-white hover:text-[#cddc39] transition text-[18px]"
+                >Лотерея</a
+              >
+              <a
+                href="#"
+                class="block text-white hover:text-[#cddc39] transition text-[18px]"
+                >LIVE казино</a
+              >
+              <a
+                href="#"
+                class="block text-white hover:text-[#cddc39] transition text-[18px]"
+                >Ставки на спорт</a
+              >
+              <a
+                href="#"
+                class="block text-white hover:text-[#cddc39] transition text-[18px]"
+                >Новинки</a
+              >
+              <a
+                href="all-games-provider.html"
+                class="block text-white hover:text-[#cddc39] transition text-[18px]"
+                >Провайдеры</a
+              >
+            </nav>
+          </div>
 
-              <h2 class="text-white text-3xl font-bold">Популярные игры</h2>
+          <!-- Сервисы -->
+          <div class="px-6 pb-6">
+            <div class="flex items-center gap-2 mb-4">
+              <img src="/assets/icons/cocktail.svg" alt="" class="h-5" />
+              <h4
+                class="text-[20px] font-family-secondary uppercase tracking-wider text-brand-accent font-regular"
+              >
+                Сервисы
+              </h4>
+            </div>
+            <nav class="space-y-1 font-family-base font-medium">
+              <a
+                href="#"
+                class="block text-white hover:text-[#cddc39] transition text-[18px]"
+                >VIP клуб</a
+              >
+              <a
+                href="#"
+                class="block text-white hover:text-[#cddc39] transition text-[18px]"
+                >Партнерство</a
+              >
+              <a
+                href="#"
+                class="block text-white hover:text-[#cddc39] transition text-[18px]"
+                >Заработать</a
+              >
+              <a
+                href="#"
+                class="block text-white hover:text-[#cddc39] transition text-[18px]"
+                >Честность игр</a
+              >
+              <a
+                href="#"
+                class="block text-white hover:text-[#cddc39] transition text-[18px]"
+                >Ответственная игры</a
+              >
+              <a
+                href="#"
+                class="block text-white hover:text-[#cddc39] transition text-[18px]"
+                >Техподдержка</a
+              >
+              <a
+                href="#"
+                class="block text-white hover:text-[#cddc39] transition text-[18px]"
+                >Акции</a
+              >
+            </nav>
+          </div>
+        </aside>
+
+        <!-- Главный контент -->
+        <main class="flex-1 lg:ml-80 min-w-0">
+          <div class="px-4 md:px-6 py-4 md:py-6">
+            <!-- Hero Banner -->
+            <div
+              class="relative w-full h-[200px] md:h-[326px] rounded-[5px] overflow-hidden mb-8 md:mb-12"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#C7F121] to-transparent"
+              ></div>
+              <div class="absolute inset-0 bg-black opacity-30"></div>
+              <div
+                class="relative z-10 flex flex-col items-center justify-center h-full px-4 md:px-12 text-center"
+              >
+                <p
+                  class="text-white font-family-secondary text-xs md:text-sm uppercase tracking-widest mb-3 md:mb-6"
+                >
+                  Регистрируйся и получи бонус к<br />
+                  депозиту до 1000$ и 30 фриспинов!
+                </p>
+                <h1
+                  class="text-white font-family-base font-bold text-3xl md:text-6xl mb-4 md:mb-8 leading-tight"
+                >
+                  Крутани как папа!
+                </h1>
+                <button
+                  class="px-4 py-2 bg-[#1a2c38] text-white font-family-secondary text-sm md:text-lg rounded-lg hover:bg-[#253847] transition uppercase tracking-wide"
+                >
+                  Начать игру
+                </button>
+              </div>
             </div>
 
-            <div class="grid grid-cols-5 gap-4">
-              <!-- Game 1 -->
-              <a href="/game-page.html" class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </a>
-
-              <!-- Game 2 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Barbarossa</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Peter & Sons
-                </p>
-              </div>
-
-              <!-- Game 3 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </div>
-
-              <!-- Game 4 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Barbarossa</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Peter & Sons
-                </p>
-              </div>
-
-              <!-- Game 5 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </div>
-            </div>
-          </section>
-
-          <!-- Крипто депозиты и обычные способы пополнения -->
-          <section class="mt-12">
-            <!-- Заголовок с иконкой и стрелками -->
-            <div class="flex items-center justify-between mb-6">
-              <div class="flex items-center gap-3">
-                <img src="assets/icons/Guitar.svg" alt="PapaBet" class="h-8" />
-
-                <h2 class="text-white text-3xl font-bold">
-                  Крипто депозиты и обычные способы пополнения
+            <!-- Популярные игры -->
+            <section class="mb-8 md:mb-12">
+              <div class="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+                <img
+                  src="assets/icons/Guitar.svg"
+                  alt="PapaBet"
+                  class="h-6 md:h-8"
+                />
+                <h2 class="text-white text-xl md:text-3xl font-bold">
+                  Популярные игры
                 </h2>
               </div>
 
-              <!-- Навигация -->
-              <div class="flex gap-2">
-                <button
-                  class="w-5 h-5 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition"
-                >
-                  <img
-                    src="assets/icons/arrow-left.svg"
-                    alt="PapaBet"
-                    class="h-2"
-                  />
-                </button>
-                <button
-                  class="w-5 h-5 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition"
-                >
-                  <img
-                    src="assets/icons/arrow-right.svg"
-                    alt="PapaBet"
-                    class="h-2"
-                  />
-                </button>
-              </div>
-            </div>
+              <div
+                class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4"
+              >
+                <a href="/game-page.html" class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </a>
 
-            <!-- Способы оплаты -->
-            <div class="grid grid-cols-5 gap-4">
-              <!-- Ethereum -->
-              <div class="cursor-pointer group">
-                <div
-                  class="w-full aspect-[16/9] bg-[#627EEA] rounded-lg p-6 flex flex-col items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
-                >
-                  <img
-                    src="assets/icons/ethereum.png"
-                    alt="PapaBet"
-                    class="h-19"
-                  />
-                  <p class="text-white text-sm font-semibold">Ethereum</p>
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Barbarossa
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Peter & Sons
+                  </p>
                 </div>
-              </div>
 
-              <!-- Bitcoin -->
-              <div class="cursor-pointer group">
-                <div
-                  class="w-full aspect-[16/9] bg-[#F7931A] rounded-lg p-6 flex flex-col items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
-                >
-                  <img
-                    src="assets/icons/bitcoin.png"
-                    alt="PapaBet"
-                    class="h-19"
-                  />
-                  <p class="text-white text-sm font-semibold">Bitcoin</p>
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
                 </div>
-              </div>
 
-              <!-- Mastercard -->
-              <div class="cursor-pointer group">
-                <div
-                  class="w-full h-full aspect-[16/9] bg-[#000000] rounded-lg p-6 flex flex-col items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
-                >
-                  <img
-                    src="assets/icons/mastercard.png"
-                    alt="PapaBet"
-                    class="h-[60px] w-[100px]"
-                  />
-                  <p class="text-white text-sm font-semibold mt-3">
-                    Mastercard
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Barbarossa
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Peter & Sons
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
                   </p>
                 </div>
               </div>
+            </section>
 
-              <!-- Apple Pay -->
-              <div class="cursor-pointer group">
-                <div
-                  class="w-full h-full aspect-[16/9] bg-[#E5E5E5] rounded-lg p-6 flex flex-col items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
-                >
+            <!-- Крипто депозиты -->
+            <section class="mb-8 md:mb-12">
+              <div class="flex items-center justify-between mb-4 md:mb-6">
+                <div class="flex items-center gap-2 md:gap-3">
                   <img
-                    src="assets/icons/applepay.png"
+                    src="assets/icons/Guitar.svg"
                     alt="PapaBet"
-                    class="h-[46px] w-[112px] mt-4"
+                    class="h-6 md:h-8"
                   />
-                  <p class="text-black text-sm font-semibold mt-2">Apple Pay</p>
+                  <h2 class="text-white text-base md:text-3xl font-bold">
+                    Крипто депозиты
+                  </h2>
+                </div>
+                <div class="flex gap-2">
+                  <button
+                    class="w-5 h-5 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition"
+                  >
+                    <img
+                      src="assets/icons/arrow-left.svg"
+                      alt="PapaBet"
+                      class="h-2"
+                    />
+                  </button>
+                  <button
+                    class="w-5 h-5 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition"
+                  >
+                    <img
+                      src="assets/icons/arrow-right.svg"
+                      alt="PapaBet"
+                      class="h-2"
+                    />
+                  </button>
                 </div>
               </div>
 
-              <!-- Visa -->
-              <div class="cursor-pointer group">
-                <div
-                  class="w-full aspect-[16/9] bg-white rounded-lg p-6 flex flex-col items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
-                >
-                  <img src="assets/icons/visa.png" alt="PapaBet" class="h-19" />
-                  <p class="text-[#1A1F71] text-sm font-semibold">Visa</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- 30% bonus deposit -->
-          <section class="mt-12">
-            <div
-              class="relative w-full h-[122px] rounded-[5px] overflow-hidden cursor-pointer hover:ring-2 hover:ring-[#cddc39] transition"
-            >
-              <div class="absolute inset-0 bg-black opacity-30"></div>
-
               <div
-                class="absolute inset-0 bg-gradient-to-t from-[#C7F121]/60 via-[#C7F121]/20 to-transparent"
-              ></div>
-
-              <div
-                class="relative z-10 flex items-center justify-center h-full"
+                class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4"
               >
-                <h2
-                  class="text-white font-medium font-family-secondary text-[32px] uppercase tracking-widest"
+                <div class="cursor-pointer group">
+                  <div
+                    class="w-full aspect-[16/9] bg-[#627EEA] rounded-lg p-4 md:p-6 flex flex-col items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
+                  >
+                    <img
+                      src="assets/icons/ethereum.png"
+                      alt="PapaBet"
+                      class="h-12 md:h-19"
+                    />
+                    <p class="text-white text-xs md:text-sm font-semibold mt-2">
+                      Ethereum
+                    </p>
+                  </div>
+                </div>
+
+                <div class="cursor-pointer group">
+                  <div
+                    class="w-full aspect-[16/9] bg-[#F7931A] rounded-lg p-4 md:p-6 flex flex-col items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
+                  >
+                    <img
+                      src="assets/icons/bitcoin.png"
+                      alt="PapaBet"
+                      class="h-12 md:h-19"
+                    />
+                    <p class="text-white text-xs md:text-sm font-semibold mt-2">
+                      Bitcoin
+                    </p>
+                  </div>
+                </div>
+
+                <div class="cursor-pointer group">
+                  <div
+                    class="w-full aspect-[16/9] bg-[#000000] rounded-lg p-4 md:p-6 flex flex-col items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
+                  >
+                    <img
+                      src="assets/icons/mastercard.png"
+                      alt="PapaBet"
+                      class="h-10 md:h-[60px] w-16 md:w-[100px]"
+                    />
+                    <p class="text-white text-xs md:text-sm font-semibold mt-2">
+                      Mastercard
+                    </p>
+                  </div>
+                </div>
+
+                <div class="cursor-pointer group">
+                  <div
+                    class="w-full aspect-[16/9] bg-[#E5E5E5] rounded-lg p-4 md:p-6 flex flex-col items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
+                  >
+                    <img
+                      src="assets/icons/applepay.png"
+                      alt="PapaBet"
+                      class="h-8 md:h-[46px] w-20 md:w-[112px]"
+                    />
+                    <p class="text-black text-xs md:text-sm font-semibold mt-1">
+                      Apple Pay
+                    </p>
+                  </div>
+                </div>
+
+                <div class="cursor-pointer group">
+                  <div
+                    class="w-full aspect-[16/9] bg-white rounded-lg p-4 md:p-6 flex flex-col items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
+                  >
+                    <img
+                      src="assets/icons/visa.png"
+                      alt="PapaBet"
+                      class="h-12 md:h-19"
+                    />
+                    <p
+                      class="text-[#1A1F71] text-xs md:text-sm font-semibold mt-2"
+                    >
+                      Visa
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- 30% bonus banner -->
+            <section class="mb-8 md:mb-12">
+              <div
+                class="relative w-full h-[80px] md:h-[122px] rounded-[5px] overflow-hidden cursor-pointer hover:ring-2 hover:ring-[#cddc39] transition"
+              >
+                <div class="absolute inset-0 bg-black opacity-30"></div>
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-[#C7F121]/60 via-[#C7F121]/20 to-transparent"
+                ></div>
+                <div
+                  class="relative z-10 flex items-center justify-center h-full"
                 >
-                  30% бонус на депозит
+                  <h2
+                    class="text-white font-medium font-family-secondary text-lg md:text-[32px] uppercase tracking-widest"
+                  >
+                    30% бонус на депозит
+                  </h2>
+                </div>
+              </div>
+            </section>
+
+            <!-- Последние Ставки -->
+            <section class="mb-8 md:mb-12">
+              <div
+                class="flex flex-col md:flex-row md:items-center justify-between mb-4 md:mb-6 gap-3"
+              >
+                <div class="flex items-center gap-2 md:gap-3">
+                  <img
+                    src="assets/icons/Guitar.svg"
+                    alt="PapaBet"
+                    class="h-6 md:h-8"
+                  />
+                  <h2 class="text-white text-xl md:text-3xl font-bold">
+                    Последние ставки
+                  </h2>
+                </div>
+
+                <div class="flex gap-2 overflow-x-auto">
+                  <button
+                    class="px-3 md:px-4 py-1.5 md:py-2 bg-[#cddc39] text-black text-xs md:text-sm font-semibold rounded-lg hover:bg-[#b8c935] transition uppercase whitespace-nowrap"
+                  >
+                    Лайв
+                  </button>
+                  <button
+                    class="px-3 md:px-4 py-1.5 md:py-2 bg-white/10 text-white text-xs md:text-sm font-semibold rounded-lg hover:bg-white/20 transition uppercase whitespace-nowrap"
+                  >
+                    Неделя
+                  </button>
+                  <button
+                    class="px-3 md:px-4 py-1.5 md:py-2 bg-white/10 text-white text-xs md:text-sm font-semibold rounded-lg hover:bg-white/20 transition uppercase whitespace-nowrap"
+                  >
+                    Месяц
+                  </button>
+                  <button
+                    class="px-3 md:px-4 py-1.5 md:py-2 bg-white/10 text-white text-xs md:text-sm font-semibold rounded-lg hover:bg-white/20 transition uppercase whitespace-nowrap"
+                  >
+                    Все время
+                  </button>
+                </div>
+              </div>
+
+              <!-- Таблица -->
+              <div class="overflow-x-auto -mx-4 md:mx-0">
+                <div
+                  class="bg-brand-primary/50 rounded-lg overflow-hidden min-w-[600px] md:min-w-0"
+                >
+                  <div
+                    class="grid grid-cols-5 gap-4 px-4 md:px-6 py-3 md:py-4 border-b border-gray-700"
+                  >
+                    <div
+                      class="text-gray-400 text-xs md:text-sm font-semibold uppercase tracking-wide"
+                    >
+                      Игра
+                    </div>
+                    <div
+                      class="text-gray-400 text-xs md:text-sm font-semibold uppercase tracking-wide"
+                    >
+                      Игрок
+                    </div>
+                    <div
+                      class="text-gray-400 text-xs md:text-sm font-semibold uppercase tracking-wide"
+                    >
+                      Время
+                    </div>
+                    <div
+                      class="text-[#627EEA] text-xs md:text-sm font-semibold uppercase tracking-wide"
+                    >
+                      Множ.
+                    </div>
+                    <div
+                      class="text-gray-400 text-xs md:text-sm font-semibold uppercase tracking-wide text-right"
+                    >
+                      Выигрыш
+                    </div>
+                  </div>
+
+                  <div id="bets-container">
+                    <div
+                      class="grid bg-[#253236] grid-cols-5 gap-4 px-4 md:px-6 py-3 md:py-4 border-b border-gray-700/50 hover:bg-white/5 transition"
+                    >
+                      <div
+                        class="text-white text-xs md:text-sm font-medium truncate"
+                      >
+                        SWEET BONANZA
+                      </div>
+                      <div class="text-white text-xs md:text-sm truncate">
+                        IVAN777
+                      </div>
+                      <div class="text-gray-400 text-xs md:text-sm">08:45</div>
+                      <div
+                        class="text-[#627EEA] text-xs md:text-sm font-semibold"
+                      >
+                        X 0.5
+                      </div>
+                      <div
+                        class="text-[#4ADE80] text-xs md:text-sm font-semibold text-right"
+                      >
+                        +27.8
+                      </div>
+                    </div>
+
+                    <div
+                      class="grid grid-cols-5 gap-4 px-4 md:px-6 py-3 md:py-4 border-b border-gray-700/50 hover:bg-white/5 transition"
+                    >
+                      <div
+                        class="text-white text-xs md:text-sm font-medium truncate"
+                      >
+                        SWEET BONANZA
+                      </div>
+                      <div class="text-white text-xs md:text-sm truncate">
+                        IVAN777
+                      </div>
+                      <div class="text-gray-400 text-xs md:text-sm">08:45</div>
+                      <div
+                        class="text-[#627EEA] text-xs md:text-sm font-semibold"
+                      >
+                        X 0.5
+                      </div>
+                      <div
+                        class="text-[#EF4444] text-xs md:text-sm font-semibold text-right"
+                      >
+                        -27.8
+                      </div>
+                    </div>
+
+                    <div
+                      class="grid bg-[#253236] grid-cols-5 gap-4 px-4 md:px-6 py-3 md:py-4 hover:bg-white/5 transition"
+                    >
+                      <div
+                        class="text-white text-xs md:text-sm font-medium truncate"
+                      >
+                        SWEET BONANZA
+                      </div>
+                      <div class="text-white text-xs md:text-sm truncate">
+                        IVAN777
+                      </div>
+                      <div class="text-gray-400 text-xs md:text-sm">08:45</div>
+                      <div
+                        class="text-[#627EEA] text-xs md:text-sm font-semibold"
+                      >
+                        X 0.5
+                      </div>
+                      <div
+                        class="text-[#4ADE80] text-xs md:text-sm font-semibold text-right"
+                      >
+                        +27.8
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Наши провайдеры -->
+            <section class="mb-8 md:mb-12">
+              <div class="flex items-center justify-between mb-4 md:mb-6">
+                <div class="flex items-center gap-2 md:gap-3">
+                  <img
+                    src="assets/icons/Guitar.svg"
+                    alt="PapaBet"
+                    class="h-6 md:h-8"
+                  />
+                  <h2 class="text-white text-xl md:text-3xl font-bold">
+                    Провайдеры
+                  </h2>
+                </div>
+                <div class="flex gap-2">
+                  <button
+                    class="w-5 h-5 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition"
+                  >
+                    <img
+                      src="assets/icons/arrow-left.svg"
+                      alt="PapaBet"
+                      class="h-2"
+                    />
+                  </button>
+                  <button
+                    class="w-5 h-5 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition"
+                  >
+                    <img
+                      src="assets/icons/arrow-right.svg"
+                      alt="PapaBet"
+                      class="h-2"
+                    />
+                  </button>
+                </div>
+              </div>
+
+              <div
+                class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4"
+              >
+                <div class="cursor-pointer group">
+                  <div
+                    class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                </div>
+                <div class="cursor-pointer group">
+                  <div
+                    class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                </div>
+                <div class="cursor-pointer group">
+                  <div
+                    class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                </div>
+                <div class="cursor-pointer group">
+                  <div
+                    class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                </div>
+                <div class="cursor-pointer group">
+                  <div
+                    class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                </div>
+                <div class="cursor-pointer group">
+                  <div
+                    class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                </div>
+                <div class="cursor-pointer group">
+                  <div
+                    class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                </div>
+                <div class="cursor-pointer group">
+                  <div
+                    class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                </div>
+                <div class="cursor-pointer group">
+                  <div
+                    class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                </div>
+                <div class="cursor-pointer group">
+                  <div
+                    class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Подарочная карта -->
+            <section class="mb-8 md:mb-12">
+              <div class="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+                <img
+                  src="assets/icons/Guitar.svg"
+                  alt="PapaBet"
+                  class="h-6 md:h-8"
+                />
+                <h2 class="text-white text-xl md:text-3xl font-bold">
+                  Подарочная карта
                 </h2>
               </div>
-            </div>
-          </section>
 
-          <!-- Последние Ставки -->
-          <section class="mt-12">
-            <!-- Завголовок -->
-            <div class="flex items-center justify-between mb-6">
-              <div class="flex items-center gap-3">
-                <img src="assets/icons/Guitar.svg" alt="PapaBet" class="h-8" />
-                <h2 class="text-white text-3xl font-bold">Последние ставки</h2>
-              </div>
-
-              <!-- Фильтры -->
-              <div class="flex gap-2">
-                <button
-                  class="px-4 py-2 bg-[#cddc39] text-black text-sm font-semibold rounded-lg hover:bg-[#b8c935] transition uppercase"
-                >
-                  Лайв
-                </button>
-                <button
-                  class="px-4 py-2 bg-white/10 text-white text-sm font-semibold rounded-lg hover:bg-white/20 transition uppercase"
-                >
-                  Неделя
-                </button>
-                <button
-                  class="px-4 py-2 bg-white/10 text-white text-sm font-semibold rounded-lg hover:bg-white/20 transition uppercase"
-                >
-                  Месяц
-                </button>
-                <button
-                  class="px-4 py-2 bg-white/10 text-white text-sm font-semibold rounded-lg hover:bg-white/20 transition uppercase"
-                >
-                  Все время
-                </button>
-              </div>
-            </div>
-
-            <!-- Таблица -->
-            <div class="bg-brand-primary/50 rounded-lg overflow-hidden">
-              <!-- Хедер таблицы -->
-              <div
-                class="grid grid-cols-5 gap-4 px-6 py-4 border-b border-gray-700"
-              >
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 <div
-                  class="text-gray-400 text-sm font-semibold uppercase tracking-wide"
+                  class="bg-[#C7F121] rounded-[5px] p-6 md:p-16 flex flex-col justify-center"
                 >
-                  Игра
-                </div>
-                <div
-                  class="text-gray-400 text-sm font-semibold uppercase tracking-wide"
-                >
-                  Игрок
-                </div>
-                <div
-                  class="text-gray-400 text-sm font-semibold uppercase tracking-wide"
-                >
-                  Время
-                </div>
-                <div
-                  class="text-[#627EEA] text-sm font-semibold uppercase tracking-wide"
-                >
-                  Множитель
-                </div>
-                <div
-                  class="text-gray-400 text-sm font-semibold uppercase tracking-wide text-right"
-                >
-                  Выигрыш/Проигрыш
-                </div>
-              </div>
-
-              <!-- Строки таблицы -->
-              <div id="bets-container">
-                <!-- Строка 1 - Выигрыш -->
-                <div
-                  class="grid bg-[#253236] grid-cols-5 gap-4 px-6 py-4 border-b border-gray-700/50 hover:bg-white/5 transition"
-                >
-                  <div class="flex items-center gap-3">
-                    <!-- <img
-                    src=""
-                    alt="Game"
-                    class="w-8 h-8 rounded"
-                  /> -->
-                    <span class="text-white text-sm font-medium"
-                      >SWEET BONANZA SUPER</span
+                  <h3
+                    class="text-[#1a2c38] text-2xl md:text-5xl text-center font-bold font-family-base mb-3 md:mb-6 leading-tight"
+                  >
+                    Ищите подарок<br />другу?
+                  </h3>
+                  <p
+                    class="text-[#1a2c38] text-sm md:text-base text-center mb-4 md:mb-8 leading-relaxed"
+                  >
+                    Тайный Санта, день рождение или новый год - всегда есть
+                    отличный подарок от Папы.
+                  </p>
+                  <div class="text-center">
+                    <button
+                      class="px-6 md:px-8 py-2 bg-[#1a2c38] text-white font-bold text-sm md:text-base rounded-lg hover:bg-[#253847] transition uppercase tracking-wide"
                     >
-                  </div>
-                  <div class="text-white text-sm">IVANPAD111</div>
-                  <div class="text-gray-400 text-sm">08:45 AM</div>
-                  <div class="text-[#627EEA] text-sm font-semibold">X 0.5</div>
-                  <div class="text-[#4ADE80] text-sm font-semibold text-right">
-                    +27.8 USDT
+                      Купить карту
+                    </button>
                   </div>
                 </div>
-
-                <!-- Строка 2 - Проигрыш -->
                 <div
-                  class="grid grid-cols-5 gap-4 px-6 py-4 border-b border-gray-700/50 hover:bg-white/5 transition"
+                  class="relative bg-black opacity-30 rounded-[5px] h-48 md:h-auto"
+                ></div>
+              </div>
+            </section>
+
+            <!-- GACHA -->
+            <section class="mb-8 md:mb-12">
+              <div class="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+                <img
+                  src="assets/icons/Guitar.svg"
+                  alt="PapaBet"
+                  class="h-6 md:h-8"
+                />
+                <h2 class="text-white text-xl md:text-3xl font-bold">GACHA</h2>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                <div
+                  class="relative bg-black opacity-30 rounded-[5px] h-48 md:h-auto order-2 md:order-1"
+                ></div>
+                <div
+                  class="bg-[#ED79AD] rounded-[5px] p-6 md:p-18 flex flex-col justify-center order-1 md:order-2"
                 >
-                  <div class="flex items-center gap-3">
-                    <!-- <img
-                    src="/assets/icons/game-icon.png"
-                    alt="Game"
-                    class="w-8 h-8 rounded"
-                  /> -->
-                    <span class="text-white text-sm font-medium"
-                      >SWEET BONANZA SUPER</span
+                  <h3
+                    class="text-[#1a2c38] text-2xl md:text-5xl text-center font-bold font-family-base mb-3 md:mb-6 leading-tight"
+                  >
+                    GACHA Автомат
+                  </h3>
+                  <p
+                    class="text-[#1a2c38] text-sm md:text-base text-center mb-4 md:mb-8 leading-relaxed"
+                  >
+                    Крутите барабан и выигрывайте призы!
+                  </p>
+                  <div class="text-center">
+                    <button
+                      class="px-6 md:px-8 py-2 bg-[#1a2c38] text-white font-bold text-sm md:text-base rounded-lg hover:bg-[#253847] transition uppercase tracking-wide"
                     >
-                  </div>
-                  <div class="text-white text-sm">IVANPAD111</div>
-                  <div class="text-gray-400 text-sm">08:45 AM</div>
-                  <div class="text-[#627EEA] text-sm font-semibold">X 0.5</div>
-                  <div class="text-[#EF4444] text-sm font-semibold text-right">
-                    -27.8 USDT
-                  </div>
-                </div>
-
-                <!-- Строка 3 - Выигрыш -->
-                <div
-                  class="bg-[#253236] grid grid-cols-5 gap-4 px-6 py-4 border-b border-gray-700/50 hover:bg-white/5 transition"
-                >
-                  <div class="flex items-center gap-3">
-                    <!-- <img
-                    src="/assets/icons/game-icon.png"
-                    alt="Game"
-                    class="w-8 h-8 rounded"
-                  /> -->
-                    <span class="text-white text-sm font-medium"
-                      >SWEET BONANZA SUPER</span
-                    >
-                  </div>
-                  <div class="text-white text-sm">IVANPAD111</div>
-                  <div class="text-gray-400 text-sm">08:45 AM</div>
-                  <div class="text-[#627EEA] text-sm font-semibold">X 0.5</div>
-                  <div class="text-[#4ADE80] text-sm font-semibold text-right">
-                    +27.8 USDT
+                      Крутануть
+                    </button>
                   </div>
                 </div>
               </div>
-            </div>
-          </section>
+            </section>
 
-          <!-- Наши провайдеры -->
-          <section class="mt-12">
-            <!-- Заголовок с иконкой и стрелками -->
-            <div class="flex items-center justify-between mb-6">
-              <div class="flex items-center gap-3">
-                <img src="assets/icons/Guitar.svg" alt="PapaBet" class="h-8" />
-                <h2 class="text-white text-3xl font-bold">Наши провайдеры</h2>
-              </div>
-
-              <!-- Стрелки навигации -->
-              <div class="flex gap-2">
-                <button
-                  class="w-5 h-5 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition"
+            <!-- PapaBet инфо -->
+            <section class="mt-8 md:mt-16 mb-8 md:mb-12">
+              <div class="mb-6 md:mb-8">
+                <h2
+                  class="text-white text-lg md:text-[24px] font-bold mb-3 md:mb-4"
                 >
-                  <img
-                    src="assets/icons/arrow-left.svg"
-                    alt="PapaBet"
-                    class="h-2"
-                  />
-                </button>
-                <button
-                  class="w-5 h-5 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition"
-                >
-                  <img
-                    src="assets/icons/arrow-right.svg"
-                    alt="PapaBet"
-                    class="h-2"
-                  />
-                </button>
-              </div>
-            </div>
-
-            <!-- Сетка провайдеров - 2 ряда по 5 -->
-            <div class="grid grid-cols-5 gap-4">
-              <!-- Ряд 1 -->
-              <!-- Карточка 1 -->
-              <div class="cursor-pointer group">
-                <div
-                  class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg flex items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-              </div>
-
-              <!-- Карточка 2 -->
-              <div class="cursor-pointer group">
-                <div
-                  class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg flex items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-              </div>
-
-              <!-- Карточка 3 -->
-              <div class="cursor-pointer group">
-                <div
-                  class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg flex items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-              </div>
-
-              <!-- Карточка 4 -->
-              <div class="cursor-pointer group">
-                <div
-                  class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg flex items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-              </div>
-
-              <!-- Карточка 5 -->
-              <div class="cursor-pointer group">
-                <div
-                  class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg flex items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-              </div>
-
-              <!-- Ряд 2 -->
-              <!-- Карточка 6 -->
-              <div class="cursor-pointer group">
-                <div
-                  class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg flex items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-              </div>
-
-              <!-- Карточка 7 -->
-              <div class="cursor-pointer group">
-                <div
-                  class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg flex items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-              </div>
-
-              <!-- Карточка 8 -->
-              <div class="cursor-pointer group">
-                <div
-                  class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg flex items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-              </div>
-
-              <!-- Карточка 9 -->
-              <div class="cursor-pointer group">
-                <div
-                  class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg flex items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-              </div>
-
-              <!-- Карточка 10 -->
-              <div class="cursor-pointer group">
-                <div
-                  class="w-full aspect-[16/9] bg-black opacity-30 rounded-lg flex items-center justify-center hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-              </div>
-            </div>
-          </section>
-
-          <!-- Подарочная карта PapaBet -->
-          <section class="mt-12">
-            <div class="flex items-center gap-3 mb-6">
-              <img src="assets/icons/Guitar.svg" alt="PapaBet" class="h-8" />
-              <h2 class="text-white text-3xl font-bold">
-                Подарочная карта PapaBet
-              </h2>
-            </div>
-
-            <div class="grid grid-cols-2 gap-6">
-              <div
-                class="bg-[#C7F121] items-center rounded-[5px] p-16 flex flex-col justify-center"
-              >
-                <h3
-                  class="text-[#1a2c38] text-5xl text-center font-bold font-family-base mb-6 leading-12"
-                >
-                  Ищите подарок<br />другу?
-                </h3>
-                <p class="text-[#1a2c38] text-base text-center mb-8 leading-6">
-                  Тайный Санта, день рождение или новый год -<br />
-                  всегда есть отличный подарок от Папы. Купите<br />
-                  гифт карут поплнения баланса. Лучший подарок -<br />
-                  полезный подарок!
-                </p>
-                <div>
-                  <button
-                    class="px-8 py-2 bg-[#1a2c38] text-white font-bold text-base rounded-lg hover:bg-[#253847] transition uppercase tracking-wide"
-                  >
-                    Купить гифт карту
-                  </button>
-                </div>
-              </div>
-              <div
-                class="relative bg-black opacity-30 rounded-[5px] overflow-hidden"
-              >
-                <div class="absolute inset-0"></div>
-                <div class="absolute inset-0 bg-black opacity-30"></div>
-              </div>
-            </div>
-          </section>
-
-          <!-- Gacha -->
-          <section class="mt-12">
-            <div class="flex items-center gap-3 mb-6">
-              <img src="assets/icons/Guitar.svg" alt="PapaBet" class="h-8" />
-              <h2 class="text-white text-3xl font-bold">GACHA</h2>
-            </div>
-
-            <div class="grid grid-cols-2 gap-6">
-              <div
-                class="relative bg-black opacity-30 rounded-[5px] overflow-hidden"
-              >
-                <div class="absolute inset-0"></div>
-                <div class="absolute inset-0 bg-black opacity-30"></div>
-              </div>
-              <div
-                class="bg-[#ED79AD] items-center rounded-[5px] p-18 flex flex-col justify-center"
-              >
-                <h3
-                  class="text-[#1a2c38] text-5xl text-center font-bold font-family-base mb-6 leading-12"
-                >
-                  GACHA Автомат
-                </h3>
-                <p class="text-[#1a2c38] text-base text-center mb-8 leading-6">
-                  Тайный Санта, день рождение или новый год -<br />
-                  всегда есть отличный подарок от Папы. Купите<br />
-                  гифт карут поплнения баланса. Лучший подарок -<br />
-                  полезный подарок!
-                </p>
-                <div>
-                  <button
-                    class="px-8 py-2 bg-[#1a2c38] text-white font-bold text-base rounded-lg hover:bg-[#253847] transition uppercase tracking-wide"
-                  >
-                    крутануть барабан
-                  </button>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- Еженедельные задания -->
-          <section class="mt-12">
-            <div class="flex items-center gap-3 mb-6">
-              <img src="assets/icons/Guitar.svg" alt="PapaBet" class="h-8" />
-              <h2 class="text-white text-3xl font-bold">
-                Еженедельные задания
-              </h2>
-            </div>
-
-            <div class="grid grid-cols-2 gap-6">
-              <div
-                class="bg-[#C7F121] items-center rounded-[5px] p-16 flex flex-col justify-center"
-              >
-                <h3
-                  class="text-[#1a2c38] text-5xl text-center font-bold font-family-base mb-6 leading-12"
-                >
-                  Weekly Spin
-                </h3>
-                <p class="text-[#1a2c38] text-base text-center mb-8 leading-6">
-                  Играйте на любимых слотах и автоматически <br />
-                  участвуйте в розыгрыше призов каждую неделю. <br />
-                  Победителей ждут денежные бонусы, фриспины и <br />
-                  другие ценные подарки. Не упустите свой шанс — <br />
-                  удача может улыбнуться именно вам! <br />
-                  Хотите принять участие?
-                </p>
-                <div>
-                  <button
-                    class="px-8 py-2 bg-[#1a2c38] text-white font-bold text-base rounded-lg hover:bg-[#253847] transition uppercase tracking-wide"
-                  >
-                    Регистрируйтесь
-                  </button>
-                </div>
-              </div>
-              <div
-                class="relative bg-black opacity-30 rounded-[5px] overflow-hidden"
-              >
-                <div class="absolute inset-0"></div>
-                <div class="absolute inset-0 bg-black opacity-30"></div>
-              </div>
-            </div>
-          </section>
-
-          <!-- Демо игры -->
-          <section class="mt-12">
-            <div class="flex items-center gap-3 mb-6">
-              <img src="assets/icons/Guitar.svg" alt="PapaBet" class="h-8" />
-              <h2 class="text-white text-3xl font-bold">Демо игры</h2>
-            </div>
-
-            <div class="grid grid-cols-2 gap-6">
-              <div
-                class="relative bg-black opacity-30 rounded-[5px] overflow-hidden"
-              >
-                <div class="absolute inset-0"></div>
-                <div class="absolute inset-0 bg-black opacity-30"></div>
-              </div>
-              <div
-                class="bg-black/30 items-center rounded-[5px] p-18 flex flex-col justify-center"
-              >
-                <h3
-                  class="text-brand-secondary text-5xl text-center font-bold font-family-base mb-6 leading-12"
-                >
-                  Weekly Spin
-                </h3>
-                <p class="text-white text-base text-center mb-8 leading-6">
-                  Играйте на любимых слотах и автоматически участвуйте в
-                  розыгрыше призов каждую неделю. Победителей ждут денежные
-                  бонусы, фриспины и другие ценные подарки. Не упустите свой
-                  шанс — удача может улыбнуться именно вам! <br />
-                  Хотите принять участие?
-                </p>
-                <div>
-                  <button
-                    class="px-8 py-2 bg-brand-secondary text-brand-primary font-bold text-base rounded-lg hover:bg-[#253847] transition uppercase tracking-wide"
-                  >
-                    Регистрируйтесь
-                  </button>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <!-- Еженедельные задания -->
-          <section class="mt-12">
-            <div class="flex items-center gap-3 mb-6">
-              <img src="assets/icons/Guitar.svg" alt="PapaBet" class="h-8" />
-              <h2 class="text-white text-3xl font-bold">
-                Еженедельные задания
-              </h2>
-            </div>
-
-            <div class="grid grid-cols-2 gap-6">
-              <div
-                class="bg-[#C7F121] items-center rounded-[5px] p-16 flex flex-col justify-center"
-              >
-                <h3
-                  class="text-[#1a2c38] text-5xl text-center font-bold font-family-base mb-6 leading-12"
-                >
-                  Weekly Spin
-                </h3>
-                <p class="text-[#1a2c38] text-base text-center mb-8 leading-6">
-                  Играйте на любимых слотах и автоматически <br />
-                  участвуйте в розыгрыше призов каждую неделю. <br />
-                  Победителей ждут денежные бонусы, фриспины и <br />
-                  другие ценные подарки. Не упустите свой шанс — <br />
-                  удача может улыбнуться именно вам! <br />
-                  Хотите принять участие?
-                </p>
-                <div>
-                  <button
-                    class="px-8 py-2 bg-[#1a2c38] text-white font-bold text-base rounded-lg hover:bg-[#253847] transition uppercase tracking-wide"
-                  >
-                    Регистрируйтесь
-                  </button>
-                </div>
-              </div>
-              <div
-                class="relative bg-black opacity-30 rounded-[5px] overflow-hidden"
-              >
-                <div class="absolute inset-0"></div>
-                <div class="absolute inset-0 bg-black opacity-30"></div>
-              </div>
-            </div>
-          </section>
-
-          <!-- Еженедельные розыгрыши -->
-          <section class="mt-12">
-            <div class="flex items-center gap-3 mb-6">
-              <img src="assets/icons/Guitar.svg" alt="PapaBet" class="h-8" />
-              <h2 class="text-white text-3xl font-bold">
-                Еженедельные розыгрыши
-              </h2>
-            </div>
-
-            <div class="grid grid-cols-2 gap-6">
-              <div
-                class="relative bg-black opacity-30 rounded-[5px] overflow-hidden"
-              >
-                <div class="absolute inset-0"></div>
-                <div class="absolute inset-0 bg-black opacity-30"></div>
-              </div>
-              <div
-                class="bg-[#CBAA56] items-center rounded-[5px] p-18 flex flex-col justify-center"
-              >
-                <h3
-                  class="text-brand-primary text-5xl text-center font-bold font-family-base mb-6 leading-12"
-                >
-                  Weekly Spin
-                </h3>
-                <p
-                  class="text-brand-primary text-base text-center mb-8 leading-6"
-                >
-                  Играйте на любимых слотах и автоматически участвуйте в
-                  розыгрыше призов каждую неделю. Победителей ждут денежные
-                  бонусы, фриспины и другие ценные подарки. Не упустите свой
-                  шанс — удача может улыбнуться именно вам! <br />
-                  Хотите принять участие?
-                </p>
-                <div>
-                  <button
-                    class="px-8 py-2 bg-brand-primary text-white font-bold text-base rounded-lg hover:bg-[#253847] transition uppercase tracking-wide"
-                  >
-                    Регистрируйтесь
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-2 gap-6 mt-6">
-              <div
-                class="bg-black/30 items-center rounded-[5px] p-18 flex flex-col justify-center"
-              >
-                <h3
-                  class="text-brand-secondary text-5xl text-center font-bold font-family-base mb-6 leading-12"
-                >
-                  Weekly Spin
-                </h3>
-                <p class="text-white text-base text-center mb-8 leading-6">
-                  Играйте на любимых слотах и автоматически участвуйте в
-                  розыгрыше призов каждую неделю. Победителей ждут денежные
-                  бонусы, фриспины и другие ценные подарки. Не упустите свой
-                  шанс — удача может улыбнуться именно вам! <br />
-                  Хотите принять участие?
-                </p>
-                <div>
-                  <button
-                    class="px-8 py-2 bg-brand-secondary text-brand-primary font-bold text-base rounded-lg hover:bg-[#253847] transition uppercase tracking-wide"
-                  >
-                    Регистрируйтесь
-                  </button>
-                </div>
-              </div>
-              <div
-                class="relative bg-black opacity-30 rounded-[5px] overflow-hidden"
-              >
-                <div class="absolute inset-0"></div>
-                <div class="absolute inset-0 bg-black opacity-30"></div>
-              </div>
-            </div>
-          </section>
-
-          <!-- PapaBet инфо -->
-          <section class="mt-16 mb-12">
-            <div class="">
-              <h2 class="text-white text-[24px] font-bold mb-4">
-                PapaBet — Crypto Casino with 20% Cashback, Battle Pass & Fast
-                Withdrawals
-              </h2>
-              <p class="text-gray-300 text-base leading-relaxed">
-                Welcome to PapaBet, the next-generation crypto casino and
-                sportsbook that combines nonstop gaming, instant crypto
-                payments, and one-of-a-kind rewards. Play provably fair casino
-                games, bet on live sports, and climb through missions,
-                lootboxes, and seasonal Battle Pass tiers to unlock exclusive
-                perks. With up to 20% daily cashback, a Refer-a-Friend program,
-                and unique Tribes for social play, PapaBet isn't just another
-                online casino - it's the future of blockchain gaming.
-              </p>
-            </div>
-
-            <div class="my-8 border-t border-gray-700"></div>
-
-            <div class="relative">
-              <h2 class="text-white text-[24px] font-bold mb-4">
-                PapaBet — Crypto Casino with 20% Cashback, Battle Pass & Fast
-                Withdrawals
-              </h2>
-
-              <div
-                class="text-content overflow-hidden transition-all duration-500"
-                style="max-height: 100px"
-              >
-                <p class="text-gray-300 text-base leading-relaxed">
+                  PapaBet — Crypto Casino
+                </h2>
+                <p class="text-gray-300 text-sm md:text-base leading-relaxed">
                   Welcome to PapaBet, the next-generation crypto casino and
                   sportsbook that combines nonstop gaming, instant crypto
-                  payments, and one-of-a-kind rewards. Play provably fair casino
-                  games, bet on live sports, and climb through missions,
-                  lootboxes, and seasonal Battle Pass tiers to unlock exclusive
-                  perks. With up to 20% daily cashback, a Refer-a-Friend
-                  program, and unique Tribes for social play, PapaBet isn't just
-                  another online casino - it's the future of blockchain gaming.
+                  payments, and one-of-a-kind rewards.
                 </p>
               </div>
 
-              <div
-                class="gradient-overlay absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-brand-primary to-transparent pointer-events-none transition-opacity duration-500"
-              ></div>
+              <div class="my-6 md:my-8 border-t border-gray-700"></div>
 
-              <div class="relative mt-4 text-center">
-                <button
-                  onclick="toggleTextBlock(this)"
-                  class="text-[#cddc39] text-sm font-semibold hover:text-[#b8c935] transition uppercase"
+              <div class="relative">
+                <h2
+                  class="text-white text-lg md:text-[24px] font-bold mb-3 md:mb-4"
                 >
-                  Show more
-                </button>
+                  About PapaBet
+                </h2>
+
+                <div
+                  class="text-content overflow-hidden transition-all duration-500"
+                  style="max-height: 100px"
+                >
+                  <p class="text-gray-300 text-sm md:text-base leading-relaxed">
+                    Welcome to PapaBet, the next-generation crypto casino and
+                    sportsbook that combines nonstop gaming, instant crypto
+                    payments, and one-of-a-kind rewards. Play provably fair
+                    casino games, bet on live sports, and climb through
+                    missions, lootboxes, and seasonal Battle Pass tiers to
+                    unlock exclusive perks.
+                  </p>
+                </div>
+
+                <div
+                  class="gradient-overlay absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-brand-primary to-transparent pointer-events-none transition-opacity duration-500"
+                ></div>
+
+                <div class="relative mt-4 text-center">
+                  <button
+                    onclick="toggleTextBlock(this)"
+                    class="text-[#cddc39] text-sm font-semibold hover:text-[#b8c935] transition uppercase"
+                  >
+                    Show more
+                  </button>
+                </div>
               </div>
-            </div>
-          </section>
-        </div>
-      </main>
+            </section>
+          </div>
+        </main>
+      </div>
     </div>
 
     <!-- Футер -->

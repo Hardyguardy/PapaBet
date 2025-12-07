@@ -472,6 +472,87 @@ function initMobileMenu() {
   }
 }
 
+// Мобильный сайдбар (переключение между ИГРЫ и СЕРВИСЫ)
+function initMobileSidebar() {
+  const gamesButton = document.getElementById("mobile-games-button");
+  const servicesButton = document.getElementById("mobile-services-button");
+  const toggleButton = document.getElementById("mobile-toggle-button");
+  const gamesMenu = document.getElementById("mobile-games-menu");
+  const servicesMenu = document.getElementById("mobile-services-menu");
+  const arrowIcon = document.getElementById("arrow-icon");
+
+  if (
+    gamesButton &&
+    servicesButton &&
+    toggleButton &&
+    gamesMenu &&
+    servicesMenu &&
+    arrowIcon
+  ) {
+    let currentMenu = null; // null, 'games', или 'services'
+
+    // Клик на ИГРЫ
+    gamesButton.addEventListener("click", () => {
+      if (currentMenu === "games") {
+        // Закрыть если уже открыто
+        gamesMenu.classList.add("hidden");
+        currentMenu = null;
+        arrowIcon.style.transform = "rotate(0deg)";
+      } else {
+        // Открыть ИГРЫ, закрыть СЕРВИСЫ
+        gamesMenu.classList.remove("hidden");
+        servicesMenu.classList.add("hidden");
+        currentMenu = "games";
+        arrowIcon.style.transform = "rotate(90deg)";
+
+        // Обновить стили кнопок
+        gamesButton.querySelector("span").classList.remove("text-gray-400");
+        gamesButton.querySelector("span").classList.add("text-brand-secondary");
+        servicesButton
+          .querySelector("span")
+          .classList.remove("text-brand-secondary");
+        servicesButton.querySelector("span").classList.add("text-gray-400");
+      }
+    });
+
+    // Клик на СЕРВИСЫ
+    servicesButton.addEventListener("click", () => {
+      if (currentMenu === "services") {
+        // Закрыть если уже открыто
+        servicesMenu.classList.add("hidden");
+        currentMenu = null;
+        arrowIcon.style.transform = "rotate(0deg)";
+      } else {
+        // Открыть СЕРВИСЫ, закрыть ИГРЫ
+        servicesMenu.classList.remove("hidden");
+        gamesMenu.classList.add("hidden");
+        currentMenu = "services";
+        arrowIcon.style.transform = "rotate(90deg)";
+
+        // Обновить стили кнопок
+        servicesButton.querySelector("span").classList.remove("text-gray-400");
+        servicesButton
+          .querySelector("span")
+          .classList.add("text-brand-secondary");
+        gamesButton
+          .querySelector("span")
+          .classList.remove("text-brand-secondary");
+        gamesButton.querySelector("span").classList.add("text-gray-400");
+      }
+    });
+
+    // Клик на стрелку - закрывает любое открытое меню
+    toggleButton.addEventListener("click", () => {
+      if (currentMenu) {
+        gamesMenu.classList.add("hidden");
+        servicesMenu.classList.add("hidden");
+        currentMenu = null;
+        arrowIcon.style.transform = "rotate(0deg)";
+      }
+    });
+  }
+}
+
 // ГЛАВНАЯ ИНИЦИАЛИЗАЦИЯ
 document.addEventListener("DOMContentLoaded", () => {
   // Загрузка компонентов
@@ -488,6 +569,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initLevelTooltip();
     initPasswordToggle();
     initMobileMenu();
+    initMobileSidebar();
   }, 100);
 });
 
