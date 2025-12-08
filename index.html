@@ -11,7 +11,7 @@
 
     <div class="pt-[57px] max-w-full mx-auto">
       <!-- Мобильный сайдбар (под хедером) - видим только на мобильных -->
-      <!-- Мобильный сайдбар (под хедером) - видим только на мобильных -->
+
       <div class="lg:hidden w-full bg-brand-primary border-b border-gray-800">
         <div class="flex items-center justify-between px-4 py-4">
           <!-- ИГРЫ -->
@@ -46,132 +46,153 @@
           </button>
         </div>
 
-        <!-- Выпадающее меню ИГРЫ -->
+        <!-- Выпадающее меню ИГРЫ - на весь экран -->
         <div
           id="mobile-games-menu"
-          class="hidden bg-[#1a2c38] border-t border-gray-800"
+          class="hidden fixed inset-0 top-[105px] bg-brand-primary z-50 overflow-y-auto"
         >
-          <nav
-            class="px-4 py-3 space-y-2 font-family-base font-medium max-h-[400px] overflow-y-auto"
-          >
+          <nav class="px-6 py-6 space-y-2 font-family-base font-medium">
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-base py-2"
+              class="block text-white hover:text-[#cddc39] transition text-lg"
               >Главная</a
             >
             <a
               href="all-games-popular.html"
-              class="block text-white hover:text-[#cddc39] transition text-base py-2"
+              class="block text-white hover:text-[#cddc39] transition text-lg"
               >Популярные игры</a
             >
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-base py-2"
+              class="block text-white hover:text-[#cddc39] transition text-lg"
               >Слоты</a
             >
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-base py-2"
+              class="block text-white hover:text-[#cddc39] transition text-lg"
               >Лотерея</a
             >
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-base py-2"
+              class="block text-white hover:text-[#cddc39] transition text-lg"
               >LIVE казино</a
             >
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-base py-2"
+              class="block text-white hover:text-[#cddc39] transition text-lg"
               >Ставки на спорт</a
             >
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-base py-2"
+              class="block text-white hover:text-[#cddc39] transition text-lg"
               >Новинки</a
             >
             <a
               href="all-games-provider.html"
-              class="block text-white hover:text-[#cddc39] transition text-base py-2"
+              class="block text-white hover:text-[#cddc39] transition text-lg"
               >Провайдеры</a
             >
           </nav>
-        </div>
-
-        <!-- Выпадающее меню СЕРВИСЫ -->
-        <div
-          id="mobile-services-menu"
-          class="hidden bg-[#1a2c38] border-t border-gray-800"
-        >
-          <nav
-            class="px-4 py-3 space-y-2 font-family-base font-medium max-h-[400px] overflow-y-auto"
-          >
-            <a
-              href="#"
-              class="block text-white hover:text-[#cddc39] transition text-base py-2"
-              >VIP клуб</a
-            >
-            <a
-              href="#"
-              class="block text-white hover:text-[#cddc39] transition text-base py-2"
-              >Партнерство</a
-            >
-            <a
-              href="#"
-              class="block text-white hover:text-[#cddc39] transition text-base py-2"
-              >Заработать</a
-            >
-            <a
-              href="#"
-              class="block text-white hover:text-[#cddc39] transition text-base py-2"
-              >Честность игр</a
-            >
-            <a
-              href="#"
-              class="block text-white hover:text-[#cddc39] transition text-base py-2"
-              >Ответственная игры</a
-            >
-            <a
-              href="#"
-              class="block text-white hover:text-[#cddc39] transition text-base py-2"
-              >Техподдержка</a
-            >
-            <a
-              href="#"
-              class="block text-white hover:text-[#cddc39] transition text-base py-2"
-              >Акции</a
-            >
-          </nav>
-
-          <!-- Battlepass  -->
-          <div class="px-4 pb-4 pt-2">
-            <div class="relative rounded-lg overflow-hidden h-48">
-              <!-- Фоновое изображение -->
-              <!-- <img
-                src="/assets/images/battlepass-bg.jpg"
-                alt="Battlepass"
-                class="absolute inset-0 w-full h-full object-cover"
-              /> -->
-
-              <!-- Overlay -->
+          <!-- Battlepass внизу меню -->
+          <div class="px-6 pb-6">
+            <div class="relative rounded-lg overflow-hidden h-56">
+              <!-- Фон -->
+              <div class="absolute inset-0 bg-black/30"></div>
               <div class="absolute inset-0 bg-black/30"></div>
 
               <!-- Контент -->
               <div
-                class="relative z-10 h-full flex flex-col justify-between p-4"
+                class="relative z-10 h-full flex flex-col justify-between p-6"
               >
-                <h3 class="text-white text-xl font-bold">Battlepass</h3>
                 <div>
-                  <button
-                    class="px-4 py-1.5 bg-[#cddc39] text-black text-sm font-bold rounded-lg hover:bg-[#b8c935] transition uppercase"
-                  >
-                    Начать
-                  </button>
+                  <p class="text-white text-xs uppercase tracking-widest mb-2">
+                    Регистрируйся и получи бонус к<br />депозиту до 1000$ и 30
+                    фриспинов!
+                  </p>
+                  <h3 class="text-white text-3xl font-bold mb-4">
+                    Крутани как папа!
+                  </h3>
                 </div>
+                <button
+                  class="px-6 py-2 bg-[#1a2c38] text-white text-sm font-bold rounded-lg hover:bg-[#253847] transition uppercase w-fit"
+                >
+                  Начать игру
+                </button>
               </div>
             </div>
-            <p class="mt-2 text-xs text-[#cddc39]">
-              Получите потрясающие награды с battlepass
-            </p>
+          </div>
+        </div>
+
+        <!-- Выпадающее меню СЕРВИСЫ - на весь экран -->
+        <div
+          id="mobile-services-menu"
+          class="hidden fixed inset-0 top-[105px] bg-brand-primary z-50 overflow-y-auto"
+        >
+          <nav class="px-6 py-6 space-y-2 font-family-base font-medium">
+            <a
+              href="#"
+              class="block text-white hover:text-[#cddc39] transition text-lg"
+              >VIP клуб</a
+            >
+            <a
+              href="#"
+              class="block text-white hover:text-[#cddc39] transition text-lg"
+              >Партнерство</a
+            >
+            <a
+              href="#"
+              class="block text-white hover:text-[#cddc39] transition text-lg"
+              >Заработать</a
+            >
+            <a
+              href="#"
+              class="block text-white hover:text-[#cddc39] transition text-lg"
+              >Честность игр</a
+            >
+            <a
+              href="#"
+              class="block text-white hover:text-[#cddc39] transition text-lg"
+              >Ответственная игра</a
+            >
+            <a
+              href="#"
+              class="block text-white hover:text-[#cddc39] transition text-lg"
+              >Техподдержка</a
+            >
+            <a
+              href="#"
+              class="block text-white hover:text-[#cddc39] transition text-lg"
+              >Акции</a
+            >
+          </nav>
+
+          <!-- Battlepass внизу меню -->
+          <div class="px-6 pb-6">
+            <div class="relative rounded-lg overflow-hidden h-56">
+              <!-- Фон -->
+              <div class="absolute inset-0 bg-black/30"></div>
+              <div class="absolute inset-0 bg-black/30"></div>
+
+              <!-- Контент -->
+              <div
+                class="relative z-10 h-full flex flex-col justify-between p-6"
+              >
+                <div>
+                  <p class="text-white text-xs uppercase tracking-widest mb-2">
+                    Регистрируйся и получи бонус к<br />депозиту до 1000$ и 30
+                    фриспинов!
+                  </p>
+                  <h3 class="text-white text-3xl font-bold mb-4">
+                    Крутани как папа!
+                  </h3>
+                </div>
+                <button
+                  class="px-6 py-2 bg-[#1a2c38] text-white text-sm font-bold rounded-lg hover:bg-[#253847] transition uppercase w-fit"
+                >
+                  Начать игру
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
