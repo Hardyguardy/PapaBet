@@ -4,870 +4,1153 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/src/index.css" rel="stylesheet" />
-    <title>PapaBet</title>
+    <title>PapaBet - Evolution Gaming</title>
   </head>
   <body class="bg-brand-primary">
     <div id="header-container"></div>
 
-    <div class="pt-[57px] max-w-full mx-auto flex">
-      <!-- Сайдбар -->
-      <aside
-        class="fixed left-0 top-[57px] w-80 h-[calc(100vh-57px)] bg-brand-primary overflow-y-auto border-r border-gray-800 z-40"
-      >
-        <!-- Battlepass -->
-        <div class="px-6 mb-6 mt-6">
-          <div class="relative rounded-lg overflow-hidden bg-black/30 h-48">
-            <!-- Текст сверху -->
-            <div class="absolute top-4 left-4">
-              <h3 class="text-white text-2xl font-bold mb-2">Battlepass</h3>
-            </div>
-
-            <!-- Кнопка снизу -->
-            <div class="absolute bottom-4 left-4">
-              <button
-                class="px-6 py-2 bg-[#cddc39] text-black font-bold rounded-lg hover:bg-[#b8c935] transition uppercase"
+    <div class="pt-[57px] max-w-full mx-auto">
+      <!-- Мобильный сайдбар -->
+      <div class="lg:hidden w-full bg-brand-primary border-b border-gray-800">
+        <div class="flex items-center justify-between px-4 py-4">
+          <button
+            id="mobile-games-button"
+            class="flex flex-col items-center gap-1 relative"
+          >
+            <div class="flex items-center gap-2">
+              <img src="/assets/icons/dinosaur.svg" alt="" class="h-5 w-5" />
+              <span
+                class="text-brand-secondary text-base font-bold font-family-secondary uppercase tracking-wide"
+                >Игры</span
               >
-                Начать
-              </button>
             </div>
-          </div>
+            <!-- <div
+              id="games-underline"
+              class="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-secondary transition-opacity duration-300"
+            ></div> -->
+          </button>
 
-          <p class="mt-3 text-sm text-[#cddc39]">
-            Получите потрясающие награды с battlepass
-          </p>
+          <button
+            id="mobile-services-button"
+            class="flex flex-col items-center gap-1 relative"
+          >
+            <div class="flex items-center gap-2">
+              <img src="/assets/icons/cocktail.svg" alt="" class="h-5 w-5" />
+              <span
+                class="text-gray-400 text-base font-bold font-family-secondary uppercase tracking-wide"
+                >Сервисы</span
+              >
+            </div>
+            <div
+              id="services-underline"
+              class="absolute bottom-0 left-0 right-0 h-0.5 bg-brand-secondary opacity-0 transition-opacity duration-300"
+            ></div>
+          </button>
+
+          <button
+            id="mobile-toggle-button"
+            class="w-8 h-8 flex items-center justify-center"
+          >
+            <img
+              id="arrow-icon"
+              src="/assets/icons/arrow-right.svg"
+              alt=""
+              class="h-2 w-2 transition-transform duration-300"
+            />
+          </button>
         </div>
 
-        <!-- Игры -->
-        <div class="px-6 mb-6">
-          <div class="flex items-center gap-2 mb-4">
-            <img src="/assets/icons/dinosaur.svg" alt="" class="h-5" />
-            <h4
-              class="text-[20px] font-family-secondary uppercase tracking-wider text-brand-secondary font-regular"
-            >
-              Игры
-            </h4>
-          </div>
-          <nav class="space-y-1 font-family-base font-medium">
+        <!-- Выпадающие меню -->
+        <div
+          id="mobile-games-menu"
+          class="hidden fixed inset-0 top-[105px] bg-brand-primary z-50 overflow-y-auto"
+        >
+          <nav class="px-6 py-6 space-y-6 font-family-base font-medium">
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              class="block text-white hover:text-[#cddc39] transition text-lg"
               >Главная</a
             >
             <a
-              href="#"
-              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              href="all-games-popular.html"
+              class="block text-white hover:text-[#cddc39] transition text-lg"
               >Популярные игры</a
             >
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              class="block text-white hover:text-[#cddc39] transition text-lg"
               >Слоты</a
             >
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              class="block text-white hover:text-[#cddc39] transition text-lg"
               >Лотерея</a
             >
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              class="block text-white hover:text-[#cddc39] transition text-lg"
               >LIVE казино</a
             >
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              class="block text-white hover:text-[#cddc39] transition text-lg"
               >Ставки на спорт</a
             >
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              class="block text-white hover:text-[#cddc39] transition text-lg"
               >Новинки</a
             >
             <a
-              href="#"
-              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              href="all-games-provider.html"
+              class="block text-white hover:text-[#cddc39] transition text-lg"
               >Провайдеры</a
             >
           </nav>
+
+          <!-- Battlepass внизу -->
+          <div class="px-6 pb-6">
+            <div class="relative rounded-lg overflow-hidden h-56">
+              <div class="absolute inset-0 bg-black/30"></div>
+              <div class="absolute inset-0 bg-black/30"></div>
+              <div
+                class="relative z-10 h-full flex flex-col justify-between p-6"
+              >
+                <div>
+                  <p class="text-white text-xs uppercase tracking-widest mb-2">
+                    Регистрируйся и получи бонус к<br />депозиту до 1000$ и 30
+                    фриспинов!
+                  </p>
+                  <h3 class="text-white text-3xl font-bold mb-4">
+                    Крутани как папа!
+                  </h3>
+                </div>
+                <button
+                  class="px-6 py-2 bg-[#1a2c38] text-white text-sm font-bold rounded-lg hover:bg-[#253847] transition uppercase w-fit"
+                >
+                  Начать игру
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- Сервисы -->
-        <div class="px-6 pb-6">
-          <div class="flex items-center gap-2 mb-4">
-            <img src="/assets/icons/cocktail.svg" alt="" class="h-5" />
-            <h4
-              class="text-[20px] font-family-secondary uppercase tracking-wider text-brand-accent font-regular"
-            >
-              Сервисы
-            </h4>
-          </div>
-          <nav class="space-y-1 font-family-base font-medium">
+        <div
+          id="mobile-services-menu"
+          class="hidden fixed inset-0 top-[105px] bg-brand-primary z-50 overflow-y-auto"
+        >
+          <nav class="px-6 py-6 space-y-6 font-family-base font-medium">
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              class="block text-white hover:text-[#cddc39] transition text-lg"
               >VIP клуб</a
             >
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              class="block text-white hover:text-[#cddc39] transition text-lg"
               >Партнерство</a
             >
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              class="block text-white hover:text-[#cddc39] transition text-lg"
               >Заработать</a
             >
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              class="block text-white hover:text-[#cddc39] transition text-lg"
               >Честность игр</a
             >
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-[18px]"
-              >Ответственная игры</a
+              class="block text-white hover:text-[#cddc39] transition text-lg"
+              >Ответственная игра</a
             >
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              class="block text-white hover:text-[#cddc39] transition text-lg"
               >Техподдержка</a
             >
             <a
               href="#"
-              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              class="block text-white hover:text-[#cddc39] transition text-lg"
               >Акции</a
             >
           </nav>
-        </div>
-      </aside>
 
-      <!-- Главный контент -->
-      <main class="flex-1 ml-80 min-w-0">
-        <div class="px-6 py-6">
-          <!-- Докупи фичу -->
-          <section>
-            <!-- Evolution gaming -->
-            <div class="flex items-center gap-3 mb-6">
-              <img src="assets/icons/Fire.svg" alt="PapaBet" class="h-8" />
-
-              <h2 class="text-white text-3xl font-bold">Evolution gaming</h2>
-              <p
-                class="text-brand-secondary font-family-base text-[18px] font-semibold uppercase tracking-wide"
+          <!-- Battlepass внизу -->
+          <div class="px-6 pb-6">
+            <div class="relative rounded-lg overflow-hidden h-56">
+              <div class="absolute inset-0 bg-black/30"></div>
+              <div class="absolute inset-0 bg-black/30"></div>
+              <div
+                class="relative z-10 h-full flex flex-col justify-between p-6"
               >
-                133 игры
-              </p>
-            </div>
-
-            <div class="grid grid-cols-5 gap-4">
-              <!-- Game 1 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
+                <div>
+                  <p class="text-white text-xs uppercase tracking-widest mb-2">
+                    Регистрируйся и получи бонус к<br />депозиту до 1000$ и 30
+                    фриспинов!
+                  </p>
+                  <h3 class="text-white text-3xl font-bold mb-4">
+                    Крутани как папа!
+                  </h3>
+                </div>
+                <button
+                  class="px-6 py-2 bg-[#1a2c38] text-white text-sm font-bold rounded-lg hover:bg-[#253847] transition uppercase w-fit"
                 >
-                  Hacksaw Gaming
-                </p>
-              </div>
-
-              <!-- Game 2 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Barbarossa</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Peter & Sons
-                </p>
-              </div>
-
-              <!-- Game 3 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </div>
-
-              <!-- Game 4 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Barbarossa</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Peter & Sons
-                </p>
-              </div>
-
-              <!-- Game 5 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
+                  Начать игру
+                </button>
               </div>
             </div>
-
-            <div class="grid grid-cols-5 gap-4 mt-7">
-              <!-- Game 1 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </div>
-
-              <!-- Game 2 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Barbarossa</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Peter & Sons
-                </p>
-              </div>
-
-              <!-- Game 3 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </div>
-
-              <!-- Game 4 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Barbarossa</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Peter & Sons
-                </p>
-              </div>
-
-              <!-- Game 5 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-5 gap-4 mt-7">
-              <!-- Game 1 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </div>
-
-              <!-- Game 2 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Barbarossa</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Peter & Sons
-                </p>
-              </div>
-
-              <!-- Game 3 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </div>
-
-              <!-- Game 4 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Barbarossa</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Peter & Sons
-                </p>
-              </div>
-
-              <!-- Game 5 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-5 gap-4 mt-7">
-              <!-- Game 1 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </div>
-
-              <!-- Game 2 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Barbarossa</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Peter & Sons
-                </p>
-              </div>
-
-              <!-- Game 3 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </div>
-
-              <!-- Game 4 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Barbarossa</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Peter & Sons
-                </p>
-              </div>
-
-              <!-- Game 5 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-5 gap-4 mt-7">
-              <!-- Game 1 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </div>
-
-              <!-- Game 2 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Barbarossa</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Peter & Sons
-                </p>
-              </div>
-
-              <!-- Game 3 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </div>
-
-              <!-- Game 4 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Barbarossa</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Peter & Sons
-                </p>
-              </div>
-
-              <!-- Game 5 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-5 gap-4 mt-7">
-              <!-- Game 1 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </div>
-
-              <!-- Game 2 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Barbarossa</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Peter & Sons
-                </p>
-              </div>
-
-              <!-- Game 3 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </div>
-
-              <!-- Game 4 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Barbarossa</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Peter & Sons
-                </p>
-              </div>
-
-              <!-- Game 5 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-5 gap-4 mt-7">
-              <!-- Game 1 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </div>
-
-              <!-- Game 2 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Barbarossa</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Peter & Sons
-                </p>
-              </div>
-
-              <!-- Game 3 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </div>
-
-              <!-- Game 4 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Barbarossa</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Peter & Sons
-                </p>
-              </div>
-
-              <!-- Game 5 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-5 gap-4 mt-7">
-              <!-- Game 1 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </div>
-
-              <!-- Game 2 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Barbarossa</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Peter & Sons
-                </p>
-              </div>
-
-              <!-- Game 3 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </div>
-
-              <!-- Game 4 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Barbarossa</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Peter & Sons
-                </p>
-              </div>
-
-              <!-- Game 5 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-5 gap-4 mt-7">
-              <!-- Game 1 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </div>
-
-              <!-- Game 2 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Barbarossa</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Peter & Sons
-                </p>
-              </div>
-
-              <!-- Game 3 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </div>
-
-              <!-- Game 4 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Barbarossa</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Peter & Sons
-                </p>
-              </div>
-
-              <!-- Game 5 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </div>
-            </div>
-
-            <div class="grid grid-cols-5 gap-4 mt-7">
-              <!-- Game 1 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </div>
-
-              <!-- Game 2 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Barbarossa</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Peter & Sons
-                </p>
-              </div>
-
-              <!-- Game 3 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </div>
-
-              <!-- Game 4 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Barbarossa</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Peter & Sons
-                </p>
-              </div>
-
-              <!-- Game 5 -->
-              <div class="cursor-pointer">
-                <div
-                  class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
-                ></div>
-                <h3 class="text-white font-semibold text-[18px]">Bash Bros</h3>
-                <p
-                  class="text-subtext text-[12px] font-family-secondary uppercase tracking-wide"
-                >
-                  Hacksaw Gaming
-                </p>
-              </div>
-            </div>
-          </section>
-          <!-- Провайдер Evolution Gaming -->
-          <section class="mt-12 mb-12">
-            <div">
-              <!-- Breadcrumbs -->
-              <p class="text-gray-400 text-sm mb-6">Провайдер</p>
-
-              <!-- Логотип -->
-              <div class="mb-6">
-                <img
-                  src="/assets/icons/evolution.svg"
-                  alt="Evolution Gaming"
-                  class="h-16"
-                />
-              </div>
-
-              <!-- Заголовок -->
-              <h2 class="text-white text-3xl font-bold mb-6">
-                Evolution Gaming
-              </h2>
-
-              <!-- Текст -->
-              <div class="text-gray-300 text-base leading-relaxed space-y-4">
-                <p>
-                  Welcome to PapaBet, the next-generation crypto casino and
-                  sportsbook that combines nonstop gaming, instant crypto
-                  payments, and one-of-a-kind rewards. Play provably fair casino
-                  games, bet on live sports, and climb through missions,
-                  lootboxes, and seasonal Battle Pass tiers to unlock exclusive
-                  perks. With up to 20% daily cashback, a Refer-a-Friend
-                  program, and unique Tribes for social play, PapaBet isn't just
-                  another online casino - it's the future of blockchain gaming.
-                </p>
-              </div>
-            </div>
-          </section>
+          </div>
         </div>
-      </main>
+      </div>
+
+      <!-- Контент с сайдбаром -->
+      <div class="flex">
+        <!-- Десктопный сайдбар -->
+        <aside
+          class="hidden lg:block fixed left-0 top-[57px] w-80 h-[calc(100vh-57px)] bg-brand-primary overflow-y-auto border-r border-gray-800 z-40"
+        >
+          <!-- Battlepass -->
+          <div class="px-6 mb-6 mt-6">
+            <div class="relative rounded-lg overflow-hidden bg-black/30 h-48">
+              <div class="absolute top-4 left-4">
+                <h3 class="text-white text-2xl font-bold mb-2">Battlepass</h3>
+              </div>
+              <div class="absolute bottom-4 left-4">
+                <button
+                  class="px-6 py-2 bg-[#cddc39] text-black font-bold rounded-lg hover:bg-[#b8c935] transition uppercase"
+                >
+                  Начать
+                </button>
+              </div>
+            </div>
+            <p class="mt-3 text-sm text-[#cddc39]">
+              Получите потрясающие награды с battlepass
+            </p>
+          </div>
+
+          <!-- Игры -->
+          <div class="px-6 mb-6">
+            <div class="flex items-center gap-2 mb-4">
+              <img src="/assets/icons/dinosaur.svg" alt="" class="h-5" />
+              <h4
+                class="text-[20px] font-family-secondary uppercase tracking-wider text-brand-secondary font-regular"
+              >
+                Игры
+              </h4>
+            </div>
+            <nav class="space-y-1 font-family-base font-medium">
+              <a
+                href="#"
+                class="block text-white hover:text-[#cddc39] transition text-[18px]"
+                >Главная</a
+              >
+              <a
+                href="all-games-popular.html"
+                class="block text-white hover:text-[#cddc39] transition text-[18px]"
+                >Популярные игры</a
+              >
+              <a
+                href="#"
+                class="block text-white hover:text-[#cddc39] transition text-[18px]"
+                >Слоты</a
+              >
+              <a
+                href="#"
+                class="block text-white hover:text-[#cddc39] transition text-[18px]"
+                >Лотерея</a
+              >
+              <a
+                href="#"
+                class="block text-white hover:text-[#cddc39] transition text-[18px]"
+                >LIVE казино</a
+              >
+              <a
+                href="#"
+                class="block text-white hover:text-[#cddc39] transition text-[18px]"
+                >Ставки на спорт</a
+              >
+              <a
+                href="#"
+                class="block text-white hover:text-[#cddc39] transition text-[18px]"
+                >Новинки</a
+              >
+              <a
+                href="all-games-provider.html"
+                class="block text-white hover:text-[#cddc39] transition text-[18px]"
+                >Провайдеры</a
+              >
+            </nav>
+          </div>
+
+          <!-- Сервисы -->
+          <div class="px-6 pb-6">
+            <div class="flex items-center gap-2 mb-4">
+              <img src="/assets/icons/cocktail.svg" alt="" class="h-5" />
+              <h4
+                class="text-[20px] font-family-secondary uppercase tracking-wider text-brand-accent font-regular"
+              >
+                Сервисы
+              </h4>
+            </div>
+            <nav class="space-y-1 font-family-base font-medium">
+              <a
+                href="#"
+                class="block text-white hover:text-[#cddc39] transition text-[18px]"
+                >VIP клуб</a
+              >
+              <a
+                href="#"
+                class="block text-white hover:text-[#cddc39] transition text-[18px]"
+                >Партнерство</a
+              >
+              <a
+                href="#"
+                class="block text-white hover:text-[#cddc39] transition text-[18px]"
+                >Заработать</a
+              >
+              <a
+                href="#"
+                class="block text-white hover:text-[#cddc39] transition text-[18px]"
+                >Честность игр</a
+              >
+              <a
+                href="#"
+                class="block text-white hover:text-[#cddc39] transition text-[18px]"
+                >Ответственная игры</a
+              >
+              <a
+                href="#"
+                class="block text-white hover:text-[#cddc39] transition text-[18px]"
+                >Техподдержка</a
+              >
+              <a
+                href="#"
+                class="block text-white hover:text-[#cddc39] transition text-[18px]"
+                >Акции</a
+              >
+            </nav>
+          </div>
+        </aside>
+
+        <!-- Главный контент -->
+        <main class="flex-1 lg:ml-80 min-w-0">
+          <div class="px-4 md:px-6 py-4 md:py-6">
+            <!-- Evolution gaming -->
+            <section class="mb-8 md:mb-12">
+              <div
+                class="flex flex-wrap items-center gap-2 md:gap-3 mb-4 md:mb-6"
+              >
+                <img
+                  src="assets/icons/Fire.svg"
+                  alt="Fire"
+                  class="h-6 md:h-8"
+                />
+                <h2 class="text-white text-xl md:text-3xl font-bold">
+                  Evolution gaming
+                </h2>
+                <p
+                  class="text-brand-secondary font-family-base text-sm md:text-[18px] font-semibold uppercase tracking-wide"
+                >
+                  133 игры
+                </p>
+              </div>
+
+              <!-- Ряд 1 -->
+              <div
+                class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 mb-3 md:mb-7"
+              >
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Barbarossa
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Peter & Sons
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Barbarossa
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Peter & Sons
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </div>
+              </div>
+
+              <!-- Ряды 2-10 -->
+              <div
+                class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 mb-3 md:mb-7"
+              >
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Barbarossa
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Peter & Sons
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Barbarossa
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Peter & Sons
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </div>
+              </div>
+
+              <!-- Ряд 3 -->
+              <div
+                class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 mb-3 md:mb-7"
+              >
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Barbarossa
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Peter & Sons
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Barbarossa
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Peter & Sons
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </div>
+              </div>
+
+              <!-- Ряд 4 -->
+              <div
+                class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 mb-3 md:mb-7"
+              >
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Barbarossa
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Peter & Sons
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Barbarossa
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Peter & Sons
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </div>
+              </div>
+
+              <!-- Ряд 5 -->
+              <div
+                class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 mb-3 md:mb-7"
+              >
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Barbarossa
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Peter & Sons
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Barbarossa
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Peter & Sons
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </div>
+              </div>
+
+              <!-- Ряд 6 -->
+              <div
+                class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 mb-3 md:mb-7"
+              >
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Barbarossa
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Peter & Sons
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Barbarossa
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Peter & Sons
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </div>
+              </div>
+
+              <!-- Ряд 7 -->
+              <div
+                class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 mb-3 md:mb-7"
+              >
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Barbarossa
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Peter & Sons
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Barbarossa
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Peter & Sons
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </div>
+              </div>
+
+              <!-- Ряд 8 -->
+              <div
+                class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 mb-3 md:mb-7"
+              >
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Barbarossa
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Peter & Sons
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Barbarossa
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Peter & Sons
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </div>
+              </div>
+
+              <!-- Ряд 9 -->
+              <div
+                class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 mb-3 md:mb-7"
+              >
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Barbarossa
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Peter & Sons
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Barbarossa
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Peter & Sons
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </div>
+              </div>
+
+              <!-- Ряд 10 (последний) -->
+              <div
+                class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4"
+              >
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Barbarossa
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Peter & Sons
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Barbarossa
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Peter & Sons
+                  </p>
+                </div>
+
+                <div class="cursor-pointer">
+                  <div
+                    class="w-full aspect-[4/3] bg-black/30 rounded-lg mb-2 md:mb-3 hover:ring-2 hover:ring-[#cddc39] transition"
+                  ></div>
+                  <h3 class="text-white font-semibold text-sm md:text-[18px]">
+                    Bash Bros
+                  </h3>
+                  <p
+                    class="text-subtext text-[10px] md:text-[12px] font-family-secondary uppercase tracking-wide"
+                  >
+                    Hacksaw Gaming
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <!-- Провайдер Evolution Gaming -->
+            <section class="mb-8 md:mb-12">
+              <div class="space-y-4 md:space-y-6">
+                <!-- Breadcrumbs -->
+                <p class="text-gray-400 text-xs md:text-sm">Провайдер</p>
+
+                <!-- Логотип -->
+                <div>
+                  <img
+                    src="/assets/icons/evolution.svg"
+                    alt="Evolution Gaming"
+                    class="h-12 md:h-16"
+                  />
+                </div>
+
+                <!-- Заголовок -->
+                <h2 class="text-white text-2xl md:text-3xl font-bold">
+                  Evolution Gaming
+                </h2>
+
+                <!-- Текст -->
+                <div
+                  class="text-gray-300 text-sm md:text-base leading-relaxed space-y-4"
+                >
+                  <p>
+                    Welcome to PapaBet, the next-generation crypto casino and
+                    sportsbook that combines nonstop gaming, instant crypto
+                    payments, and one-of-a-kind rewards. Play provably fair
+                    casino games, bet on live sports, and climb through
+                    missions, lootboxes, and seasonal Battle Pass tiers to
+                    unlock exclusive perks. With up to 20% daily cashback, a
+                    Refer-a-Friend program, and unique Tribes for social play,
+                    PapaBet isn't just another online casino - it's the future
+                    of blockchain gaming.
+                  </p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
     </div>
 
-    <!-- Футер -->
     <div id="footer-container"></div>
     <script type="module" src="/src/main.js"></script>
   </body>
