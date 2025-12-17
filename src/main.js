@@ -553,6 +553,214 @@ function initMobileSidebar() {
   }
 }
 
+// Мобильное меню для залогиненного хедера
+function initMobileMenuLogged() {
+  const mobileMenuButton = document.getElementById("mobile-menu-button-logged");
+  const mobileMenu = document.getElementById("mobile-menu-logged");
+  const mobileMenuClose = document.getElementById("mobile-menu-close-logged");
+  const menuIconBurger = document.getElementById("menu-icon-burger-logged");
+  const menuIconClose = document.getElementById("menu-icon-close-logged");
+
+  if (mobileMenuButton && mobileMenu) {
+    let isOpen = false;
+
+    mobileMenuButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      if (!isOpen) {
+        mobileMenu.classList.remove("-translate-y-full");
+        mobileMenu.classList.add("translate-y-0");
+        if (menuIconBurger) menuIconBurger.classList.add("opacity-0");
+        if (menuIconClose) menuIconClose.classList.add("opacity-100");
+        document.body.style.overflow = "hidden";
+        isOpen = true;
+      }
+    });
+
+    if (mobileMenuClose) {
+      mobileMenuClose.addEventListener("click", (e) => {
+        e.stopPropagation();
+        mobileMenu.classList.remove("translate-y-0");
+        mobileMenu.classList.add("-translate-y-full");
+        if (menuIconBurger) menuIconBurger.classList.remove("opacity-0");
+        if (menuIconClose) menuIconClose.classList.remove("opacity-100");
+        document.body.style.overflow = "";
+        isOpen = false;
+      });
+    }
+
+    const menuLinks = mobileMenu.querySelectorAll("a");
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.remove("translate-y-0");
+        mobileMenu.classList.add("-translate-y-full");
+        if (menuIconBurger) menuIconBurger.classList.remove("opacity-0");
+        if (menuIconClose) menuIconClose.classList.remove("opacity-100");
+        document.body.style.overflow = "";
+        isOpen = false;
+      });
+    });
+  }
+}
+
+// Десктопный поиск для залогиненного хедера
+function initSearchDropdownLogged() {
+  const searchButton = document.getElementById("search-button-logged");
+  const searchDropdown = document.getElementById("search-dropdown-logged");
+
+  if (searchButton && searchDropdown) {
+    searchButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      searchDropdown.classList.toggle("hidden");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (
+        !searchDropdown.contains(e.target) &&
+        !searchButton.contains(e.target)
+      ) {
+        searchDropdown.classList.add("hidden");
+      }
+    });
+  }
+}
+
+// Transaction History Page
+function initTransactionHistoryButtons() {
+  const mobileProfileNavButton = document.getElementById(
+    "mobile-profile-nav-button-tx"
+  );
+  const mobileProfileNavDropdown = document.getElementById(
+    "mobile-profile-nav-dropdown-tx"
+  );
+
+  if (mobileProfileNavButton && mobileProfileNavDropdown) {
+    mobileProfileNavButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      mobileProfileNavDropdown.classList.toggle("hidden");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (
+        !mobileProfileNavDropdown.contains(e.target) &&
+        !mobileProfileNavButton.contains(e.target)
+      ) {
+        mobileProfileNavDropdown.classList.add("hidden");
+      }
+    });
+  }
+
+  // Deposits/Withdrawals Toggle
+  const depositsButton = document.getElementById("deposits-button");
+  const withdrawalsButton = document.getElementById("withdrawals-button");
+
+  if (depositsButton && withdrawalsButton) {
+    depositsButton.addEventListener("click", () => {
+      depositsButton.classList.remove("bg-white/10", "text-white");
+      depositsButton.classList.add("bg-[#cddc39]", "text-black");
+      withdrawalsButton.classList.remove("bg-[#cddc39]", "text-black");
+      withdrawalsButton.classList.add("bg-white/10", "text-white");
+    });
+
+    withdrawalsButton.addEventListener("click", () => {
+      withdrawalsButton.classList.remove("bg-white/10", "text-white");
+      withdrawalsButton.classList.add("bg-[#cddc39]", "text-black");
+      depositsButton.classList.remove("bg-[#cddc39]", "text-black");
+      depositsButton.classList.add("bg-white/10", "text-white");
+    });
+  }
+}
+
+function initBetHistoryDropdowns() {
+  console.log("initBetHistoryDropdowns called");
+
+  const mobileProfileNavButton = document.getElementById(
+    "mobile-profile-nav-button"
+  );
+  const mobileProfileNavDropdown = document.getElementById(
+    "mobile-profile-nav-dropdown"
+  );
+
+  console.log("Elements found:", {
+    mobileProfileNavButton,
+    mobileProfileNavDropdown,
+  });
+
+  if (mobileProfileNavButton && mobileProfileNavDropdown) {
+    mobileProfileNavButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      console.log("Mobile profile nav clicked");
+      mobileProfileNavDropdown.classList.toggle("hidden");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (
+        !mobileProfileNavDropdown.contains(e.target) &&
+        !mobileProfileNavButton.contains(e.target)
+      ) {
+        mobileProfileNavDropdown.classList.add("hidden");
+      }
+    });
+  }
+
+  // Period Dropdown
+  const periodButton = document.getElementById("period-button");
+  const periodDropdown = document.getElementById("period-dropdown");
+  const periodSelected = document.getElementById("period-selected");
+  const periodOptions = document.querySelectorAll(".period-option");
+
+  console.log("Period elements:", { periodButton, periodDropdown });
+
+  if (periodButton && periodDropdown) {
+    periodButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      console.log("Period button clicked");
+      periodDropdown.classList.toggle("hidden");
+      const gameDropdown = document.getElementById("game-dropdown");
+      if (gameDropdown) gameDropdown.classList.add("hidden");
+    });
+
+    periodOptions.forEach((option) => {
+      option.addEventListener("click", () => {
+        console.log("Period option clicked:", option.dataset.value);
+        periodSelected.textContent = option.dataset.value;
+        periodDropdown.classList.add("hidden");
+      });
+    });
+  }
+
+  // Game Dropdown
+  const gameButton = document.getElementById("game-button");
+  const gameDropdown = document.getElementById("game-dropdown");
+  const gameSelected = document.getElementById("game-selected");
+  const gameOptions = document.querySelectorAll(".game-option");
+
+  console.log("Game elements:", { gameButton, gameDropdown });
+
+  if (gameButton && gameDropdown) {
+    gameButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      console.log("Game button clicked");
+      gameDropdown.classList.toggle("hidden");
+      const periodDropdown = document.getElementById("period-dropdown");
+      if (periodDropdown) periodDropdown.classList.add("hidden");
+    });
+
+    gameOptions.forEach((option) => {
+      option.addEventListener("click", () => {
+        console.log("Game option clicked:", option.dataset.value);
+        gameSelected.textContent = option.dataset.value;
+        gameDropdown.classList.add("hidden");
+      });
+    });
+  }
+
+  // Close dropdowns on outside click
+  document.addEventListener("click", () => {
+    if (periodDropdown) periodDropdown.classList.add("hidden");
+    if (gameDropdown) gameDropdown.classList.add("hidden");
+  });
+}
+
 // ГЛАВНАЯ ИНИЦИАЛИЗАЦИЯ
 document.addEventListener("DOMContentLoaded", () => {
   // Загрузка компонентов
@@ -570,6 +778,9 @@ document.addEventListener("DOMContentLoaded", () => {
     initPasswordToggle();
     initMobileMenu();
     initMobileSidebar();
+    initMobileMenuLogged();
+    initSearchDropdownLogged();
+    initBetHistoryDropdowns();
   }, 100);
 });
 
