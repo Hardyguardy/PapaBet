@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/index.css" rel="stylesheet" />
+    <title>Статистика - PapaBet</title>
+  </head>
+  <body class="bg-brand-primary">
+    <div id="header-logged-container"></div>
+
+    <div class="pt-[57px] max-w-full mx-auto">
+      <!-- Мобильный хедер профиля -->
+      <div class="lg:hidden w-full bg-brand-primary border-b border-gray-800">
+        <div class="px-4 py-4">
+          <!-- Back Button + User Info -->
+          <div class="flex items-center justify-between mb-4">
+            <button
+              onclick="window.location.href='/loggeduser.html'"
+              class="flex items-center gap-2 text-gray-400 hover:text-white transition"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+              <span
+                class="text-sm font-family-secondary uppercase tracking-wider"
+                >Назад</span
+              >
+            </button>
+
+            <div class="flex items-center gap-2">
+              <h3
+                class="text-[#cddc39] text-lg font-family-secondary uppercase tracking-wide"
+              >
+                IVAN777
+              </h3>
+              <span
+                class="px-2 py-0.5 bg-transparent border border-[#cddc39] text-[#cddc39] text-xs font-bold font-family-secondary rounded uppercase"
+                >GOLD</span
+              >
+            </div>
+          </div>
+
+          <!-- Mobile Nav Dropdown -->
+          <div class="relative">
+            <button
+              id="mobile-profile-nav-button-stats"
+              class="w-full bg-[#273337] text-white px-4 py-3 rounded-lg flex items-center justify-between hover:bg-[#2d4250] transition"
+            >
+              <span class="font-family-secondary uppercase text-sm"
+                >Партнерство</span
+              >
+              <img src="/assets/icons/arrow-down-gray.svg" alt="" class="h-2" />
+            </button>
+            <div
+              id="mobile-profile-nav-dropdown-stats"
+              class="hidden absolute top-full left-0 right-0 mt-2 bg-[#273337] rounded-lg border border-gray-700 z-50"
+            >
+              <a
+                href="/account.html"
+                class="block px-4 py-3 hover:bg-[#2d4250] text-white font-family-secondary text-sm"
+                >Аккаунт</a
+              >
+              <a
+                href="/settings.html"
+                class="block px-4 py-3 hover:bg-[#2d4250] text-white font-family-secondary text-sm"
+                >Настройки</a
+              >
+              <a
+                href="/bet-history.html"
+                class="block px-4 py-3 hover:bg-[#2d4250] text-white font-family-secondary text-sm"
+                >История ставок</a
+              >
+              <a
+                href="/transaction-history.html"
+                class="block px-4 py-3 hover:bg-[#2d4250] text-white font-family-secondary text-sm"
+                >История транзакций</a
+              >
+              <a
+                href="/stats.html"
+                class="block px-4 py-3 bg-[#2d4250] text-brand-secondary font-family-secondary text-sm"
+                >Партнерство</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Контент с сайдбаром -->
+      <div class="flex">
+        <!-- Десктопный сайдбар -->
+        <aside
+          class="hidden lg:block fixed left-0 top-[57px] w-80 h-[calc(100vh-57px)] bg-brand-primary overflow-y-auto border-r border-gray-800 z-40"
+        >
+          <!-- Back Button + Title -->
+          <div class="px-6 py-6 border-b border-gray-800">
+            <div class="flex items-center gap-3 mb-8">
+              <button
+                onclick="window.location.href='/loggeduser.html'"
+                class="text-gray-400 hover:text-white transition"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </button>
+              <h2
+                class="text-gray-400 text-xl font-family-secondary uppercase tracking-wider"
+              >
+                Назад
+              </h2>
+            </div>
+
+            <!-- User Profile -->
+            <div class="flex items-center gap-3">
+              <h3
+                class="text-[#cddc39] text-2xl font-family-secondary uppercase tracking-wide"
+              >
+                IVAN777
+              </h3>
+              <span
+                class="px-3 py-1 bg-transparent border-2 border-[#cddc39] text-[#cddc39] text-sm font-bold font-family-secondary rounded uppercase tracking-wide"
+                >GOLD</span
+              >
+            </div>
+          </div>
+
+          <!-- Nav Links -->
+          <nav class="px-6 py-6 space-y-1 font-family-base font-medium">
+            <a
+              href="/account.html"
+              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              >Аккаунт</a
+            >
+            <a
+              href="/settings.html"
+              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              >Настройки</a
+            >
+            <a
+              href="/bet-history.html"
+              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              >История ставок</a
+            >
+            <a
+              href="/transaction-history.html"
+              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              >История транзакций</a
+            >
+            <a
+              href="/stats.html"
+              class="block text-brand-secondary hover:text-[#cddc39] transition text-[18px]"
+              >Партнерство</a
+            >
+          </nav>
+        </aside>
+
+        <!-- Главный контент -->
+        <main class="flex-1 lg:ml-80 min-w-0">
+          <div class="px-4 md:px-6 py-4 md:py-6">
+            <!-- Tabs Navigation -->
+            <section class="mb-6 md:mb-8">
+              <div class="flex justify-center gap-2 md:gap-3 overflow-x-auto">
+                <button
+                  class="px-4 md:px-6 py-2 md:py-3 bg-white/10 text-white text-xs md:text-sm font-bold font-family-secondary rounded-lg hover:bg-white/20 transition uppercase tracking-wide whitespace-nowrap"
+                >
+                  Дашборд
+                </button>
+                <button
+                  class="px-4 md:px-6 py-2 md:py-3 bg-[#cddc39] text-black text-xs md:text-sm font-bold font-family-secondary rounded-lg hover:bg-[#b8c935] transition uppercase tracking-wide whitespace-nowrap"
+                >
+                  Статистика
+                </button>
+                <button
+                  class="px-4 md:px-6 py-2 md:py-3 bg-white/10 text-white text-xs md:text-sm font-bold font-family-secondary rounded-lg hover:bg-white/20 transition uppercase tracking-wide whitespace-nowrap"
+                >
+                  Моя сеть
+                </button>
+                <button
+                  class="px-4 md:px-6 py-2 md:py-3 bg-white/10 text-white text-xs md:text-sm font-bold font-family-secondary rounded-lg hover:bg-white/20 transition uppercase tracking-wide whitespace-nowrap"
+                >
+                  Промо
+                </button>
+                <button
+                  class="px-4 md:px-6 py-2 md:py-3 bg-white/10 text-white text-xs md:text-sm font-bold font-family-secondary rounded-lg hover:bg-white/20 transition uppercase tracking-wide whitespace-nowrap"
+                >
+                  Финансы
+                </button>
+              </div>
+            </section>
+
+            <!-- Page Title + Period Filters -->
+            <section class="mb-6 md:mb-8">
+              <div
+                class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6"
+              >
+                <h1
+                  class="text-white text-2xl md:text-4xl font-bold font-family-base"
+                >
+                  Статистика
+                </h1>
+
+                <!-- Period Filter Buttons -->
+                <div class="flex gap-2 overflow-x-auto">
+                  <button
+                    class="px-3 md:px-4 py-1.5 md:py-2 bg-[#cddc39] text-black text-xs md:text-sm font-semibold font-family-secondary rounded-lg hover:bg-[#b8c935] transition uppercase whitespace-nowrap"
+                  >
+                    Сегодня
+                  </button>
+                  <button
+                    class="px-3 md:px-4 py-1.5 md:py-2 bg-white/10 text-white text-xs md:text-sm font-semibold font-family-secondary rounded-lg hover:bg-white/20 transition uppercase whitespace-nowrap"
+                  >
+                    Неделя
+                  </button>
+                  <button
+                    class="px-3 md:px-4 py-1.5 md:py-2 bg-white/10 text-white text-xs md:text-sm font-semibold font-family-secondary rounded-lg hover:bg-white/20 transition uppercase whitespace-nowrap"
+                  >
+                    Месяц
+                  </button>
+                  <button
+                    class="px-3 md:px-4 py-1.5 md:py-2 bg-white/10 text-white text-xs md:text-sm font-semibold font-family-secondary rounded-lg hover:bg-white/20 transition uppercase whitespace-nowrap"
+                  >
+                    Все время
+                  </button>
+                  <button
+                    class="px-3 md:px-4 py-1.5 md:py-2 bg-white/10 text-white text-xs md:text-sm font-semibold font-family-secondary rounded-lg hover:bg-white/20 transition uppercase whitespace-nowrap"
+                  >
+                    Пользовательский
+                  </button>
+                </div>
+              </div>
+            </section>
+
+            <!-- Воронка конверсии -->
+            <section class="mb-8 md:mb-12">
+              <div class="bg-[#273337] rounded-lg p-4 md:p-6">
+                <h2
+                  class="text-white text-xl md:text-2xl font-bold font-family-base mb-4 md:mb-6"
+                >
+                  Воронка конверсии
+                </h2>
+
+                <div
+                  class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4"
+                >
+                  <!-- Card 1 - Клики -->
+                  <div
+                    class="bg-[#0f1c24] rounded-lg p-4 md:p-6 border border-gray-700/30"
+                  >
+                    <div class="flex items-center justify-between mb-3 md:mb-4">
+                      <span
+                        class="text-gray-400 text-xs md:text-sm font-semibold uppercase tracking-wide font-family-secondary"
+                        >Клики</span
+                      >
+                      <svg
+                        class="w-4 h-4 text-gray-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M13 7l5 5m0 0l-5 5m5-5H6"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="text-[#cddc39] text-3xl md:text-4xl font-bold font-family-base"
+                    >
+                      1,024
+                    </div>
+                  </div>
+
+                  <!-- Card 2 - Регистрации -->
+                  <div
+                    class="bg-[#0f1c24] rounded-lg p-4 md:p-6 border border-gray-700/30"
+                  >
+                    <div class="flex items-center justify-between mb-3 md:mb-4">
+                      <span
+                        class="text-gray-400 text-xs md:text-sm font-semibold uppercase tracking-wide font-family-secondary"
+                        >Регистрации</span
+                      >
+                      <svg
+                        class="w-4 h-4 text-gray-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M13 7l5 5m0 0l-5 5m5-5H6"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="text-[#cddc39] text-3xl md:text-4xl font-bold font-family-base mb-1"
+                    >
+                      120
+                    </div>
+                    <div
+                      class="text-[#cddc39] text-xs md:text-sm font-semibold"
+                    >
+                      37.5%
+                    </div>
+                  </div>
+
+                  <!-- Card 3 - Депозиты -->
+                  <div
+                    class="bg-[#0f1c24] rounded-lg p-4 md:p-6 border border-gray-700/30"
+                  >
+                    <div class="flex items-center justify-between mb-3 md:mb-4">
+                      <span
+                        class="text-gray-400 text-xs md:text-sm font-semibold uppercase tracking-wide font-family-secondary"
+                        >Депозиты</span
+                      >
+                      <svg
+                        class="w-4 h-4 text-gray-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M13 7l5 5m0 0l-5 5m5-5H6"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="text-[#cddc39] text-3xl md:text-4xl font-bold font-family-base mb-1"
+                    >
+                      45
+                    </div>
+                    <div
+                      class="text-[#cddc39] text-xs md:text-sm font-semibold"
+                    >
+                      37.5%
+                    </div>
+                  </div>
+
+                  <!-- Card 4 - Активные -->
+                  <div
+                    class="bg-[#0f1c24] rounded-lg p-4 md:p-6 border border-gray-700/30"
+                  >
+                    <div class="flex items-center justify-between mb-3 md:mb-4">
+                      <span
+                        class="text-gray-400 text-xs md:text-sm font-semibold uppercase tracking-wide font-family-secondary"
+                        >Активные</span
+                      >
+                      <svg
+                        class="w-4 h-4 text-gray-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M13 7l5 5m0 0l-5 5m5-5H6"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="text-[#cddc39] text-3xl md:text-4xl font-bold font-family-base mb-1"
+                    >
+                      22
+                    </div>
+                    <div
+                      class="text-[#cddc39] text-xs md:text-sm font-semibold"
+                    >
+                      37.5%
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <!-- Статистика по уровням -->
+            <section class="mb-8 md:mb-12">
+              <div class="bg-[#273337] rounded-lg p-4 md:p-6">
+                <h2
+                  class="text-white text-xl md:text-2xl font-bold font-family-base mb-4 md:mb-6"
+                >
+                  Статистика по уровням
+                </h2>
+
+                <div
+                  class="bg-[#273337] rounded-lg overflow-hidden border border-gray-700/30"
+                >
+                  <!-- Хедер - ДЕСКТОП (5 колонок) -->
+                  <div
+                    class="hidden md:grid md:grid-cols-5 gap-4 px-4 md:px-6 py-3 md:py-4 border-b border-gray-700/50"
+                  >
+                    <div
+                      class="text-gray-400 text-xs md:text-sm font-semibold uppercase tracking-wide font-family-secondary"
+                    >
+                      Уровень
+                    </div>
+                    <div
+                      class="text-gray-400 text-xs md:text-sm font-semibold uppercase tracking-wide font-family-secondary"
+                    >
+                      Рефералов
+                    </div>
+                    <div
+                      class="text-gray-400 text-xs md:text-sm font-semibold uppercase tracking-wide font-family-secondary"
+                    >
+                      Активных
+                    </div>
+                    <div
+                      class="text-gray-400 text-xs md:text-sm font-semibold uppercase tracking-wide font-family-secondary text-right"
+                    >
+                      NGR
+                    </div>
+                    <div
+                      class="text-[#cddc39] text-xs md:text-sm font-semibold uppercase tracking-wide font-family-secondary text-right"
+                    >
+                      Мой доход
+                    </div>
+                  </div>
+
+                  <!-- Хедер - МОБИЛЬНЫЙ (3 колонки) -->
+                  <div
+                    class="grid md:hidden grid-cols-3 gap-2 px-4 py-3 border-b border-gray-700/50"
+                  >
+                    <div
+                      class="text-gray-400 text-xs font-semibold uppercase tracking-wide font-family-secondary"
+                    >
+                      Уровень
+                    </div>
+                    <div
+                      class="text-gray-400 text-xs font-semibold uppercase tracking-wide font-family-secondary"
+                    >
+                      Рефералов
+                    </div>
+                    <div
+                      class="text-gray-400 text-xs font-semibold uppercase tracking-wide font-family-secondary text-right"
+                    >
+                      Активных
+                    </div>
+                  </div>
+
+                  <!-- Строки таблицы -->
+                  <div>
+                    <!-- Строка 1 - ДЕСКТОП -->
+                    <div
+                      class="hidden md:grid bg-[#111F24] md:grid-cols-5 gap-4 px-4 md:px-6 py-3 md:py-4 border-b border-gray-700/30 hover:bg-[#1d2f3f] transition"
+                    >
+                      <div class="text-white text-xs md:text-sm font-medium">
+                        L1 (10%)
+                      </div>
+                      <div class="text-white text-xs md:text-sm">23</div>
+                      <div class="text-white text-xs md:text-sm">8</div>
+                      <div class="text-white text-xs md:text-sm text-right">
+                        $1,240.00
+                      </div>
+                      <div
+                        class="text-[#cddc39] text-xs md:text-sm font-semibold text-right"
+                      >
+                        $124.00
+                      </div>
+                    </div>
+
+                    <!-- Строка 1 - МОБИЛЬНЫЙ -->
+                    <div
+                      class="grid md:hidden bg-[#111F24] grid-cols-3 gap-2 px-4 py-3 border-b border-gray-700/30"
+                    >
+                      <div class="text-white text-xs font-medium">L1 (10%)</div>
+                      <div class="text-white text-xs">23</div>
+                      <div class="text-white text-xs text-right">8</div>
+                    </div>
+
+                    <!-- Строка 2 - ДЕСКТОП -->
+                    <div
+                      class="hidden md:grid md:grid-cols-5 gap-4 px-4 md:px-6 py-3 md:py-4 border-b border-gray-700/30 hover:bg-[#1d2f3f] transition"
+                    >
+                      <div class="text-white text-xs md:text-sm font-medium">
+                        L1 (10%)
+                      </div>
+                      <div class="text-white text-xs md:text-sm">23</div>
+                      <div class="text-white text-xs md:text-sm">8</div>
+                      <div class="text-white text-xs md:text-sm text-right">
+                        $1,240.00
+                      </div>
+                      <div
+                        class="text-[#cddc39] text-xs md:text-sm font-semibold text-right"
+                      >
+                        $124.00
+                      </div>
+                    </div>
+
+                    <!-- Строка 2 - МОБИЛЬНЫЙ -->
+                    <div
+                      class="grid md:hidden grid-cols-3 gap-2 px-4 py-3 border-b border-gray-700/30"
+                    >
+                      <div class="text-white text-xs font-medium">L1 (10%)</div>
+                      <div class="text-white text-xs">23</div>
+                      <div class="text-white text-xs text-right">8</div>
+                    </div>
+
+                    <!-- Строка 3 - ДЕСКТОП -->
+                    <div
+                      class="hidden md:grid bg-[#111F24] md:grid-cols-5 gap-4 px-4 md:px-6 py-3 md:py-4 border-b border-gray-700/30 hover:bg-[#1d2f3f] transition"
+                    >
+                      <div class="text-white text-xs md:text-sm font-medium">
+                        L1 (10%)
+                      </div>
+                      <div class="text-white text-xs md:text-sm">23</div>
+                      <div class="text-white text-xs md:text-sm">8</div>
+                      <div class="text-white text-xs md:text-sm text-right">
+                        $1,240.00
+                      </div>
+                      <div
+                        class="text-[#cddc39] text-xs md:text-sm font-semibold text-right"
+                      >
+                        $124.00
+                      </div>
+                    </div>
+
+                    <!-- Строка 3 - МОБИЛЬНЫЙ -->
+                    <div
+                      class="grid md:hidden bg-[#111F24] grid-cols-3 gap-2 px-4 py-3 border-b border-gray-700/30"
+                    >
+                      <div class="text-white text-xs font-medium">L1 (10%)</div>
+                      <div class="text-white text-xs">23</div>
+                      <div class="text-white text-xs text-right">8</div>
+                    </div>
+
+                    <!-- Строка 4 - ДЕСКТОП -->
+                    <div
+                      class="hidden md:grid md:grid-cols-5 gap-4 px-4 md:px-6 py-3 md:py-4 border-b border-gray-700/30 hover:bg-[#1d2f3f] transition"
+                    >
+                      <div class="text-white text-xs md:text-sm font-medium">
+                        L1 (10%)
+                      </div>
+                      <div class="text-white text-xs md:text-sm">23</div>
+                      <div class="text-white text-xs md:text-sm">8</div>
+                      <div class="text-white text-xs md:text-sm text-right">
+                        $1,240.00
+                      </div>
+                      <div
+                        class="text-[#cddc39] text-xs md:text-sm font-semibold text-right"
+                      >
+                        $124.00
+                      </div>
+                    </div>
+
+                    <!-- Строка 4 - МОБИЛЬНЫЙ -->
+                    <div
+                      class="grid md:hidden grid-cols-3 gap-2 px-4 py-3 border-b border-gray-700/30"
+                    >
+                      <div class="text-white text-xs font-medium">L1 (10%)</div>
+                      <div class="text-white text-xs">23</div>
+                      <div class="text-white text-xs text-right">8</div>
+                    </div>
+
+                    <!-- Строка ИТОГО - ДЕСКТОП -->
+                    <div
+                      class="hidden md:grid bg-[#cddc39] md:grid-cols-5 gap-4 px-4 md:px-6 py-3 md:py-4"
+                    >
+                      <div
+                        class="text-black text-xs md:text-sm font-bold uppercase"
+                      >
+                        Итого
+                      </div>
+                      <div class="text-black text-xs md:text-sm font-semibold">
+                        149
+                      </div>
+                      <div class="text-black text-xs md:text-sm font-semibold">
+                        25
+                      </div>
+                      <div
+                        class="text-black text-xs md:text-sm font-semibold text-right"
+                      >
+                        $4,240.00
+                      </div>
+                      <div
+                        class="text-black text-xs md:text-sm font-bold text-right"
+                      >
+                        $424.00
+                      </div>
+                    </div>
+
+                    <!-- Строка ИТОГО - МОБИЛЬНЫЙ -->
+                    <div
+                      class="grid md:hidden bg-[#cddc39] grid-cols-3 gap-2 px-4 py-3"
+                    >
+                      <div class="text-black text-xs font-bold uppercase">
+                        Итого
+                      </div>
+                      <div class="text-black text-xs font-semibold">149</div>
+                      <div class="text-black text-xs font-semibold text-right">
+                        25
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Download CSV Button -->
+                <div class="mt-4 md:mt-6">
+                  <button
+                    class="w-full md:w-auto px-6 md:px-8 py-3 bg-white text-black text-sm md:text-base font-bold font-family-secondary rounded-lg hover:bg-gray-100 transition uppercase tracking-wide"
+                  >
+                    Скачать CSV
+                  </button>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <div id="footer-container"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

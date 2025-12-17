@@ -761,6 +761,31 @@ function initBetHistoryDropdowns() {
   });
 }
 
+function initStatsPage() {
+  const mobileProfileNavButton = document.getElementById(
+    "mobile-profile-nav-button-stats"
+  );
+  const mobileProfileNavDropdown = document.getElementById(
+    "mobile-profile-nav-dropdown-stats"
+  );
+
+  if (mobileProfileNavButton && mobileProfileNavDropdown) {
+    mobileProfileNavButton.addEventListener("click", (e) => {
+      e.stopPropagation();
+      mobileProfileNavDropdown.classList.toggle("hidden");
+    });
+
+    document.addEventListener("click", (e) => {
+      if (
+        !mobileProfileNavDropdown.contains(e.target) &&
+        !mobileProfileNavButton.contains(e.target)
+      ) {
+        mobileProfileNavDropdown.classList.add("hidden");
+      }
+    });
+  }
+}
+
 // ГЛАВНАЯ ИНИЦИАЛИЗАЦИЯ
 document.addEventListener("DOMContentLoaded", () => {
   // Загрузка компонентов
@@ -781,6 +806,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initMobileMenuLogged();
     initSearchDropdownLogged();
     initBetHistoryDropdowns();
+    initStatsPage();
   }, 100);
 });
 
