@@ -354,29 +354,68 @@
                   </h2>
                   <div class="flex gap-2">
                     <button
-                      class="px-3 py-1.5 bg-white/10 text-gray-400 text-xs font-semibold font-family-secondary rounded uppercase"
+                      id="chart-period-7days"
+                      class="px-3 py-1.5 bg-[#cddc39] text-black text-xs font-semibold font-family-secondary rounded uppercase transition"
                     >
-                      Год
+                      7 Дней
                     </button>
                     <button
-                      class="px-3 py-1.5 bg-[#cddc39] text-black text-xs font-semibold font-family-secondary rounded uppercase"
+                      id="chart-period-30days"
+                      class="px-3 py-1.5 bg-white/10 text-gray-400 text-xs font-semibold font-family-secondary rounded uppercase transition hover:bg-white/20"
                     >
                       30 Дней
                     </button>
                     <button
-                      class="px-3 py-1.5 bg-white/10 text-gray-400 text-xs font-semibold font-family-secondary rounded uppercase"
+                      id="chart-period-90days"
+                      class="px-3 py-1.5 bg-white/10 text-gray-400 text-xs font-semibold font-family-secondary rounded uppercase transition hover:bg-white/20"
                     >
-                      Все
+                      90 Дней
                     </button>
                   </div>
                 </div>
 
-                <!-- Chart -->
+                <!-- Chart Container -->
                 <div class="relative w-full h-48 md:h-64 lg:h-80">
+                  <!-- 7 Days Chart -->
                   <div
-                    class="absolute inset-0 flex items-end justify-between gap-2 md:gap-2"
+                    id="chart-7days"
+                    class="absolute inset-0 flex items-end justify-between gap-2 md:gap-4"
                   >
-                    <!-- 30 bars for 30 days -->
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 65%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 85%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 55%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 25%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 10%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 15%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 75%"
+                    ></div>
+                  </div>
+
+                  <!-- 30 Days Chart -->
+                  <div
+                    id="chart-30days"
+                    class="hidden absolute inset-0 flex items-end justify-between gap-0.5 md:gap-1"
+                  >
                     <div
                       class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
                       style="height: 35%"
@@ -498,20 +537,380 @@
                       style="height: 90%"
                     ></div>
                   </div>
-                  <div class="absolute top-2 md:top-4 left-2 md:left-4">
+
+                  <!-- 90 Days Chart -->
+                  <div
+                    id="chart-90days"
+                    class="hidden absolute inset-0 flex items-end justify-between gap-0.5"
+                  >
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 45%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 32%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 68%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 25%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 88%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 52%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 15%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 72%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 38%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 95%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 58%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 22%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 78%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 42%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 65%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 18%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 85%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 48%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 92%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 35%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 62%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 28%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 75%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 12%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 98%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 55%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 20%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 82%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 38%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 100%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 25%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 70%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 45%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 88%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 32%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 15%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 65%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 52%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 95%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 22%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 78%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 48%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 85%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 35%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 12%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 72%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 58%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 92%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 28%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 68%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 42%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 18%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 75%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 55%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 98%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 38%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 82%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 25%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 62%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 48%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 88%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 15%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 70%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 52%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 32%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 78%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 45%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 92%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 22%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 65%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 58%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 35%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 12%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 85%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 42%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 95%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 28%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 72%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 55%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 18%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 68%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 48%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 100%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 38%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 82%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 25%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 75%"
+                    ></div>
+                    <div
+                      class="flex-1 min-w-0 bg-[#cddc39] rounded-t-sm"
+                      style="height: 52%"
+                    ></div>
+                  </div>
+
+                  <!-- <div class="absolute top-2 md:top-4 left-2 md:left-4">
                     <p
                       class="text-[#4ADE80] text-base md:text-lg lg:text-xl font-bold"
                     >
                       +$136.50
                     </p>
-                  </div>
+                  </div> -->
                 </div>
 
                 <div
                   class="flex items-center justify-between mt-4 text-[10px] md:text-xs text-gray-400 font-family-secondary"
                 >
-                  <span>АВГУСТ 15, 2025</span>
-                  <span>СЕНТЯБРЯ 15, 2025</span>
+                  <span id="chart-date-start">АВГУСТ 15, 2025</span>
+                  <span id="chart-date-end">СЕНТЯБРЯ 15, 2025</span>
                 </div>
               </div>
             </section>

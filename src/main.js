@@ -786,6 +786,58 @@ function initStatsPage() {
   }
 }
 
+function initChartPeriodSwitcher() {
+  const btn7days = document.getElementById("chart-period-7days");
+  const btn30days = document.getElementById("chart-period-30days");
+  const btn90days = document.getElementById("chart-period-90days");
+
+  const chart7days = document.getElementById("chart-7days");
+  const chart30days = document.getElementById("chart-30days");
+  const chart90days = document.getElementById("chart-90days");
+
+  const dateStart = document.getElementById("chart-date-start");
+  const dateEnd = document.getElementById("chart-date-end");
+
+  if (!btn7days || !btn30days || !btn90days) return;
+
+  function setActiveButton(activeBtn) {
+    [btn7days, btn30days, btn90days].forEach((btn) => {
+      btn.classList.remove("bg-[#cddc39]", "text-black");
+      btn.classList.add("bg-white/10", "text-gray-400");
+    });
+    activeBtn.classList.remove("bg-white/10", "text-gray-400");
+    activeBtn.classList.add("bg-[#cddc39]", "text-black");
+  }
+
+  function showChart(chart) {
+    [chart7days, chart30days, chart90days].forEach((c) =>
+      c?.classList.add("hidden")
+    );
+    chart?.classList.remove("hidden");
+  }
+
+  btn7days?.addEventListener("click", () => {
+    setActiveButton(btn7days);
+    showChart(chart7days);
+    dateStart.textContent = "АВГУСТ 9, 2025";
+    dateEnd.textContent = "АВГУСТ 15, 2025";
+  });
+
+  btn30days?.addEventListener("click", () => {
+    setActiveButton(btn30days);
+    showChart(chart30days);
+    dateStart.textContent = "АВГУСТ 15, 2025";
+    dateEnd.textContent = "СЕНТЯБРЯ 15, 2025";
+  });
+
+  btn90days?.addEventListener("click", () => {
+    setActiveButton(btn90days);
+    showChart(chart90days);
+    dateStart.textContent = "ИЮНЬ 15, 2025";
+    dateEnd.textContent = "СЕНТЯБРЯ 15, 2025";
+  });
+}
+
 // ГЛАВНАЯ ИНИЦИАЛИЗАЦИЯ
 document.addEventListener("DOMContentLoaded", () => {
   // Загрузка компонентов
@@ -807,6 +859,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initSearchDropdownLogged();
     initBetHistoryDropdowns();
     initStatsPage();
+    initChartPeriodSwitcher();
   }, 100);
 });
 
