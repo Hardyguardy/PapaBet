@@ -122,57 +122,57 @@ function initCustomDropdowns() {
   // === DEPOSIT BANK PAGE ===
   const currencyButtonBank = document.getElementById("currency-button-bank");
   const currencyDropdownBank = document.getElementById(
-    "currency-dropdown-bank"
+    "currency-dropdown-bank",
   );
   const currencySelectedBank = document.getElementById(
-    "currency-selected-bank"
+    "currency-selected-bank",
   );
   const currencyOptionsBank = document.querySelectorAll(
-    ".currency-option-bank"
+    ".currency-option-bank",
   );
   const currencySearchBank = document.getElementById("currency-search-bank");
 
   // === DEPOSIT WITHDRAWAL PAGE ===
   const withdrawalMethodButton = document.getElementById(
-    "withdrawal-method-button"
+    "withdrawal-method-button",
   );
   const withdrawalMethodDropdown = document.getElementById(
-    "withdrawal-method-dropdown"
+    "withdrawal-method-dropdown",
   );
   const withdrawalMethodSelected = document.getElementById(
-    "withdrawal-method-selected"
+    "withdrawal-method-selected",
   );
   const withdrawalMethodOptions = document.querySelectorAll(
-    ".withdrawal-method-option"
+    ".withdrawal-method-option",
   );
 
   const currencyButtonWithdrawal = document.getElementById(
-    "currency-button-withdrawal"
+    "currency-button-withdrawal",
   );
   const currencyDropdownWithdrawal = document.getElementById(
-    "currency-dropdown-withdrawal"
+    "currency-dropdown-withdrawal",
   );
   const currencySelectedWithdrawal = document.getElementById(
-    "currency-selected-withdrawal"
+    "currency-selected-withdrawal",
   );
   const currencyOptionsWithdrawal = document.querySelectorAll(
-    ".currency-option-withdrawal"
+    ".currency-option-withdrawal",
   );
   const currencySearchWithdrawal = document.getElementById(
-    "currency-search-withdrawal"
+    "currency-search-withdrawal",
   );
 
   const networkButtonWithdrawal = document.getElementById(
-    "network-button-withdrawal"
+    "network-button-withdrawal",
   );
   const networkDropdownWithdrawal = document.getElementById(
-    "network-dropdown-withdrawal"
+    "network-dropdown-withdrawal",
   );
   const networkSelectedWithdrawal = document.getElementById(
-    "network-selected-withdrawal"
+    "network-selected-withdrawal",
   );
   const networkOptionsWithdrawal = document.querySelectorAll(
-    ".network-option-withdrawal"
+    ".network-option-withdrawal",
   );
 
   console.log("Elements found:", {
@@ -627,10 +627,10 @@ function initSearchDropdownLogged() {
 // Transaction History Page
 function initTransactionHistoryButtons() {
   const mobileProfileNavButton = document.getElementById(
-    "mobile-profile-nav-button-tx"
+    "mobile-profile-nav-button-tx",
   );
   const mobileProfileNavDropdown = document.getElementById(
-    "mobile-profile-nav-dropdown-tx"
+    "mobile-profile-nav-dropdown-tx",
   );
 
   if (mobileProfileNavButton && mobileProfileNavDropdown) {
@@ -674,10 +674,10 @@ function initBetHistoryDropdowns() {
   console.log("initBetHistoryDropdowns called");
 
   const mobileProfileNavButton = document.getElementById(
-    "mobile-profile-nav-button"
+    "mobile-profile-nav-button",
   );
   const mobileProfileNavDropdown = document.getElementById(
-    "mobile-profile-nav-dropdown"
+    "mobile-profile-nav-dropdown",
   );
 
   console.log("Elements found:", {
@@ -763,10 +763,10 @@ function initBetHistoryDropdowns() {
 
 function initStatsPage() {
   const mobileProfileNavButton = document.getElementById(
-    "mobile-profile-nav-button-stats"
+    "mobile-profile-nav-button-stats",
   );
   const mobileProfileNavDropdown = document.getElementById(
-    "mobile-profile-nav-dropdown-stats"
+    "mobile-profile-nav-dropdown-stats",
   );
 
   if (mobileProfileNavButton && mobileProfileNavDropdown) {
@@ -811,7 +811,7 @@ function initChartPeriodSwitcher() {
 
   function showChart(chart) {
     [chart7days, chart30days, chart90days].forEach((c) =>
-      c?.classList.add("hidden")
+      c?.classList.add("hidden"),
     );
     chart?.classList.remove("hidden");
   }
@@ -844,7 +844,7 @@ document.addEventListener("DOMContentLoaded", () => {
   loadComponent("header-container", "/src/components/header.html");
   loadComponent(
     "header-logged-container",
-    "/src/components/header-logged.html"
+    "/src/components/header-logged.html",
   );
   loadComponent("footer-container", "/src/components/footer.html");
 
