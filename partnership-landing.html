@@ -1,0 +1,918 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/index.css" rel="stylesheet" />
+    <title>Партнерская программа - PapaBet</title>
+  </head>
+  <body class="bg-brand-primary">
+    <div id="header-logged-container"></div>
+
+    <div class="pt-[57px] max-w-full mx-auto">
+      <!-- Мобильный хедер профиля -->
+      <div class="lg:hidden w-full bg-brand-primary border-b border-gray-800">
+        <div class="px-4 py-4">
+          <div class="flex items-center justify-between mb-4">
+            <button
+              onclick="window.location.href = '/loggeduser.html'"
+              class="flex items-center gap-2 text-gray-400 hover:text-white transition"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+              <span
+                class="text-sm font-family-secondary uppercase tracking-wider"
+                >Назад</span
+              >
+            </button>
+            <div class="flex items-center gap-2">
+              <h3
+                class="text-[#cddc39] text-lg font-family-secondary uppercase tracking-wide"
+              >
+                IVAN777
+              </h3>
+              <span
+                class="px-2 py-0.5 bg-transparent border border-[#cddc39] text-[#cddc39] text-xs font-bold font-family-secondary rounded uppercase"
+                >GOLD</span
+              >
+            </div>
+          </div>
+
+          <!-- Mobile Nav Dropdown -->
+          <div class="relative">
+            <button
+              id="mobile-profile-nav-button-landing"
+              class="w-full bg-[#273337] text-white px-4 py-3 rounded-lg flex items-center justify-between hover:bg-[#2d4250] transition"
+            >
+              <span class="font-family-secondary uppercase text-sm"
+                >Партнерство</span
+              >
+              <img src="/assets/icons/arrow-down-gray.svg" alt="" class="h-2" />
+            </button>
+            <div
+              id="mobile-profile-nav-dropdown-landing"
+              class="hidden absolute top-full left-0 right-0 mt-2 bg-[#273337] rounded-lg border border-gray-700 z-50"
+            >
+              <a
+                href="/account.html"
+                class="block px-4 py-3 hover:bg-[#2d4250] text-white font-family-secondary text-sm"
+                >Аккаунт</a
+              >
+              <a
+                href="/settings.html"
+                class="block px-4 py-3 hover:bg-[#2d4250] text-white font-family-secondary text-sm"
+                >Настройки</a
+              >
+              <a
+                href="/bet-history.html"
+                class="block px-4 py-3 hover:bg-[#2d4250] text-white font-family-secondary text-sm"
+                >История ставок</a
+              >
+              <a
+                href="/transaction-history.html"
+                class="block px-4 py-3 hover:bg-[#2d4250] text-white font-family-secondary text-sm"
+                >История транзакций</a
+              >
+              <a
+                href="/partnership-landing.html"
+                class="block px-4 py-3 bg-[#2d4250] text-brand-secondary font-family-secondary text-sm"
+                >Партнерство</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex">
+        <!-- Десктопный сайдбар -->
+        <aside
+          class="hidden lg:block fixed left-0 top-[57px] w-80 h-[calc(100vh-57px)] bg-brand-primary overflow-y-auto border-r border-gray-800 z-40"
+        >
+          <div class="px-6 py-6 border-b border-gray-800">
+            <div class="flex items-center gap-3 mb-8">
+              <button
+                onclick="window.location.href = '/loggeduser.html'"
+                class="text-gray-400 hover:text-white transition"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </button>
+              <h2
+                class="text-gray-400 text-xl font-family-secondary uppercase tracking-wider"
+              >
+                Назад
+              </h2>
+            </div>
+            <div class="flex items-center gap-3">
+              <h3
+                class="text-[#cddc39] text-2xl font-family-secondary uppercase tracking-wide"
+              >
+                IVAN777
+              </h3>
+              <span
+                class="px-3 py-1 bg-transparent border-2 border-[#cddc39] text-[#cddc39] text-sm font-bold font-family-secondary rounded uppercase tracking-wide"
+                >GOLD</span
+              >
+            </div>
+          </div>
+
+          <nav class="px-6 py-6 space-y-1 font-family-base font-medium">
+            <a
+              href="/account.html"
+              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              >Аккаунт</a
+            >
+            <a
+              href="/settings.html"
+              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              >Настройки</a
+            >
+            <a
+              href="/bet-history.html"
+              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              >История ставок</a
+            >
+            <a
+              href="/transaction-history.html"
+              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              >История транзакций</a
+            >
+            <a
+              href="/partnership-landing.html"
+              class="block text-brand-secondary hover:text-[#cddc39] transition text-[18px]"
+              >Партнерство</a
+            >
+          </nav>
+        </aside>
+
+        <!-- Главный контент -->
+        <main class="flex-1 lg:ml-80 min-w-0">
+          <!-- Hero Section -->
+
+          <section
+            class="relative min-h-[400px] md:min-h-[600px] overflow-hidden"
+            style="
+              background-image: url(&quot;/assets/icons/partnership-1.png&quot;);
+              background-size: cover;
+              background-position: center;
+            "
+          >
+            <div class="absolute inset-0"></div>
+
+            <!-- Контент -->
+            <div
+              class="relative z-10 flex flex-col items-center justify-center text-center px-4 min-h-[400px] md:min-h-[600px]"
+              style="padding-top: 120px; padding-bottom: 120px"
+            >
+              <!-- Надпись сверху -->
+              <p
+                class="text-[#cddc39] text-xs md:text-sm font-bold font-family-secondary uppercase tracking-[0.3em] mb-6 md:mb-8"
+              >
+                Партнёрская программа
+              </p>
+
+              <!-- Главный заголовок -->
+              <h1
+                class="text-white text-4xl md:text-6xl lg:text-7xl font-bold font-family-base leading-tight mb-6 md:mb-8 max-w-4xl"
+              >
+                Зарабатывай до 19%<br />с каждого игрока
+              </h1>
+
+              <!-- Подзаголовок -->
+              <p
+                class="text-white text-xs md:text-sm font-family-secondary uppercase tracking-[0.2em] mb-8 md:mb-12 max-w-2xl leading-relaxed"
+              >
+                Приводи игроков, строй сеть — получай пожизненный доход с 4
+                уровней рефералов
+              </p>
+
+              <!-- Email кнопка -->
+              <a
+                href="mailto:topguys@papabet.gg"
+                class="inline-block px-8 md:px-10 py-3 md:py-4 bg-[#cddc39] text-black text-sm md:text-base font-bold font-family-secondary rounded-lg hover:bg-[#b8c935] transition uppercase tracking-wider mb-6 md:mb-8"
+              >
+                topguys@papabet.gg
+              </a>
+
+              <!-- Ссылка внизу -->
+              <div class="text-center">
+                <p
+                  class="text-[#cddc39] text-sm md:text-base font-family-secondary mb-1"
+                >
+                  Уже зарегистрирован?
+                </p>
+                <a
+                  href="/partnership-dashboard.html"
+                  class="text-gray-300 text-xs md:text-sm font-family-secondary hover:text-white transition"
+                >
+                  Партнёрка доступна в личном кабинете
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <!-- 4 Levels Section -->
+          <section class="px-4 md:px-6 py-10 md:py-16">
+            <div class="text-center mb-8 md:mb-12">
+              <div class="inline-flex mb-4 md:mb-6">
+                <img
+                  src="/assets/icons/money-icon.png"
+                  alt=""
+                  class="w-16 h-16 md:w-20 md:h-20"
+                />
+              </div>
+              <h2
+                class="text-brand-secondary text-2xl md:text-4xl font-bold font-family-base mb-3 md:mb-4"
+              >
+                4 уровня дохода
+              </h2>
+              <p class="text-gray-400 text-sm md:text-base max-w-2xl mx-auto">
+                Получайте комиссию с четырех уровней рефералов — больше
+                рефералов, больше дохода
+              </p>
+            </div>
+
+            <div
+              class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 lg:gap-6"
+            >
+              <div
+                class="bg-[#1a2c38] rounded-lg p-4 md:p-6 border-2 border-[#cddc39]"
+              >
+                <div class="mb-3 md:mb-4">
+                  <span
+                    class="inline-block px-3 py-1 bg-[#cddc39] text-black text-xs font-bold font-family-secondary rounded uppercase"
+                    >Уровень 1</span
+                  >
+                </div>
+                <div
+                  class="text-[#cddc39] text-4xl md:text-5xl font-bold font-family-base mb-2"
+                >
+                  10%
+                </div>
+                <p class="text-gray-400 text-xs md:text-sm">
+                  С прямых рефералов
+                </p>
+              </div>
+              <div
+                class="bg-[#1a2c38] rounded-lg p-4 md:p-6 border border-gray-700"
+              >
+                <div class="mb-3 md:mb-4">
+                  <span
+                    class="inline-block px-3 py-1 bg-white/10 text-white text-xs font-bold font-family-secondary rounded uppercase"
+                    >Уровень 2</span
+                  >
+                </div>
+                <div
+                  class="text-[#cddc39] text-4xl md:text-5xl font-bold font-family-base mb-2"
+                >
+                  5%
+                </div>
+                <p class="text-gray-400 text-xs md:text-sm">
+                  Рефералы рефералов
+                </p>
+              </div>
+              <div
+                class="bg-[#1a2c38] rounded-lg p-4 md:p-6 border border-gray-700"
+              >
+                <div class="mb-3 md:mb-4">
+                  <span
+                    class="inline-block px-3 py-1 bg-white/10 text-white text-xs font-bold font-family-secondary rounded uppercase"
+                    >Уровень 3</span
+                  >
+                </div>
+                <div
+                  class="text-[#cddc39] text-4xl md:text-5xl font-bold font-family-base mb-2"
+                >
+                  3%
+                </div>
+                <p class="text-gray-400 text-xs md:text-sm">Третий уровень</p>
+              </div>
+              <div
+                class="bg-[#1a2c38] rounded-lg p-4 md:p-6 border border-gray-700"
+              >
+                <div class="mb-3 md:mb-4">
+                  <span
+                    class="inline-block px-3 py-1 bg-white/10 text-white text-xs font-bold font-family-secondary rounded uppercase"
+                    >Уровень 4</span
+                  >
+                </div>
+                <div
+                  class="text-[#cddc39] text-4xl md:text-5xl font-bold font-family-base mb-2"
+                >
+                  1%
+                </div>
+                <p class="text-gray-400 text-xs md:text-sm">
+                  Четвертый уровень
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="text-center mt-8 md:mt-12 relative overflow-hidden rounded-lg p-6 md:p-8"
+              style="
+                background-image: url(&quot;/assets/icons/lifetime.png&quot;);
+                background-size: cover;
+                background-position: center;
+              "
+            >
+              <!-- Затемняющий оверлей -->
+              <div class="absolute inset-0 bg-black/30"></div>
+
+              <!-- Контент -->
+              <div class="relative z-10">
+                <p
+                  class="text-[#cddc39] text-lg md:text-2xl font-bold font-family-secondary uppercase"
+                >
+                  Пожизненно!
+                </p>
+                <p class="text-gray-400 text-sm md:text-base mt-2">
+                  Пожизненно. Один раз привёл — получаешь всегда, пока игрок
+                  активен
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Calculator Section -->
+          <section class="px-4 md:px-6 py-10 md:py-16">
+            <div class="text-center mb-8 md:mb-12">
+              <div
+                class="inline-flex w-16 h-16 md:w-20 md:h-20 rounded-full items-center justify-center mb-4 md:mb-6"
+              >
+                <img
+                  src="/assets/icons/calc-icon.png"
+                  alt=""
+                  class="w-16 h-16 md:w-20 md:h-20"
+                />
+              </div>
+              <h2
+                class="text-brand-secondary text-2xl md:text-4xl font-bold font-family-base mb-3 md:mb-4"
+              >
+                Калькулятор дохода
+              </h2>
+              <p class="text-gray-400 text-sm md:text-base">
+                Посмотри, сколько можешь зарабатывать
+              </p>
+            </div>
+
+            <div
+              class="max-w-4xl mx-auto bg-[#1a2c38] rounded-lg p-6 md:p-8 lg:p-12"
+            >
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8">
+                <div>
+                  <div class="flex items-center justify-between mb-3">
+                    <label
+                      class="text-gray-400 text-sm uppercase font-family-secondary"
+                      >Рефералов в месяц</label
+                    >
+                    <span
+                      class="text-[#cddc39] text-xl font-bold font-family-base"
+                      >50</span
+                    >
+                  </div>
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="50"
+                    class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-[#cddc39]"
+                  />
+                </div>
+                <div>
+                  <div class="flex items-center justify-between mb-3">
+                    <label
+                      class="text-gray-400 text-sm uppercase font-family-secondary"
+                      >Средний депозит</label
+                    >
+                    <span
+                      class="text-[#cddc39] text-xl font-bold font-family-base"
+                      >50</span
+                    >
+                  </div>
+                  <input
+                    type="range"
+                    min="0"
+                    max="1000"
+                    value="50"
+                    class="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-[#cddc39]"
+                  />
+                </div>
+              </div>
+
+              <div class="bg-brand-secondary rounded-lg p-6 md:p-8 text-center">
+                <p
+                  class="text-black text-sm md:text-base font-bold font-family-secondary uppercase mb-2"
+                >
+                  Ваш доход
+                </p>
+                <div
+                  class="text-black text-4xl md:text-5xl font-bold font-family-base mb-4"
+                >
+                  $194
+                </div>
+                <div
+                  class="flex items-center justify-center gap-2 md:gap-4 text-black text-xs md:text-sm font-family-secondary"
+                >
+                  <span>$100</span><span>•</span><span>$50</span><span>•</span
+                  ><span>$40</span><span>•</span><span>$4</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Why PapaBet Partners -->
+          <section class="px-4 md:px-6 py-10 md:py-16">
+            <div class="text-center mb-8 md:mb-12">
+              <div
+                class="inline-flex w-16 h-16 md:w-20 md:h-20 rounded-full items-center justify-center mb-4 md:mb-6"
+              >
+                <img
+                  src="/assets/icons/hands.png"
+                  alt=""
+                  class="w-auto h-auto max-w-full"
+                />
+              </div>
+              <h2
+                class="text-brand-secondary text-2xl md:text-4xl font-bold font-family-base mb-3 md:mb-4"
+              >
+                Почему PapaBet Partners?
+              </h2>
+              <p class="text-gray-400 text-sm md:text-base">
+                Создали партнёрку, в которой хотели бы работать сами
+              </p>
+            </div>
+
+            <div
+              class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+            >
+              <div
+                class="text-center relative overflow-hidden rounded-lg p-6 min-h-[250px] flex items-center"
+                style="
+                  background-image: url(&quot;/assets/icons/coins-bg.png&quot;);
+                  background-size: cover;
+                  background-position: center;
+                "
+              >
+                <!-- Затемняющий оверлей -->
+                <div class="absolute inset-0 bg-black/30"></div>
+
+                <!-- Контент -->
+                <div class="relative z-10 w-full">
+                  <div
+                    class="inline-flex w-16 h-16 md:w-20 md:h-20 rounded-full items-center justify-center mb-4"
+                  >
+                    <img
+                      src="/assets/icons/graphstats.png"
+                      alt=""
+                      class="w-16 h-16"
+                    />
+                  </div>
+                  <h3
+                    class="text-white text-lg md:text-xl font-bold font-family-base mb-2"
+                  >
+                    Без минуса
+                  </h3>
+                  <p class="text-gray-400 text-sm md:text-base">
+                    Если игрок выиграл — ты просто не получаешь ничего за этот
+                    период. Никакого negative carryover.
+                  </p>
+                </div>
+              </div>
+
+              <div class="text-center bg-black/30 p-6">
+                <div
+                  class="inline-flex w-16 h-16 md:w-20 md:h-20 rounded-full items-center justify-center mb-4"
+                >
+                  <img
+                    src="/assets/icons/money-icon.png"
+                    alt=""
+                    class="w-16 h-16"
+                  />
+                </div>
+                <h3
+                  class="text-white text-lg md:text-xl font-bold font-family-base mb-2"
+                >
+                  Быстрые выплаты
+                </h3>
+                <p class="text-gray-400 text-sm md:text-base">
+                  Вывод от $50 по запросу. USDT TRC20 или Capitalist — выбирай
+                  удобный способ.
+                </p>
+              </div>
+
+              <div class="text-center bg-black/30 p-6">
+                <div
+                  class="inline-flex w-16 h-16 md:w-20 md:h-20 bg-[#1a2c38] rounded-full items-center justify-center mb-4"
+                ></div>
+                <h3
+                  class="text-white text-lg md:text-xl font-bold font-family-base mb-2"
+                >
+                  +10% Бонус
+                </h3>
+                <p class="text-gray-400 text-sm md:text-base">
+                  Переведи заработок на игровой баланс и получи +10% сверху.
+                  $100 → $110.
+                </p>
+              </div>
+
+              <div class="text-center bg-black/30 p-6">
+                <div
+                  class="inline-flex w-16 h-16 md:w-20 md:h-20 bg-[#1a2c38] rounded-full items-center justify-center mb-4"
+                ></div>
+                <h3
+                  class="text-white text-lg md:text-xl font-bold font-family-base mb-2"
+                >
+                  Прозрачная статистика
+                </h3>
+                <p class="text-gray-400 text-sm md:text-base">
+                  Детальная аналитика по каждому уровню. Видишь кто сколько
+                  приносит.
+                </p>
+              </div>
+
+              <div class="text-center bg-black/30 p-6">
+                <div
+                  class="inline-flex w-16 h-16 md:w-20 md:h-20 bg-[#1a2c38] rounded-full items-center justify-center mb-4"
+                ></div>
+                <h3
+                  class="text-white text-lg md:text-xl font-bold font-family-base mb-2"
+                >
+                  Telegram-уведомления
+                </h3>
+                <p class="text-gray-400 text-sm md:text-base">
+                  Новый реферал, депозит, ежедневный отчёт — всё прилетает в
+                  Telegram.
+                </p>
+              </div>
+
+              <div class="text-center bg-black/30 p-6">
+                <div
+                  class="inline-flex w-16 h-16 md:w-20 md:h-20 bg-[#1a2c38] rounded-full items-center justify-center mb-4"
+                ></div>
+                <h3
+                  class="text-white text-lg md:text-xl font-bold font-family-base mb-2"
+                >
+                  Удобные инструменты
+                </h3>
+                <p class="text-gray-400 text-sm md:text-base">
+                  Генератор ссылок с UTM-метками, готовые баннеры всех размеров.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- How It Works -->
+          <section class="px-4 md:px-6 py-10 md:py-16">
+            <div class="text-center mb-8 md:mb-12">
+              <div
+                class="inline-flex w-16 h-16 md:w-20 md:h-20 bg-[#1a2c38] rounded-full items-center justify-center mb-4 md:mb-6"
+              >
+                <span class="text-[#cddc39] text-3xl md:text-4xl font-bold"
+                  >?</span
+                >
+              </div>
+              <h2
+                class="text-brand-secondary text-2xl md:text-4xl font-bold font-family-base mb-3 md:mb-4"
+              >
+                Как это работает
+              </h2>
+              <p class="text-gray-400 text-sm md:text-base">
+                Три шага до первого дохода
+              </p>
+            </div>
+
+            <div
+              class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-4xl mx-auto"
+            >
+              <div class="text-center">
+                <div
+                  class="inline-flex w-20 h-20 md:w-24 md:h-24 bg-[#1a2c38] rounded-full items-center justify-center mb-4 md:mb-6"
+                >
+                  <svg
+                    class="w-10 h-10 md:w-12 md:h-12 text-[#cddc39]"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
+                    />
+                  </svg>
+                </div>
+                <h3
+                  class="text-[#cddc39] text-xl md:text-2xl font-bold font-family-base mb-2"
+                >
+                  Зарегистрируйся
+                </h3>
+                <p class="text-gray-400 text-sm md:text-base">
+                  Создайте аккаунт за минуту — просто укажите почту и придумайте
+                  пароль
+                </p>
+              </div>
+
+              <div class="text-center">
+                <div
+                  class="inline-flex w-20 h-20 md:w-24 md:h-24 bg-[#1a2c38] rounded-full items-center justify-center mb-4 md:mb-6"
+                >
+                  <svg
+                    class="w-10 h-10 md:w-12 md:h-12 text-[#cddc39]"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92 1.61 0 2.92-1.31 2.92-2.92s-1.31-2.92-2.92-2.92z"
+                    />
+                  </svg>
+                </div>
+                <h3
+                  class="text-[#cddc39] text-xl md:text-2xl font-bold font-family-base mb-2"
+                >
+                  Получи ссылку
+                </h3>
+                <p class="text-gray-400 text-sm md:text-base">
+                  Получите персональную реферальную ссылку и начните привлекать
+                  игроков
+                </p>
+              </div>
+
+              <div class="text-center">
+                <div
+                  class="inline-flex w-20 h-20 md:w-24 md:h-24 bg-[#1a2c38] rounded-full items-center justify-center mb-4 md:mb-6"
+                >
+                  <svg
+                    class="w-10 h-10 md:w-12 md:h-12 text-[#cddc39]"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"
+                    />
+                  </svg>
+                </div>
+                <h3
+                  class="text-[#cddc39] text-xl md:text-2xl font-bold font-family-base mb-2"
+                >
+                  Приводи и зарабатывай
+                </h3>
+                <p class="text-gray-400 text-sm md:text-base">
+                  Получайте пассивный доход с каждой ставки ваших рефералов
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Special Conditions -->
+          <section class="px-4 md:px-6 py-10 md:py-16">
+            <div class="bg-brand-secondary rounded-2xl p-8 md:p-12 text-center">
+              <div
+                class="inline-flex w-16 h-16 md:w-20 md:h-20 bg-white/20 rounded-full items-center justify-center mb-6"
+              >
+                <svg
+                  class="w-8 h-8 md:w-10 md:h-10 text-black"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+                  />
+                </svg>
+              </div>
+              <h2
+                class="text-black text-2xl md:text-4xl font-bold font-family-base mb-4 md:mb-6"
+              >
+                Особые условия для лидеров
+              </h2>
+              <p
+                class="text-black text-sm md:text-base mb-6 md:mb-10 max-w-2xl mx-auto"
+              >
+                Если у тебя есть аудитория — готовы обсудить индивидуальные
+                условия сотрудничества
+              </p>
+              <div
+                class="flex flex-wrap items-center justify-center gap-3 md:gap-6 mb-8"
+              >
+                <span
+                  class="text-black font-bold font-family-secondary uppercase text-sm"
+                  >📱 Telegram</span
+                >
+                <span
+                  class="text-black font-bold font-family-secondary uppercase text-sm"
+                  >▶️ YouTube</span
+                >
+                <span
+                  class="text-black font-bold font-family-secondary uppercase text-sm"
+                  >🎮 Twitch</span
+                >
+                <span
+                  class="text-black font-bold font-family-secondary uppercase text-sm"
+                  >🎵 TikTok</span
+                >
+              </div>
+              <button
+                class="px-8 md:px-12 py-3 md:py-4 bg-black text-[#cddc39] text-sm md:text-base font-bold font-family-secondary rounded-lg hover:bg-gray-900 transition uppercase"
+              >
+                topguys@papabet.gg
+              </button>
+            </div>
+          </section>
+
+          <!-- FAQ -->
+          <section class="px-4 md:px-6 py-10 md:py-16">
+            <div class="text-center mb-8 md:mb-12">
+              <div
+                class="inline-flex w-16 h-16 md:w-20 md:h-20 bg-[#1a2c38] rounded-full items-center justify-center mb-4 md:mb-6"
+              >
+                <svg
+                  class="w-8 h-8 md:w-10 md:h-10 text-[#cddc39]"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"
+                  />
+                </svg>
+              </div>
+              <h2
+                class="text-brand-secondary text-2xl md:text-4xl font-bold font-family-base mb-3 md:mb-4"
+              >
+                Частые вопросы
+              </h2>
+              <p class="text-gray-400 text-sm md:text-base">
+                Если не нашёл ответ — пиши нам
+              </p>
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-4">
+              <div class="bg-[#1a2c38] rounded-lg p-4 md:p-6">
+                <button
+                  class="w-full flex items-center justify-between text-left"
+                >
+                  <h3
+                    class="text-white text-base md:text-lg font-bold font-family-base pr-4"
+                  >
+                    Как считается мой доход?
+                  </h3>
+                  <svg
+                    class="w-5 h-5 text-gray-400 flex-shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="bg-[#1a2c38] rounded-lg p-4 md:p-6">
+                <button
+                  class="w-full flex items-center justify-between text-left"
+                >
+                  <h3
+                    class="text-white text-base md:text-lg font-bold font-family-base pr-4"
+                  >
+                    Что если игрок выиграл?
+                  </h3>
+                  <svg
+                    class="w-5 h-5 text-gray-400 flex-shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="bg-[#1a2c38] rounded-lg p-4 md:p-6">
+                <button
+                  class="w-full flex items-center justify-between text-left"
+                >
+                  <h3
+                    class="text-white text-base md:text-lg font-bold font-family-base pr-4"
+                  >
+                    Как работает 4 уровня?
+                  </h3>
+                  <svg
+                    class="w-5 h-5 text-gray-400 flex-shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="bg-[#1a2c38] rounded-lg p-4 md:p-6">
+                <button
+                  class="w-full flex items-center justify-between text-left"
+                >
+                  <h3
+                    class="text-white text-base md:text-lg font-bold font-family-base pr-4"
+                  >
+                    Когда выплата денег?
+                  </h3>
+                  <svg
+                    class="w-5 h-5 text-gray-400 flex-shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <div class="bg-[#1a2c38] rounded-lg p-4 md:p-6">
+                <button
+                  class="w-full flex items-center justify-between text-left"
+                >
+                  <h3
+                    class="text-white text-base md:text-lg font-bold font-family-base pr-4"
+                  >
+                    Нужно ли платить за участие?
+                  </h3>
+                  <svg
+                    class="w-5 h-5 text-gray-400 flex-shrink-0"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- Final CTA -->
+          <section class="px-4 md:px-6 py-10 md:py-16">
+            <div class="text-center">
+              <h2
+                class="text-white text-3xl md:text-5xl font-bold font-family-base mb-4 md:mb-6"
+              >
+                Готов начать?
+              </h2>
+              <p
+                class="text-gray-400 text-sm md:text-base mb-8 md:mb-12 max-w-2xl mx-auto"
+              >
+                Присоединяйся к PapaBet Partners и зарабатывай с каждого игрока
+              </p>
+              <button
+                onclick="window.location.href = '/partnership-dashboard.html'"
+                class="px-8 md:px-12 py-4 md:py-5 bg-brand-secondary text-black text-base md:text-lg font-bold font-family-secondary rounded-lg hover:bg-[#b8c935] transition uppercase tracking-wide"
+              >
+                Call to action
+              </button>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <div id="footer-container"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
