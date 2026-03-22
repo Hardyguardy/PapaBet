@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/index.css" rel="stylesheet" />
+    <title>Миссии - PapaBet</title>
+  </head>
+  <body class="bg-brand-primary">
+    <div id="header-logged-container"></div>
+
+    <div class="pt-[57px] max-w-full mx-auto">
+      <!-- Мобильный хедер профиля -->
+      <div class="lg:hidden w-full bg-brand-primary border-b border-gray-800">
+        <div class="px-4 py-4">
+          <div class="flex items-center justify-between mb-4">
+            <button
+              onclick="window.location.href = '/loggeduser.html'"
+              class="flex items-center gap-2 text-gray-400 hover:text-white transition"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+              <span
+                class="text-sm font-family-secondary uppercase tracking-wider"
+                >Назад</span
+              >
+            </button>
+            <div class="flex items-center gap-2">
+              <h3
+                class="text-[#cddc39] text-lg font-family-secondary uppercase tracking-wide"
+              >
+                IVAN777
+              </h3>
+              <span
+                class="px-2 py-0.5 bg-transparent border border-[#cddc39] text-[#cddc39] text-xs font-bold font-family-secondary rounded uppercase"
+                >GOLD</span
+              >
+            </div>
+          </div>
+
+          <!-- Mobile Nav Dropdown -->
+          <div class="relative">
+            <button
+              id="mobile-profile-nav-button-missions"
+              class="w-full bg-[#273337] text-white px-4 py-3 rounded-lg flex items-center justify-between hover:bg-[#2d4250] transition"
+            >
+              <span class="font-family-secondary uppercase text-sm"
+                >Миссии</span
+              >
+              <img src="/assets/icons/arrow-down-gray.svg" alt="" class="h-2" />
+            </button>
+            <div
+              id="mobile-profile-nav-dropdown-missions"
+              class="hidden absolute top-full left-0 right-0 mt-2 bg-[#273337] rounded-lg border border-gray-700 z-50"
+            >
+              <a
+                href="/account.html"
+                class="block px-4 py-3 hover:bg-[#2d4250] text-white font-family-secondary text-sm"
+                >Аккаунт</a
+              >
+              <a
+                href="/settings.html"
+                class="block px-4 py-3 hover:bg-[#2d4250] text-white font-family-secondary text-sm"
+                >Настройки</a
+              >
+              <a
+                href="/bet-history.html"
+                class="block px-4 py-3 hover:bg-[#2d4250] text-white font-family-secondary text-sm"
+                >История ставок</a
+              >
+              <a
+                href="/transaction-history.html"
+                class="block px-4 py-3 hover:bg-[#2d4250] text-white font-family-secondary text-sm"
+                >История транзакций</a
+              >
+              <a
+                href="/partnership-landing.html"
+                class="block px-4 py-3 hover:bg-[#2d4250] text-white font-family-secondary text-sm"
+                >Партнерство</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex">
+        <!-- Десктопный сайдбар -->
+        <aside
+          class="hidden lg:block fixed left-0 top-[57px] w-80 h-[calc(100vh-57px)] bg-brand-primary overflow-y-auto border-r border-gray-800 z-40"
+        >
+          <div class="px-6 py-6 border-b border-gray-800">
+            <div class="flex items-center gap-3 mb-8">
+              <button
+                onclick="window.location.href = '/loggeduser.html'"
+                class="text-gray-400 hover:text-white transition"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </button>
+              <h2
+                class="text-gray-400 text-xl font-family-secondary uppercase tracking-wider"
+              >
+                Назад
+              </h2>
+            </div>
+            <div class="flex items-center gap-3">
+              <h3
+                class="text-[#cddc39] text-2xl font-family-secondary uppercase tracking-wide"
+              >
+                IVAN777
+              </h3>
+              <span
+                class="px-3 py-1 bg-transparent border-2 border-[#cddc39] text-[#cddc39] text-sm font-bold font-family-secondary rounded uppercase tracking-wide"
+                >GOLD</span
+              >
+            </div>
+          </div>
+
+          <nav class="px-6 py-6 space-y-1 font-family-base font-medium">
+            <a
+              href="/account.html"
+              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              >Аккаунт</a
+            >
+            <a
+              href="/settings.html"
+              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              >Настройки</a
+            >
+            <a
+              href="/bet-history.html"
+              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              >История ставок</a
+            >
+            <a
+              href="/transaction-history.html"
+              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              >История транзакций</a
+            >
+            <a
+              href="/partnership-landing.html"
+              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              >Партнерство</a
+            >
+          </nav>
+        </aside>
+
+        <!-- Главный контент -->
+        <main class="flex-1 lg:ml-80 min-w-0 px-4 md:px-6 py-6 md:py-8">
+          <!-- Header -->
+          <div class="mb-8">
+            <div class="flex items-center gap-3 mb-4">
+              <img
+                src="/assets/icons/bullseye-arrow.svg"
+                alt=""
+                class="w-8 h-8 md:w-10 md:h-10"
+              />
+              <h1
+                class="text-white text-2xl md:text-4xl font-bold font-family-base"
+              >
+                Миссии
+              </h1>
+            </div>
+            <div class="flex items-center gap-4 text-sm md:text-base">
+              <div class="flex items-center gap-2">
+                <span class="text-gray-400 uppercase font-family-secondary"
+                  >Выполнено:</span
+                >
+                <span class="text-white font-bold font-family-base">3/10</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-gray-400 uppercase font-family-secondary"
+                  >Получено:</span
+                >
+                <div class="flex items-center gap-1">
+                  <span
+                    class="w-2 h-2 bg-brand-secondary rounded-full inline-block"
+                  ></span>
+                  <span class="text-brand-secondary font-bold font-family-base"
+                    >200</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Missions Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- Mission Card 1 - Пригласи 5 друзей -->
+            <div class="bg-[#273337] rounded-lg p-6 text-center">
+              <div class="inline-flex mb-4">
+                <img src="/assets/icons/friends.svg" alt="" class="w-12 h-12" />
+              </div>
+              <h3
+                class="text-brand-secondary text-lg font-bold font-family-base mb-2"
+              >
+                Пригласи 5 друзей
+              </h3>
+              <p class="text-gray-400 text-sm mb-4">
+                Пригласи друзей по реферальной ссылке
+              </p>
+              <div class="flex items-center justify-center gap-2 mb-4">
+                <span
+                  class="text-gray-400 text-xs uppercase font-family-secondary"
+                  >Приз:</span
+                >
+                <div class="flex items-center gap-1">
+                  <span
+                    class="w-2 h-2 bg-brand-secondary rounded-full inline-block"
+                  ></span>
+                  <span class="text-brand-secondary font-bold">500</span>
+                </div>
+              </div>
+              <button
+                class="w-full px-4 py-2 bg-brand-secondary text-black text-sm font-bold font-family-secondary rounded hover:bg-[#b8c935] transition uppercase"
+              >
+                Пригласить
+              </button>
+            </div>
+
+            <!-- Mission Card 2 - Twitter -->
+            <div class="bg-[#273337] rounded-lg p-6 text-center">
+              <div class="inline-flex mb-4">
+                <img src="/assets/icons/X-white.svg" alt="" class="w-12 h-12" />
+              </div>
+              <h3
+                class="text-brand-secondary text-lg font-bold font-family-base mb-2"
+              >
+                Twitter
+              </h3>
+              <p class="text-gray-400 text-sm mb-4">
+                Подпишитесь на @papabet_gg в Twitter
+              </p>
+              <div class="flex items-center justify-center gap-2 mb-4">
+                <span
+                  class="text-gray-400 text-xs uppercase font-family-secondary"
+                  >Приз:</span
+                >
+                <div class="flex items-center gap-1">
+                  <span
+                    class="w-2 h-2 bg-brand-secondary rounded-full inline-block"
+                  ></span>
+                  <span class="text-brand-secondary font-bold">500</span>
+                </div>
+              </div>
+              <button
+                class="w-full px-4 py-2 bg-brand-secondary text-black text-sm font-bold font-family-secondary rounded hover:bg-[#b8c935] transition uppercase"
+              >
+                Подписаться
+              </button>
+            </div>
+
+            <!-- Mission Card 3 - Discord -->
+            <div class="bg-[#273337] rounded-lg p-6 text-center">
+              <div class="inline-flex mb-4">
+                <img
+                  src="/assets/icons/Twitch-white.svg"
+                  alt=""
+                  class="w-12 h-12"
+                />
+              </div>
+              <h3
+                class="text-brand-secondary text-lg font-bold font-family-base mb-2"
+              >
+                Discord
+              </h3>
+              <p class="text-gray-400 text-sm mb-4">
+                Присоединяйтесь к нашему Discord-серверу
+              </p>
+              <div class="flex items-center justify-center gap-2 mb-4">
+                <span
+                  class="text-gray-400 text-xs uppercase font-family-secondary"
+                  >Приз:</span
+                >
+                <div class="flex items-center gap-1">
+                  <span
+                    class="w-2 h-2 bg-brand-secondary rounded-full inline-block"
+                  ></span>
+                  <span class="text-brand-secondary font-bold">500</span>
+                </div>
+              </div>
+              <button
+                class="w-full px-4 py-2 bg-brand-secondary text-black text-sm font-bold font-family-secondary rounded hover:bg-[#b8c935] transition uppercase"
+              >
+                Присоединиться
+              </button>
+            </div>
+
+            <!-- Mission Card 4 - Instagram -->
+            <div class="bg-[#273337] rounded-lg p-6 text-center">
+              <div class="inline-flex mb-4">
+                <img
+                  src="/assets/icons/Instagram-white.svg"
+                  alt=""
+                  class="w-12 h-12"
+                />
+              </div>
+              <h3
+                class="text-brand-secondary text-lg font-bold font-family-base mb-2"
+              >
+                Instagram
+              </h3>
+              <p class="text-gray-400 text-sm mb-4">
+                Подпишитесь на @papabet в Instagram
+              </p>
+              <div class="flex items-center justify-center gap-2 mb-4">
+                <span
+                  class="text-gray-400 text-xs uppercase font-family-secondary"
+                  >Приз:</span
+                >
+                <div class="flex items-center gap-1">
+                  <span
+                    class="w-2 h-2 bg-brand-secondary rounded-full inline-block"
+                  ></span>
+                  <span class="text-brand-secondary font-bold">500</span>
+                </div>
+              </div>
+              <button
+                class="w-full px-4 py-2 bg-brand-secondary text-black text-sm font-bold font-family-secondary rounded hover:bg-[#b8c935] transition uppercase"
+              >
+                Подписаться
+              </button>
+            </div>
+
+            <!-- Mission Card 5 - Youtube -->
+            <div class="bg-[#273337] rounded-lg p-6 text-center">
+              <div class="inline-flex mb-4">
+                <img
+                  src="/assets/icons/Youtube-white.svg"
+                  alt=""
+                  class="w-12 h-12"
+                />
+              </div>
+              <h3
+                class="text-brand-secondary text-lg font-bold font-family-base mb-2"
+              >
+                Youtube
+              </h3>
+              <p class="text-gray-400 text-sm mb-4">
+                Подпишитесь на наш Youtube-канал
+              </p>
+              <div class="flex items-center justify-center gap-2 mb-4">
+                <span
+                  class="text-gray-400 text-xs uppercase font-family-secondary"
+                  >Приз:</span
+                >
+                <div class="flex items-center gap-1">
+                  <span
+                    class="w-2 h-2 bg-brand-secondary rounded-full inline-block"
+                  ></span>
+                  <span class="text-brand-secondary font-bold">500</span>
+                </div>
+              </div>
+              <button
+                class="w-full px-4 py-2 bg-brand-secondary text-black text-sm font-bold font-family-secondary rounded hover:bg-[#b8c935] transition uppercase"
+              >
+                Подписаться
+              </button>
+            </div>
+
+            <!-- Mission Card 6 - Аватарка -->
+            <div class="bg-[#273337] rounded-lg p-6 text-center">
+              <div class="inline-flex mb-4">
+                <img
+                  src="/assets/icons/Image-white.svg"
+                  alt=""
+                  class="w-12 h-12"
+                />
+              </div>
+              <h3
+                class="text-brand-secondary text-lg font-bold font-family-base mb-2"
+              >
+                Аватарка
+              </h3>
+              <p class="text-gray-400 text-sm mb-4">
+                Загрузите аватарку в свой профиль
+              </p>
+              <div class="flex items-center justify-center gap-2 mb-4">
+                <span
+                  class="text-gray-400 text-xs uppercase font-family-secondary"
+                  >Приз:</span
+                >
+                <div class="flex items-center gap-1">
+                  <span
+                    class="w-2 h-2 bg-brand-secondary rounded-full inline-block"
+                  ></span>
+                  <span class="text-brand-secondary font-bold">500</span>
+                </div>
+              </div>
+              <button
+                class="w-full px-4 py-2 bg-brand-secondary text-black text-sm font-bold font-family-secondary rounded hover:bg-[#b8c935] transition uppercase"
+              >
+                Загрузить
+              </button>
+            </div>
+
+            <!-- Mission Card 7 - Включите 2FA (Completed) -->
+            <div class="bg-[#273337] rounded-lg p-6 text-center">
+              <div class="inline-flex mb-4">
+                <img src="/assets/icons/2FA.svg" alt="" class="w-12 h-12" />
+              </div>
+              <h3
+                class="text-brand-secondary text-lg font-bold font-family-base mb-2"
+              >
+                Включите 2FA
+              </h3>
+              <p class="text-gray-400 text-sm mb-4">
+                Защитa двухфакторной аутентификацией
+              </p>
+              <div class="flex items-center justify-center gap-2 mb-4">
+                <span
+                  class="text-gray-400 text-xs uppercase font-family-secondary"
+                  >Приз:</span
+                >
+                <div class="flex items-center gap-1">
+                  <span
+                    class="w-2 h-2 bg-brand-secondary rounded-full inline-block"
+                  ></span>
+                  <span class="text-brand-secondary font-bold">500</span>
+                </div>
+              </div>
+              <button
+                class="w-full px-4 py-2 bg-brand-secondary text-black text-sm font-bold font-family-secondary rounded hover:bg-[#b8c935] transition uppercase"
+              >
+                Включить
+              </button>
+            </div>
+
+            <!-- Mission Card 8 - Email (Completed) -->
+            <div class="bg-[#273337] rounded-lg p-6 text-center opacity-60">
+              <div class="inline-flex mb-4 relative">
+                <img
+                  src="/assets/icons/Envelope-white.svg"
+                  alt=""
+                  class="w-12 h-12"
+                />
+                <img
+                  src="/assets/icons/badge-check.png"
+                  alt=""
+                  class="w-5 h-5 absolute top-0 right-0 transform translate-x-1/2 -translate-y-1/4"
+                />
+              </div>
+              <h3
+                class="text-brand-secondary text-lg font-bold font-family-base mb-2"
+              >
+                Email
+              </h3>
+              <p class="text-gray-400 text-sm mb-4">
+                Подтвердите почту для безопасности аккаунта
+              </p>
+              <div class="flex items-center justify-center gap-2 mb-4">
+                <span
+                  class="text-gray-400 text-xs uppercase font-family-secondary"
+                  >Получено:</span
+                >
+                <div class="flex items-center gap-1">
+                  <span
+                    class="w-2 h-2 bg-brand-secondary rounded-full inline-block"
+                  ></span>
+                  <span class="text-brand-secondary font-bold">500</span>
+                </div>
+              </div>
+              <button
+                disabled
+                class="w-full px-4 py-2 bg-gray-700 text-gray-500 text-sm font-bold font-family-secondary rounded uppercase cursor-not-allowed"
+              >
+                Выполнено
+              </button>
+            </div>
+
+            <!-- Mission Card 9 - Telegram-канал (Completed) -->
+            <div class="bg-[#273337] rounded-lg p-6 text-center opacity-60">
+              <div class="inline-flex mb-4 relative">
+                <img
+                  src="/assets/icons/Telegram-white.svg"
+                  alt=""
+                  class="w-12 h-12"
+                />
+                <img
+                  src="/assets/icons/badge-check.png"
+                  alt=""
+                  class="w-5 h-5 absolute top-0 right-0 transform translate-x-full -translate-y-1/3"
+                />
+              </div>
+              <h3
+                class="text-brand-secondary text-lg font-bold font-family-base mb-2"
+              >
+                Telegram-канал
+              </h3>
+              <p class="text-gray-400 text-sm mb-4">
+                Получайте новости первыми на @papabet
+              </p>
+              <div class="flex items-center justify-center gap-2 mb-4">
+                <span
+                  class="text-gray-400 text-xs uppercase font-family-secondary"
+                  >Получено:</span
+                >
+                <div class="flex items-center gap-1">
+                  <span
+                    class="w-2 h-2 bg-brand-secondary rounded-full inline-block"
+                  ></span>
+                  <span class="text-brand-secondary font-bold">500</span>
+                </div>
+              </div>
+              <button
+                disabled
+                class="w-full px-4 py-2 bg-gray-700 text-gray-500 text-sm font-bold font-family-secondary rounded uppercase cursor-not-allowed"
+              >
+                Выполнено
+              </button>
+            </div>
+
+            <!-- Mission Card 10 - Telegram-бот (Completed) -->
+            <div class="bg-[#273337] rounded-lg p-6 text-center opacity-60">
+              <div class="inline-flex mb-4 relative">
+                <img src="/assets/icons/Robot.svg" alt="" class="w-12 h-12" />
+                <img
+                  src="/assets/icons/badge-check.png"
+                  alt=""
+                  class="w-5 h-5 absolute -top-1 -right-1"
+                />
+              </div>
+              <h3
+                class="text-brand-secondary text-lg font-bold font-family-base mb-2"
+              >
+                Telegram-бот
+              </h3>
+              <p class="text-gray-400 text-sm mb-4">
+                Подключите бота для уведомлений о выигрышах
+              </p>
+              <div class="flex items-center justify-center gap-2 mb-4">
+                <span
+                  class="text-gray-400 text-xs uppercase font-family-secondary"
+                  >Получено:</span
+                >
+                <div class="flex items-center gap-1">
+                  <span
+                    class="w-2 h-2 bg-brand-secondary rounded-full inline-block"
+                  ></span>
+                  <span class="text-brand-secondary font-bold">500</span>
+                </div>
+              </div>
+              <button
+                disabled
+                class="w-full px-4 py-2 bg-gray-700 text-gray-500 text-sm font-bold font-family-secondary rounded uppercase cursor-not-allowed"
+              >
+                Выполнено
+              </button>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <div id="footer-container"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
