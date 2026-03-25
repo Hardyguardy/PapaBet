@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/src/index.css" rel="stylesheet" />
+    <title>Миссии - PapaBet</title>
+  </head>
+  <body class="bg-brand-primary">
+    <div id="header-logged-container"></div>
+
+    <div class="pt-[57px] max-w-full mx-auto">
+      <!-- Мобильный хедер профиля -->
+      <div class="lg:hidden w-full bg-brand-primary border-b border-gray-800">
+        <div class="px-4 py-4">
+          <div class="flex items-center justify-between mb-4">
+            <button
+              onclick="window.location.href = '/loggeduser.html'"
+              class="flex items-center gap-2 text-gray-400 hover:text-white transition"
+            >
+              <svg
+                class="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+              <span
+                class="text-sm font-family-secondary uppercase tracking-wider"
+                >Назад</span
+              >
+            </button>
+            <div class="flex items-center gap-2">
+              <h3
+                class="text-[#cddc39] text-lg font-family-secondary uppercase tracking-wide"
+              >
+                IVAN777
+              </h3>
+              <span
+                class="px-2 py-0.5 bg-transparent border border-[#cddc39] text-[#cddc39] text-xs font-bold font-family-secondary rounded uppercase"
+                >GOLD</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex">
+        <!-- Десктопный сайдбар -->
+        <aside
+          class="hidden lg:block fixed left-0 top-[57px] w-80 h-[calc(100vh-57px)] bg-brand-primary overflow-y-auto border-r border-gray-800 z-40"
+        >
+          <div class="px-6 py-6 border-b border-gray-800">
+            <div class="flex items-center gap-3 mb-8">
+              <button
+                onclick="window.location.href = '/loggeduser.html'"
+                class="text-gray-400 hover:text-white transition"
+              >
+                <svg
+                  class="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </button>
+              <h2
+                class="text-gray-400 text-xl font-family-secondary uppercase tracking-wider"
+              >
+                Назад
+              </h2>
+            </div>
+            <div class="flex items-center gap-3">
+              <h3
+                class="text-[#cddc39] text-2xl font-family-secondary uppercase tracking-wide"
+              >
+                IVAN777
+              </h3>
+              <span
+                class="px-3 py-1 bg-transparent border-2 border-[#cddc39] text-[#cddc39] text-sm font-bold font-family-secondary rounded uppercase tracking-wide"
+                >GOLD</span
+              >
+            </div>
+          </div>
+
+          <nav class="px-6 py-6 space-y-1 font-family-base font-medium">
+            <a
+              href="/account.html"
+              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              >Аккаунт</a
+            >
+            <a
+              href="/settings.html"
+              class="block text-brand-secondary hover:text-[#cddc39] transition text-[18px]"
+              >Настройки</a
+            >
+            <a
+              href="/bet-history.html"
+              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              >История ставок</a
+            >
+            <a
+              href="/transaction-history.html"
+              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              >История транзакций</a
+            >
+            <a
+              href="/partnership-landing.html"
+              class="block text-white hover:text-[#cddc39] transition text-[18px]"
+              >Партнерство</a
+            >
+          </nav>
+        </aside>
+
+        <!-- Главный контент -->
+        <main class="flex-1 lg:ml-80 min-w-0 px-4 md:px-6 py-6 md:py-8">
+          <!-- Header -->
+          <div class="mb-8">
+            <div class="flex items-center gap-3">
+              <img
+                src="/assets/icons/bullseye-arrow.svg"
+                alt=""
+                class="w-8 h-8 md:w-10 md:h-10"
+              />
+              <h1
+                class="text-white text-2xl md:text-4xl font-bold font-family-base"
+              >
+                Миссии
+              </h1>
+            </div>
+          </div>
+
+          <!-- Empty State Card -->
+
+          <div class="w-full">
+            <div
+              class="bg-[#273337] rounded-2xl p-8 md:p-12 lg:p-16 text-center max-w-2xl mx-auto"
+            >
+              <!-- Mailbox Icon -->
+              <div class="flex justify-center mb-8">
+                <img
+                  src="/assets/icons/mailbox.png"
+                  alt=""
+                  class="w-32 h-32 md:w-40 md:h-40"
+                />
+              </div>
+
+              <!-- Title -->
+              <h2
+                class="text-white text-3xl md:text-4xl lg:text-5xl font-bold font-family-base mb-6 md:mb-8"
+              >
+                Пока нет заданий
+              </h2>
+
+              <!-- Description -->
+              <p
+                class="text-gray-400 text-sm md:text-base font-family-secondary uppercase tracking-wide mb-8 md:mb-12 max-w-xl mx-auto leading-relaxed"
+              >
+                Сейчас нет доступных миссий. Загляните позже — мы регулярно
+                добавляем новые задания с наградами!
+              </p>
+
+              <!-- CTA Button -->
+              <button
+                onclick="window.location.href = '/loggeduser.html'"
+                class="px-8 md:px-12 py-3 md:py-4 bg-brand-secondary text-black text-sm md:text-base font-bold font-family-secondary rounded-lg hover:bg-[#b8c935] transition uppercase tracking-wide"
+              >
+                Играть
+              </button>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <div id="footer-container"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
